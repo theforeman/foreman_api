@@ -17,8 +17,8 @@ module ForemanApi
     end
 
     def call(method, path, payload = nil)
-      a, *_ = [method, payload ? payload.to_json : nil].compact
-      ret  = client[path].send(a)
+      a, *params = [method, payload ? payload.to_json : nil].compact
+      ret  = client[path].send(a, *params)
       data = begin
         JSON.parse(ret.body)
       rescue JSON::ParserError
