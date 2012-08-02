@@ -17,8 +17,11 @@ module ForemanApi
     end
 
     def call(method, path, payload = nil)
-      a, *params = [method, payload ? payload.to_json : nil].compact
-      ret  = client[path].send(a, *params)
+      if payload && (method == :post || method == :put)
+        # TODO: is this neccessary? RestClient converts it automaticaly for me.
+        payload = payload.to_json
+      end
+      ret  = client[path].send(*([method, payload].compact))
       data = begin
         JSON.parse(ret.body)
       rescue JSON::ParserError
