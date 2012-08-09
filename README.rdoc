@@ -1,0 +1,29 @@
+= Foreman API bindings for Ruby
+
+== Summary
+
+  require 'foreman_api'
+  architectures = ForemanApi::Resources::Architecture.new(:base_url => 'http://localhost:3000', 
+                                                          :username => 'admin', 
+                                                          :password => 'changeme')
+
+  pp architectures.index
+  [[{"architecture"=>{"id"=>5, "name"=>"i386"}},
+    {"architecture"=>{"id"=>9, "name"=>"ppc"}},
+    {"architecture"=>{"id"=>14, "name"=>"x86_64"}}],
+   "[{\"architecture\":{\"name\":\"i386\",\"id\":5}},{\"architecture\":{\"name\":\"ppc\",\"id\":9}},{\"architecture\":{\"name\":\"x86_64\",\"id\":14}}]"]
+  => nil
+
+== Description
+  
+This gem contains Foreman API bindings for the Ruby language. The bindings are generated from API documentation using {Apidoc}[https://github.com/Pajk/apipie-rails] tool.
+
+The bindings brings support for new versioned API which is not complete yet. The number of supported controllers is limited but more are comming soon.
+
+== License
+
+The bindings are released under MIT license 
+
+
+
+
