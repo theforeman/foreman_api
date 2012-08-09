@@ -20,6 +20,14 @@ This gem contains Foreman API bindings for the Ruby language. The bindings are g
 
 The bindings brings support for new versioned API which is not complete yet. The number of supported controllers is limited but more are comming soon.
 
+=== Authentication
+
+Foreman API supports authentication with username/password and OAuth. For use of OAuth with the bindings you only have to change the params
+
+  architectures = ForemanApi::Resources::Architecture.new(:base_url => 'http://localhost:3000', 
+                                                          :oauth    => { :consumer_key    => 'mykey',
+                                                                         :consumer_secret => 'shhhh' })
+
 == License
 
 The bindings are released under MIT license 
