@@ -10,6 +10,7 @@ Gem::Specification.new do |gem|
 
   gem.files         = `git ls-files`.split($\)
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.files.reject! { |fn| fn == 'rubygem-foreman_api.spec' }
   gem.name          = "foreman_api"
   gem.require_paths = ["lib"]
   gem.version       = ForemanApi::VERSION
