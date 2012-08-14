@@ -2,26 +2,26 @@ module ForemanApi
   module Resources
     class Bookmark < ForemanApi::Base
 
-      def index
-        call(:get, "/api/bookmarks")
+      def index(headers = {})
+        call(:get, "/api/bookmarks", :headers => headers)
       end
 
-      def show(id)
-        call(:get, "/api/bookmarks/#{id}")
+      def show(id, headers = {})
+        call(:get, "/api/bookmarks/#{id}", :headers => headers)
       end
 
-      def create(params = {})
+      def create(params = {}, headers = {})
         validate_params!(params, {"bookmark"=>["name", "controller", "query"]})
-        call(:post, "/api/bookmarks", params)
+        call(:post, "/api/bookmarks", :payload => params, :headers => headers)
       end
 
-      def update(id, params = {})
+      def update(id, params = {}, headers = {})
         validate_params!(params, {"bookmark"=>["name", "controller", "query"]})
-        call(:put, "/api/bookmarks/#{id}", params)
+        call(:put, "/api/bookmarks/#{id}", :payload => params, :headers => headers)
       end
 
-      def destroy(id)
-        call(:delete, "/api/bookmarks/#{id}")
+      def destroy(id, headers = {})
+        call(:delete, "/api/bookmarks/#{id}", :headers => headers)
       end
 
     end

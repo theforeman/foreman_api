@@ -2,26 +2,26 @@ module ForemanApi
   module Resources
     class User < ForemanApi::Base
 
-      def index
-        call(:get, "/api/users")
+      def index(headers = {})
+        call(:get, "/api/users", :headers => headers)
       end
 
-      def show(id)
-        call(:get, "/api/users/#{id}")
+      def show(id, headers = {})
+        call(:get, "/api/users/#{id}", :headers => headers)
       end
 
-      def create(params = {})
-        validate_params!(params, {"user"=>["login", "firstname", "lastname", "mail", "admin"]})
-        call(:post, "/api/users", params)
+      def create(params = {}, headers = {})
+        validate_params!(params, {"user"=>["login", "firstname", "lastname", "mail", "admin", "password", "auth_source_id"]})
+        call(:post, "/api/users", :payload => params, :headers => headers)
       end
 
-      def update(id, params = {})
-        validate_params!(params, {"user"=>["login", "firstname", "lastname", "mail", "admin"]})
-        call(:put, "/api/users/#{id}", params)
+      def update(id, params = {}, headers = {})
+        validate_params!(params, {"user"=>["login", "firstname", "lastname", "mail", "admin", "password"]})
+        call(:put, "/api/users/#{id}", :payload => params, :headers => headers)
       end
 
-      def destroy(id)
-        call(:delete, "/api/users/#{id}")
+      def destroy(id, headers = {})
+        call(:delete, "/api/users/#{id}", :headers => headers)
       end
 
     end
