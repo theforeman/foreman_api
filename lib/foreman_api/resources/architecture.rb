@@ -2,11 +2,11 @@ module ForemanApi
   module Resources
     class Architecture < ForemanApi::Base
 
-      def index(headers = {})
+      def index(params = {}, headers = {})
         call(:get, "/api/architectures", :headers => headers)
       end
 
-      def show(id, headers = {})
+      def show(id, params = {}, headers = {})
         call(:get, "/api/architectures/#{id}", :headers => headers)
       end
 
@@ -20,7 +20,7 @@ module ForemanApi
         call(:put, "/api/architectures/#{id}", :payload => params, :headers => headers)
       end
 
-      def destroy(id, headers = {})
+      def destroy(id, params = {}, headers = {})
         call(:delete, "/api/architectures/#{id}", :headers => headers)
       end
 

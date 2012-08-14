@@ -3,7 +3,7 @@
 %if 0%{?rhel} == 6 || 0%{?fedora} < 17
 %define rubyabi 1.8
 %else
-%define rubyabi 1.9
+%define rubyabi 1.9.1
 %endif
 
 %if 0%{?rhel} == 6
@@ -16,7 +16,7 @@
 
 Summary: Ruby bindings for Forman's rest API
 Name: rubygem-%{gem_name}
-Version: 0.0.2
+Version: 0.0.3
 Release: 1%{?dist}
 Group: Development/Languages
 License: MIT
@@ -82,6 +82,16 @@ rm -f %{buildroot}%{gem_instdir}/%{gem_name}.gemspec
 
 
 %changelog
+* Tue Aug 14 2012 Martin Bacovsky <mbacovsk@redhat.com> 0.0.3-1
+- Updated to 0.0.3
+- added domains and config_templates 
+
+* Tue Aug 14 2012 Martin Bačovský <mbacovsk@redhat.com> 0.0.2-1
+- Updated gem to 0.0.2 (mbacovsk@redhat.com)
+
+* Mon Aug 13 2012 Miroslav Suchý <msuchy@redhat.com> 0.0.1-4
+- for rubyabi do s/1.9/1.9.1/ (msuchy@redhat.com)
+
 * Mon Aug 13 2012 Martin Bačovský <mbacovsk@redhat.com> 0.0.1-3
 - Fixed failing spec removal (mbacovsk@redhat.com)
 

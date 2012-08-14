@@ -2,11 +2,11 @@ module ForemanApi
   module Resources
     class OperatingSystem < ForemanApi::Base
 
-      def index(headers = {})
+      def index(params = {}, headers = {})
         call(:get, "/api/operatingsystems", :headers => headers)
       end
 
-      def show(id, headers = {})
+      def show(id, params = {}, headers = {})
         call(:get, "/api/operatingsystems/#{id}", :headers => headers)
       end
 
@@ -20,7 +20,7 @@ module ForemanApi
         call(:put, "/api/operatingsystems/#{id}", :payload => params, :headers => headers)
       end
 
-      def destroy(id, headers = {})
+      def destroy(id, params = {}, headers = {})
         call(:delete, "/api/operatingsystems/#{id}", :headers => headers)
       end
 
