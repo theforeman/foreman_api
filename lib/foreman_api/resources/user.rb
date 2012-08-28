@@ -11,12 +11,12 @@ module ForemanApi
       end
 
       def create(params = {}, headers = {})
-        validate_params!(params, {"user"=>["login", "firstname", "lastname", "mail", "admin", "password", "auth_source_id"]})
+        validate_params!(params, {"user"=>["login", "firstname", "lastname", "mail", "admin"]})
         call(:post, "/api/users", :payload => params, :headers => headers)
       end
 
       def update(id, params = {}, headers = {})
-        validate_params!(params, {"user"=>["login", "firstname", "lastname", "mail", "admin", "password"]})
+        validate_params!(params, {"user"=>["login", "firstname", "lastname", "mail", "admin"]})
         call(:put, "/api/users/#{id}", :payload => params, :headers => headers)
       end
 

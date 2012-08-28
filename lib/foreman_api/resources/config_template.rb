@@ -12,12 +12,12 @@ module ForemanApi
       end
 
       def create(params = {}, headers = {})
-        validate_params!(params, {"config_template"=>["name", "template", "snippet", "audit_comment", "template_kind_id", "template_combinations_attributes"]})
+        validate_params!(params, {"config_template"=>["name", "template", "snippet", "audit_comment", "template_kind_id", "template_combinations_attributes", "operatingsystem_ids"]})
         call(:post, "/api/config_templates", :payload => params, :headers => headers)
       end
 
       def update(id, params = {}, headers = {})
-        validate_params!(params, {"config_template"=>["name", "template", "snippet", "audit_comment", "template_kind_id", "template_combinations_attributes"]})
+        validate_params!(params, {"config_template"=>["name", "template", "snippet", "audit_comment", "template_kind_id", "template_combinations_attributes", "operatingsystem_ids"]})
         call(:put, "/api/config_templates/#{id}", :payload => params, :headers => headers)
       end
 
