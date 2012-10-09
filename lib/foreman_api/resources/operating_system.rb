@@ -1,32 +1,68 @@
 module ForemanApi
   module Resources
-    class OperatingSystem < ForemanApi::Base
-
-      def index(params = {}, headers = {})
-        call(:get, "/api/operatingsystems", :headers => headers)
+    class OperatingSystem < Apipie::Client::Base
+      def self.doc
+        @doc ||= ForemanApi.doc['resources']["operatingsystems"]
       end
 
-      def show(id, params = {}, headers = {})
-        call(:get, "/api/operatingsystems/#{id}", :headers => headers)
+      # @param [Hash] params a hash of params to be passed to the service
+      # allowed keys are: ["search", "order"]
+      #
+      # @param [Hash] headers additional http headers
+      def index(params = { }, headers = { })
+        check_params params, :allowed => true, :method => __method__
+        url, params = fill_params_in_url "/api/operatingsystems", params
+        call(:"get", url, params, headers)
       end
 
-      def create(params = {}, headers = {})
-        validate_params!(params, {"operatingsystem"=>["name", "major", "minor"]})
-        call(:post, "/api/operatingsystems", :payload => params, :headers => headers)
+      # @param [Hash] params a hash of params to be passed to the service
+      # allowed keys are: ["id"]
+      #
+      # @param [Hash] headers additional http headers
+      def show(params = { }, headers = { })
+        check_params params, :allowed => true, :method => __method__
+        url, params = fill_params_in_url "/api/operatingsystems/:id", params
+        call(:"get", url, params, headers)
       end
 
-      def update(id, params = {}, headers = {})
-        validate_params!(params, {"operatingsystem"=>["name", "major", "minor"]})
-        call(:put, "/api/operatingsystems/#{id}", :payload => params, :headers => headers)
+      # @param [Hash] params a hash of params to be passed to the service
+      # allowed keys are: {"operatingsystem"=>["name", "major", "minor"]}
+      #
+      # @param [Hash] headers additional http headers
+      def create(params = { }, headers = { })
+        check_params params, :allowed => true, :method => __method__
+        url, params = fill_params_in_url "/api/operatingsystems", params
+        call(:"post", url, params, headers)
       end
 
-      def destroy(id, params = {}, headers = {})
-        call(:delete, "/api/operatingsystems/#{id}", :headers => headers)
+      # @param [Hash] params a hash of params to be passed to the service
+      # allowed keys are: {"id"=>nil, "operatingsystem"=>["name", "major", "minor"]}
+      #
+      # @param [Hash] headers additional http headers
+      def update(params = { }, headers = { })
+        check_params params, :allowed => true, :method => __method__
+        url, params = fill_params_in_url "/api/operatingsystems/:id", params
+        call(:"put", url, params, headers)
       end
 
-      def bootfiles(id, params = {}, headers = {})
-        validate_params!(params, ["medium", "architecture"])
-        call(:get, "/api/operatingsystems/#{id}/bootfiles", :params => params, :headers => headers)
+      # @param [Hash] params a hash of params to be passed to the service
+      # allowed keys are: ["id"]
+      #
+      # @param [Hash] headers additional http headers
+      def destroy(params = { }, headers = { })
+        check_params params, :allowed => true, :method => __method__
+        url, params = fill_params_in_url "/api/operatingsystems/:id", params
+        call(:"delete", url, params, headers)
+      end
+
+      # @param [Hash] params a hash of params to be passed to the service
+      # allowed keys are: ["id", "medium", "architecture"]
+      #
+      # @param [Hash] headers additional http headers
+      def bootfiles(params = { }, headers = { })
+        check_params params, :allowed => true, :method => __method__
+        url, params = fill_params_in_url "/api/operatingsystems/:id/bootfiles", params
+        call(:"get", url, params, headers)
       end
 
     end
