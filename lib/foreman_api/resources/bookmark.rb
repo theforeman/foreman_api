@@ -1,27 +1,58 @@
 module ForemanApi
   module Resources
-    class Bookmark < ForemanApi::Base
-
-      def index(params = {}, headers = {})
-        call(:get, "/api/bookmarks", :headers => headers)
+    class Bookmark < Apipie::Client::Base
+      def self.doc
+        @doc ||= ForemanApi.doc['resources']["bookmarks"]
       end
 
-      def show(id, params = {}, headers = {})
-        call(:get, "/api/bookmarks/#{id}", :headers => headers)
+      # @param [Hash] params a hash of params to be passed to the service
+      # allowed keys are: []
+      #
+      # @param [Hash] headers additional http headers
+      def index(params = { }, headers = { })
+        check_params params, :allowed => false, :method => __method__
+        url, params = fill_params_in_url "/api/bookmarks", params
+        call(:"get", url, params, headers)
       end
 
-      def create(params = {}, headers = {})
-        validate_params!(params, {"bookmark"=>["name", "controller", "query"]})
-        call(:post, "/api/bookmarks", :payload => params, :headers => headers)
+      # @param [Hash] params a hash of params to be passed to the service
+      # allowed keys are: ["id"]
+      #
+      # @param [Hash] headers additional http headers
+      def show(params = { }, headers = { })
+        check_params params, :allowed => true, :method => __method__
+        url, params = fill_params_in_url "/api/bookmarks/:id", params
+        call(:"get", url, params, headers)
       end
 
-      def update(id, params = {}, headers = {})
-        validate_params!(params, {"bookmark"=>["name", "controller", "query"]})
-        call(:put, "/api/bookmarks/#{id}", :payload => params, :headers => headers)
+      # @param [Hash] params a hash of params to be passed to the service
+      # allowed keys are: {"bookmark"=>["name", "controller", "query"]}
+      #
+      # @param [Hash] headers additional http headers
+      def create(params = { }, headers = { })
+        check_params params, :allowed => true, :method => __method__
+        url, params = fill_params_in_url "/api/bookmarks", params
+        call(:"post", url, params, headers)
       end
 
-      def destroy(id, params = {}, headers = {})
-        call(:delete, "/api/bookmarks/#{id}", :headers => headers)
+      # @param [Hash] params a hash of params to be passed to the service
+      # allowed keys are: {"id"=>nil, "bookmark"=>["name", "controller", "query"]}
+      #
+      # @param [Hash] headers additional http headers
+      def update(params = { }, headers = { })
+        check_params params, :allowed => true, :method => __method__
+        url, params = fill_params_in_url "/api/bookmarks/:id", params
+        call(:"put", url, params, headers)
+      end
+
+      # @param [Hash] params a hash of params to be passed to the service
+      # allowed keys are: ["id"]
+      #
+      # @param [Hash] headers additional http headers
+      def destroy(params = { }, headers = { })
+        check_params params, :allowed => true, :method => __method__
+        url, params = fill_params_in_url "/api/bookmarks/:id", params
+        call(:"delete", url, params, headers)
       end
 
     end
