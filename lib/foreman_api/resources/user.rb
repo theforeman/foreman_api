@@ -6,7 +6,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["search", "order"]
+      # allowed keys are: ["search", "order", "page", "per_page"]
       #
       # @param [Hash] headers additional http headers
       def index(params = { }, headers = { })
@@ -36,7 +36,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"id"=>nil, "user"=>["login", "firstname", "lastname", "mail", "admin", "password"]}
+      # allowed keys are: {"user"=>["login", "firstname", "lastname", "mail", "admin", "password"], "id"=>nil}
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })

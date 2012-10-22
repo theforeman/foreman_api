@@ -6,11 +6,11 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: []
+      # allowed keys are: ["page", "per_page"]
       #
       # @param [Hash] headers additional http headers
       def index(params = { }, headers = { })
-        check_params params, :allowed => false, :method => __method__
+        check_params params, :allowed => true, :method => __method__
         url, params = fill_params_in_url "/api/bookmarks", params
         call(:"get", url, params, headers)
       end
@@ -26,7 +26,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"bookmark"=>["name", "controller", "query"]}
+      # allowed keys are: {"bookmark"=>["name", "controller", "query", "public"]}
       #
       # @param [Hash] headers additional http headers
       def create(params = { }, headers = { })
@@ -36,7 +36,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"id"=>nil, "bookmark"=>["name", "controller", "query"]}
+      # allowed keys are: {"bookmark"=>["name", "controller", "query", "public"], "id"=>nil}
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })
