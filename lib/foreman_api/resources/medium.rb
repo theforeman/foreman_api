@@ -31,7 +31,7 @@ module ForemanApi
       # @param [Hash] headers additional http headers
       def create(params = { }, headers = { })
         check_params params, :allowed => true, :method => __method__
-        url, params = fill_params_in_url "/api/medium", params
+        url, params = fill_params_in_url "/api/media", params
         call(:"post", url, params, headers)
       end
 
