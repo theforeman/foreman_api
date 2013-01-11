@@ -36,7 +36,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"hostgroup"=>["name", "environment_id", "operatingsystem_id", "architecture_id", "medium_id", "ptable_id", "puppet_ca_proxy_id", "subnet_id", "domain_id", "puppet_proxy_id"], "id"=>nil}
+      # allowed keys are: {"id"=>nil, "hostgroup"=>["name", "environment_id", "operatingsystem_id", "architecture_id", "medium_id", "ptable_id", "puppet_ca_proxy_id", "subnet_id", "domain_id", "puppet_proxy_id"]}
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })
