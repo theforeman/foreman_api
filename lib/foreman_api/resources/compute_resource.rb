@@ -26,17 +26,17 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"id"=>nil, "compute_resource"=>["name", "provider", "url", "description", "user", "password", "uuid", "region", "tenant", "server"]}
+      # allowed keys are: {"compute_resource"=>["name", "provider", "url", "description", "user", "password", "uuid", "region", "tenant", "server"]}
       #
       # @param [Hash] headers additional http headers
       def create(params = { }, headers = { })
         check_params params, :allowed => true, :method => __method__
-        url, params = fill_params_in_url "/api/compute_resources/:id", params
-        call(:"put", url, params, headers)
+        url, params = fill_params_in_url "/api/compute_resources", params
+        call(:"post", url, params, headers)
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # allowed keys are: {"id"=>nil, "compute_resource"=>["name", "provider", "url", "description", "user", "password", "uuid", "region", "tenant", "server"]}
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })
