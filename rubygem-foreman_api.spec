@@ -16,7 +16,7 @@
 
 Summary: Ruby bindings for Forman's rest API
 Name: rubygem-%{gem_name}
-Version: 0.0.9
+Version: 0.0.10
 Release: 1%{?dist}
 Group: Development/Languages
 License: MIT
@@ -83,6 +83,9 @@ rm -f %{buildroot}%{gem_instdir}/%{gem_name}.gemspec
 
 
 %changelog
+* Tue Jan 15 2013 Martin Bačovský <mbacovsk@redhat.com> 0.0.10-1
+- Fixed params handeling (mbacovsk@redhat.com)
+
 * Fri Jan 11 2013 Martin Bačovský <mbacovsk@redhat.com> 0.0.9-1
 - Bump to 0.0.9 (mbacovsk@redhat.com) ( compute_resource domain environment host
    common_parameter hostgroup image medium operating_system ptable 
