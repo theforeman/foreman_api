@@ -36,7 +36,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"auth_source_ldap"=>["name", "host", "port", "account", "base_dn", "account_password", "attr_login", "attr_firstname", "attr_lastname", "attr_mail", "onthefly_register", "tls"], "id"=>nil}
+      # allowed keys are: {"id"=>nil, "auth_source_ldap"=>["name", "host", "port", "account", "base_dn", "account_password", "attr_login", "attr_firstname", "attr_lastname", "attr_mail", "onthefly_register", "tls"]}
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })
