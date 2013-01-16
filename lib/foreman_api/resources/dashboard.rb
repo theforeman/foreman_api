@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class Dashboard < Apipie::Client::Base
+    class Dashboard < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["dashboard"]
       end

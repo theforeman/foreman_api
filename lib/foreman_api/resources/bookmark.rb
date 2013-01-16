@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class Bookmark < Apipie::Client::Base
+    class Bookmark < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["bookmarks"]
       end

@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class SmartProxy < Apipie::Client::Base
+    class SmartProxy < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["smart_proxies"]
       end
@@ -36,7 +36,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"smart_proxy"=>["name", "url"], "id"=>nil}
+      # allowed keys are: {"id"=>nil, "smart_proxy"=>["name", "url"]}
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })

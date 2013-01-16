@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class OperatingSystem < Apipie::Client::Base
+    class OperatingSystem < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["operatingsystems"]
       end
@@ -36,7 +36,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"operatingsystem"=>["name", "major", "minor", "family", "release_name"], "id"=>nil}
+      # allowed keys are: {"id"=>nil, "operatingsystem"=>["name", "major", "minor", "family", "release_name"]}
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })

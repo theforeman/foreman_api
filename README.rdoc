@@ -15,14 +15,33 @@
   => nil
 
 == Description
-  
-This gem contains Foreman API bindings for the Ruby language. The bindings are generated from API documentation using {Apidoc}[https://github.com/Pajk/apipie-rails] tool.
 
-The bindings brings support for new versioned API which is not complete yet. The number of supported controllers is limited but more are comming soon.
+This gem contains Foreman API bindings for the Ruby language. The
+bindings are generated from API documentation using
+{Apidoc}[https://github.com/Pajk/apipie-rails] tool.
+
+The bindings brings support for new versioned API which is not
+complete yet. The number of supported controllers is limited but more
+are coming soon.
+
+=== Regenerating bindings
+
+The code for generating the bindings is a part of this repo. The
+generator needs a running Foreman instance to load the apidoc.json.
+
+Usage:
+
+    bin/generate.rb -h
+    Script for generating API bindings for Foreman API from Apipie docs.
+        -u, --url FOREMAN_APIDOC_URL     By default http://localhost:3000/apidoc
+        -h, --help
+
+Only files under +lib/foreman_api/resources+ are touched by the generator.
 
 === Authentication
 
-Foreman API supports authentication with username/password and OAuth. For use of OAuth with the bindings you only have to change the params
+Foreman API supports authentication with username/password and OAuth.
+For use of OAuth with the bindings you only have to change the params
 
   architectures = ForemanApi::Resources::Architecture.new(:base_url => 'http://localhost:3000', 
                                                           :oauth    => { :consumer_key    => 'mykey',

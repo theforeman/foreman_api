@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class Medium < Apipie::Client::Base
+    class Medium < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["media"]
       end
@@ -36,7 +36,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"medium"=>["name", "path", "os_family"], "id"=>nil}
+      # allowed keys are: {"id"=>nil, "medium"=>["name", "path", "os_family"]}
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })

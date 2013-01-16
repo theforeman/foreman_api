@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class Usergroup < Apipie::Client::Base
+    class Usergroup < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["usergroups"]
       end
@@ -36,7 +36,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"usergroup"=>["name"], "id"=>nil}
+      # allowed keys are: {"id"=>nil, "usergroup"=>["name"]}
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })

@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class Subnet < Apipie::Client::Base
+    class Subnet < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["subnets"]
       end
