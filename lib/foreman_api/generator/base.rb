@@ -11,9 +11,6 @@ require 'foreman_api/base'
 require 'net/http'
 require 'uri'
 
-require 'pry'
-
-
 module ForemanApi
   module Generator
 
