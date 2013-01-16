@@ -10,12 +10,15 @@ Gem::Specification.new do |gem|
 
   gem.files         = `git ls-files`.split($\)
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.files.reject! { |fn| fn == 'rubygem-foreman_api.spec' }
+  gem.files.reject! do |fn|
+    fn.start_with?("lib/foreman_api/generator") ||
+      fn == 'bin/generate.rb' ||
+      fn == 'rubygem-foreman_api.spec'
+  end
   gem.name          = "foreman_api"
   gem.require_paths = ["lib"]
   gem.version       = ForemanApi::VERSION
 
-  gem.add_dependency 'apipie-rails', '~> 0.0.12'
   gem.add_dependency 'json'
   gem.add_dependency 'rest-client', '>= 1.6.1'
   gem.add_dependency 'oauth'
