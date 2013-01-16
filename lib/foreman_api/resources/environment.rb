@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class Environment < Apipie::Client::Base
+    class Environment < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["environments"]
       end

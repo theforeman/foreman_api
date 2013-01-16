@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class CommonParameter < Apipie::Client::Base
+    class CommonParameter < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["common_parameters"]
       end

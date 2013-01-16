@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class FactValue < Apipie::Client::Base
+    class FactValue < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["fact_values"]
       end

@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class TemplateKind < Apipie::Client::Base
+    class TemplateKind < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["template_kinds"]
       end
