@@ -5,6 +5,8 @@ require 'foreman_api/rest_client_oauth'
 
 module ForemanApi
   class Base
+    API_VERSION = "2"
+
     attr_reader :client, :config
 
     def initialize(config, options = { })
@@ -13,7 +15,7 @@ module ForemanApi
       :password => config[:password],
       :oauth    => config[:oauth],
       :headers  => { :content_type => 'application/json',
-                     :accept       => 'application/json' }
+                     :accept       => "application/json;version=#{API_VERSION}" }
       @config = config
     end
 
