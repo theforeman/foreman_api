@@ -27,7 +27,6 @@ Requires: ruby(rubygems)
 Requires: rubygem(json) 
 Requires: rubygem(rest-client) >= 1.6.1
 Requires: rubygem(oauth) 
-Requires: rubygem(apipie-rails) >= 0.0.12 
 BuildRequires: ruby(abi) = %{rubyabi}
 BuildRequires: ruby(rubygems) 
 
