@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class LookupKey < Apipie::Client::Base
+    class LookupKey < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["lookup_keys"]
       end

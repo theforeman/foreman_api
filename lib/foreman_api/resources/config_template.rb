@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class ConfigTemplate < Apipie::Client::Base
+    class ConfigTemplate < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["config_templates"]
       end

@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class Home < Apipie::Client::Base
+    class Home < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["home"]
       end

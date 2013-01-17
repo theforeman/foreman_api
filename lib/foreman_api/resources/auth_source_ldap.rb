@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class AuthSourceLdap < Apipie::Client::Base
+    class AuthSourceLdap < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["auth_source_ldaps"]
       end

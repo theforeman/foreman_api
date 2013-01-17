@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class ComputeResource < Apipie::Client::Base
+    class ComputeResource < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["compute_resources"]
       end

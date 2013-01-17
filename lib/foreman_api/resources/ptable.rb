@@ -1,6 +1,6 @@
 module ForemanApi
   module Resources
-    class Ptable < Apipie::Client::Base
+    class Ptable < ForemanApi::Base
       def self.doc
         @doc ||= ForemanApi.doc['resources']["ptables"]
       end
