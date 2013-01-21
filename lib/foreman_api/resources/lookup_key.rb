@@ -4,9 +4,12 @@ module ForemanApi
       def self.doc
         @doc ||= ForemanApi.doc['resources']["lookup_keys"]
       end
-
+      
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["search", "order", "page", "per_page"]
+      # @option params [String] order Sort results 
+      # @option params [String] page Paginate results 
+      # @option params [String] per_page Number of entries per request 
+      # @option params [String] search Filter results 
       #
       # @param [Hash] headers additional http headers
       def index(params = { }, headers = { })
@@ -16,7 +19,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def show(params = { }, headers = { })
@@ -26,7 +29,14 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"lookup_key"=>["key", "puppetclass_id", "default_value", "path", "description", "lookup_values_count"]}
+      # @option params [Hash] lookup_key 
+      #   allowed keys are: 
+      #   * default_value [String],
+      #   * description [String],
+      #   * key [String],
+      #   * lookup_values_count [String],
+      #   * path [String],
+      #   * puppetclass_id [String],
       #
       # @param [Hash] headers additional http headers
       def create(params = { }, headers = { })
@@ -36,7 +46,15 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"id"=>nil, "lookup_key"=>["key", "puppetclass_id", "default_value", "path", "description", "lookup_values_count"]}
+      # @option params [String] id 
+      # @option params [Hash] lookup_key 
+      #   allowed keys are: 
+      #   * default_value [String],
+      #   * description [String],
+      #   * key [String],
+      #   * lookup_values_count [String],
+      #   * path [String],
+      #   * puppetclass_id [String],
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })
@@ -46,7 +64,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def destroy(params = { }, headers = { })

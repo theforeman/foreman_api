@@ -4,9 +4,12 @@ module ForemanApi
       def self.doc
         @doc ||= ForemanApi.doc['resources']["config_templates"]
       end
-
+      
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["search", "order", "page", "per_page"]
+      # @option params [String] order Sort results 
+      # @option params [String] page Paginate results 
+      # @option params [String] per_page Number of entries per request 
+      # @option params [String] search Filter results 
       #
       # @param [Hash] headers additional http headers
       def index(params = { }, headers = { })
@@ -16,7 +19,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def show(params = { }, headers = { })
@@ -26,7 +29,15 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"config_template"=>["name", "template", "snippet", "audit_comment", "template_kind_id", "template_combinations_attributes", "operatingsystem_ids"]}
+      # @option params [Hash] config_template 
+      #   allowed keys are: 
+      #   * audit_comment [String, nil],
+      #   * name [String] Template name ,
+      #   * operatingsystem_ids [String] Array of operating systems id to associate the template with ,
+      #   * snippet [String, nil],
+      #   * template [String],
+      #   * template_combinations_attributes [String] Array of template combinations (hostgroupid, environmentid) ,
+      #   * template_kind_id [String, nil] Not relevant for snippet ,
       #
       # @param [Hash] headers additional http headers
       def create(params = { }, headers = { })
@@ -36,7 +47,16 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"id"=>nil, "config_template"=>["name", "template", "snippet", "audit_comment", "template_kind_id", "template_combinations_attributes", "operatingsystem_ids"]}
+      # @option params [String] id 
+      # @option params [Hash] config_template 
+      #   allowed keys are: 
+      #   * audit_comment [String, nil],
+      #   * name [String] Template name ,
+      #   * operatingsystem_ids [String] Array of operating systems id to associate the template with ,
+      #   * snippet [String],
+      #   * template [String],
+      #   * template_combinations_attributes [String] Array of template combinations (hostgroupid, environmentid) ,
+      #   * template_kind_id [String, nil] Not relevant for snippet ,
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })
@@ -46,7 +66,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["version"]
+      # @option params [String] version Template version 
       #
       # @param [Hash] headers additional http headers
       def revision(params = { }, headers = { })
@@ -56,7 +76,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def destroy(params = { }, headers = { })
@@ -66,7 +86,6 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: []
       #
       # @param [Hash] headers additional http headers
       def build_pxe_default(params = { }, headers = { })

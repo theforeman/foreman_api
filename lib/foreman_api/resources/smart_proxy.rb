@@ -4,9 +4,11 @@ module ForemanApi
       def self.doc
         @doc ||= ForemanApi.doc['resources']["smart_proxies"]
       end
-
+      
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["type", "page", "per_page"]
+      # @option params [String] page Paginate results 
+      # @option params [String] per_page Number of entries per request 
+      # @option params [String] type Filter by type 
       #
       # @param [Hash] headers additional http headers
       def index(params = { }, headers = { })
@@ -16,7 +18,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def show(params = { }, headers = { })
@@ -26,7 +28,10 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"smart_proxy"=>["name", "url"]}
+      # @option params [Hash] smart_proxy 
+      #   allowed keys are: 
+      #   * name [String],
+      #   * url [String],
       #
       # @param [Hash] headers additional http headers
       def create(params = { }, headers = { })
@@ -36,7 +41,11 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"id"=>nil, "smart_proxy"=>["name", "url"]}
+      # @option params [String] id 
+      # @option params [Hash] smart_proxy 
+      #   allowed keys are: 
+      #   * name [String],
+      #   * url [String],
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })
@@ -46,7 +55,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def destroy(params = { }, headers = { })

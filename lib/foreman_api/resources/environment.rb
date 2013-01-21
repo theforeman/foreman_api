@@ -4,9 +4,12 @@ module ForemanApi
       def self.doc
         @doc ||= ForemanApi.doc['resources']["environments"]
       end
-
+      
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["search", "order", "page", "per_page"]
+      # @option params [String] order Sort results 
+      # @option params [String] page Paginate results 
+      # @option params [String] per_page Number of entries per request 
+      # @option params [String] search Filter results 
       #
       # @param [Hash] headers additional http headers
       def index(params = { }, headers = { })
@@ -16,7 +19,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def show(params = { }, headers = { })
@@ -26,7 +29,9 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"environment"=>["name"]}
+      # @option params [Hash] environment 
+      #   allowed keys are: 
+      #   * name [String],
       #
       # @param [Hash] headers additional http headers
       def create(params = { }, headers = { })
@@ -36,7 +41,10 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"id"=>nil, "environment"=>["name"]}
+      # @option params [String] id 
+      # @option params [Hash] environment 
+      #   allowed keys are: 
+      #   * name [String],
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })
@@ -46,7 +54,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def destroy(params = { }, headers = { })

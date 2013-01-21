@@ -24,3 +24,4 @@ require 'foreman_api/generator/base.rb'
 options[:foreman_apidoc_url].sub!(/\Z\//,"")
 
 ForemanApi::Generator::Base.start(options[:foreman_apidoc_url])
+system("yard doc")

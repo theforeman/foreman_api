@@ -4,9 +4,12 @@ module ForemanApi
       def self.doc
         @doc ||= ForemanApi.doc['resources']["hosts"]
       end
-
+      
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["search", "order", "page", "per_page"]
+      # @option params [String] order Sort results 
+      # @option params [String] page Paginate results 
+      # @option params [String] per_page Number of entries per request 
+      # @option params [String] search Filter results 
       #
       # @param [Hash] headers additional http headers
       def index(params = { }, headers = { })
@@ -16,7 +19,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def show(params = { }, headers = { })
@@ -26,7 +29,26 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"host"=>["name", "environment_id", "ip", "mac", "architecture_id", "domain_id", "puppet_proxy_id", "operatingsystem_id", "medium_id", "ptable_id", "subnet_id", "sp_subnet_id", "model_id_id", "hostgroup_id", "owner_id", "puppet_ca_proxy_id", "image_id", "host_parameters_attributes"]}
+      # @option params [Hash] host 
+      #   allowed keys are: 
+      #   * architecture_id [String],
+      #   * domain_id [String],
+      #   * environment_id [String],
+      #   * host_parameters_attributes [String],
+      #   * hostgroup_id [String],
+      #   * image_id [String],
+      #   * ip [String] Not required if using a subnet with dhcp proxy ,
+      #   * mac [String] Not required if its a virtual machine ,
+      #   * medium_id [String],
+      #   * model_id_id [String],
+      #   * name [String],
+      #   * operatingsystem_id [String],
+      #   * owner_id [String],
+      #   * ptable_id [String],
+      #   * puppet_ca_proxy_id [String],
+      #   * puppet_proxy_id [String],
+      #   * sp_subnet_id [String],
+      #   * subnet_id [String],
       #
       # @param [Hash] headers additional http headers
       def create(params = { }, headers = { })
@@ -36,7 +58,27 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"id"=>nil, "host"=>["name", "environment_id", "ip", "mac", "architecture_id", "domain_id", "puppet_proxy_id", "operatingsystem_id", "medium_id", "ptable_id", "subnet_id", "sp_subnet_id", "model_id_id", "hostgroup_id", "owner_id", "puppet_ca_proxy_id", "image_id", "host_parameters_attributes"]}
+      # @option params [String] id 
+      # @option params [Hash] host 
+      #   allowed keys are: 
+      #   * architecture_id [String],
+      #   * domain_id [String],
+      #   * environment_id [String],
+      #   * host_parameters_attributes [String],
+      #   * hostgroup_id [String],
+      #   * image_id [String],
+      #   * ip [String] Not required if using a subnet with dhcp proxy ,
+      #   * mac [String] Not required if its a virtual machine ,
+      #   * medium_id [String],
+      #   * model_id_id [String],
+      #   * name [String],
+      #   * operatingsystem_id [String],
+      #   * owner_id [String],
+      #   * ptable_id [String],
+      #   * puppet_ca_proxy_id [String],
+      #   * puppet_proxy_id [String],
+      #   * sp_subnet_id [String],
+      #   * subnet_id [String],
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })
@@ -46,7 +88,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def destroy(params = { }, headers = { })
@@ -56,7 +98,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def status(params = { }, headers = { })

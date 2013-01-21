@@ -4,10 +4,18 @@ module ForemanApi
       def self.doc
         @doc ||= ForemanApi.doc['resources']["<%= resource_key %>"]
       end
-<% resource[:methods].each do |method| -%>
+      <% resource[:methods].each do |method| -%>
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: <%= validation(method).inspect %>
+<% method["params"].sort_by{|p| prioritize_id(p["name"])}.each do |param| -%>
+      # @option params [<%= param["expected_type"].capitalize %><%= param["allow_nil"] ? ', nil' : '' %>] <%= param["name"] %> <%= format_param_description(param["description"]) %>
+<% if param["expected_type"] == 'hash' -%>
+      #   allowed keys are: 
+<% param["params"].sort_by{|p| prioritize_id(p["name"])}.each do |subparam| -%>
+      #   * <%= subparam["name"] %> [<%= subparam["expected_type"].capitalize %><%= subparam["allow_nil"] ? ', nil' : '' %>]<%= format_param_description(subparam["description"], ' ') %>,
+<% end -%>
+<% end -%>
+<% end -%>
       #
       # @param [Hash] headers additional http headers
       def <%= method[:name] %>(params = { }, headers = { })

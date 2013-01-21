@@ -4,9 +4,12 @@ module ForemanApi
       def self.doc
         @doc ||= ForemanApi.doc['resources']["media"]
       end
-
+      
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["search", "order", "page", "per_page"]
+      # @option params [String] order For example, name asc, or name desc 
+      # @option params [String] page Paginate results 
+      # @option params [String] per_page Number of entries per request 
+      # @option params [String] search Filter results 
       #
       # @param [Hash] headers additional http headers
       def index(params = { }, headers = { })
@@ -16,7 +19,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def show(params = { }, headers = { })
@@ -26,7 +29,11 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"medium"=>["name", "path", "os_family"]}
+      # @option params [Hash] medium 
+      #   allowed keys are: 
+      #   * name [String] Name of media ,
+      #   * os_family [String] The family that the operating system belongs to.  available families:   archlinux debian redhat solaris suse windows  ,
+      #   * path [String] The path to the medium, can be a url or a valid nfs server (exclusive of the architecture).  for example http://mirror.averse.net/centos/$version/os/$arch where $arch will be substituted for the host&#39;s actual os architecture and $version, $major and $minor will be substituted for the version of the operating system.  solaris and debian media may also use $release. ,
       #
       # @param [Hash] headers additional http headers
       def create(params = { }, headers = { })
@@ -36,7 +43,12 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"id"=>nil, "medium"=>["name", "path", "os_family"]}
+      # @option params [String] id 
+      # @option params [Hash] medium 
+      #   allowed keys are: 
+      #   * name [String] Name of media ,
+      #   * os_family [String, nil] The family that the operating system belongs to.  available families:   archlinux debian redhat solaris suse windows  ,
+      #   * path [String] The path to the medium, can be a url or a valid nfs server (exclusive of the architecture).  for example http://mirror.averse.net/centos/$version/os/$arch where $arch will be substituted for the host&#39;s actual os architecture and $version, $major and $minor will be substituted for the version of the operating system.  solaris and debian media may also use $release. ,
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })
@@ -46,7 +58,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def destroy(params = { }, headers = { })
