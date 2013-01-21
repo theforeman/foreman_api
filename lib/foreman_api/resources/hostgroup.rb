@@ -4,9 +4,12 @@ module ForemanApi
       def self.doc
         @doc ||= ForemanApi.doc['resources']["hostgroups"]
       end
-
+      
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["search", "order", "page", "per_page"]
+      # @option params [String] order Sort results 
+      # @option params [String] page Paginate results 
+      # @option params [String] per_page Number of entries per request 
+      # @option params [String] search Filter results 
       #
       # @param [Hash] headers additional http headers
       def index(params = { }, headers = { })
@@ -16,7 +19,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def show(params = { }, headers = { })
@@ -26,7 +29,18 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"hostgroup"=>["name", "environment_id", "operatingsystem_id", "architecture_id", "medium_id", "ptable_id", "puppet_ca_proxy_id", "subnet_id", "domain_id", "puppet_proxy_id"]}
+      # @option params [Hash] hostgroup 
+      #   allowed keys are: 
+      #   * architecture_id [String],
+      #   * domain_id [String],
+      #   * environment_id [String],
+      #   * medium_id [String],
+      #   * name [String],
+      #   * operatingsystem_id [String],
+      #   * ptable_id [String],
+      #   * puppet_ca_proxy_id [String],
+      #   * puppet_proxy_id [String],
+      #   * subnet_id [String],
       #
       # @param [Hash] headers additional http headers
       def create(params = { }, headers = { })
@@ -36,7 +50,19 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"id"=>nil, "hostgroup"=>["name", "environment_id", "operatingsystem_id", "architecture_id", "medium_id", "ptable_id", "puppet_ca_proxy_id", "subnet_id", "domain_id", "puppet_proxy_id"]}
+      # @option params [String] id 
+      # @option params [Hash] hostgroup 
+      #   allowed keys are: 
+      #   * architecture_id [String],
+      #   * domain_id [String],
+      #   * environment_id [String],
+      #   * medium_id [String],
+      #   * name [String],
+      #   * operatingsystem_id [String],
+      #   * ptable_id [String],
+      #   * puppet_ca_proxy_id [String],
+      #   * puppet_proxy_id [String],
+      #   * subnet_id [String],
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })
@@ -46,7 +72,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def destroy(params = { }, headers = { })

@@ -4,9 +4,10 @@ module ForemanApi
       def self.doc
         @doc ||= ForemanApi.doc['resources']["template_kinds"]
       end
-
+      
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["page", "per_page"]
+      # @option params [String] page Paginate results 
+      # @option params [String] per_page Number of entries per request 
       #
       # @param [Hash] headers additional http headers
       def index(params = { }, headers = { })

@@ -4,9 +4,12 @@ module ForemanApi
       def self.doc
         @doc ||= ForemanApi.doc['resources']["users"]
       end
-
+      
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["search", "order", "page", "per_page"]
+      # @option params [String] order Sort results 
+      # @option params [String] page Paginate results 
+      # @option params [String] per_page Number of entries per request 
+      # @option params [String] search Filter results 
       #
       # @param [Hash] headers additional http headers
       def index(params = { }, headers = { })
@@ -16,7 +19,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def show(params = { }, headers = { })
@@ -26,7 +29,15 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"user"=>["login", "firstname", "lastname", "mail", "admin", "password", "auth_source_id"]}
+      # @option params [Hash] user 
+      #   allowed keys are: 
+      #   * admin [String] Is an admin account? ,
+      #   * auth_source_id [Numeric],
+      #   * firstname [String],
+      #   * lastname [String],
+      #   * login [String],
+      #   * mail [String],
+      #   * password [String],
       #
       # @param [Hash] headers additional http headers
       def create(params = { }, headers = { })
@@ -36,7 +47,15 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"id"=>nil, "user"=>["login", "firstname", "lastname", "mail", "admin", "password"]}
+      # @option params [String] id 
+      # @option params [Hash] user 
+      #   allowed keys are: 
+      #   * admin [String] Is an admin account? ,
+      #   * firstname [String, nil],
+      #   * lastname [String, nil],
+      #   * login [String],
+      #   * mail [String],
+      #   * password [String],
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })
@@ -46,7 +65,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def destroy(params = { }, headers = { })

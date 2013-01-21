@@ -4,9 +4,9 @@ module ForemanApi
       def self.doc
         @doc ||= ForemanApi.doc['resources']["dashboard"]
       end
-
+      
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["search"]
+      # @option params [String] search Filter results 
       #
       # @param [Hash] headers additional http headers
       def index(params = { }, headers = { })
