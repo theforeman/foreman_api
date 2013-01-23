@@ -1,0 +1,4 @@
+lib/foreman_api/resources/*.rb
+-
+README.rdoc
+MIT-LICENSE

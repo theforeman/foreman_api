@@ -7,15 +7,18 @@ require 'thor/group'
 require 'fileutils'
 require 'active_support/inflector'
 require 'active_support/core_ext/hash/indifferent_access'
+require 'action_view'
 require 'foreman_api/base'
 require 'net/http'
 require 'uri'
+require 'pp'
 
 module ForemanApi
   module Generator
 
     class Base < Thor::Group
       include Thor::Actions
+      include ActionView::Helpers::SanitizeHelper
 
       attr_reader :doc, :resource, :resource_key
 
@@ -78,7 +81,18 @@ module ForemanApi
         end
         ForemanApi::Base.construct_validation_hash(stringify[method])
       end
-    end
 
+      def format_param_description(descr, prefix = '')
+        unless descr.empty?
+          prefix + strip_tags(descr).gsub(/\n/,' ').capitalize
+        end
+      end
+
+      def prioritize_id(param)
+        return '' if param.upcase == 'ID'
+        param
+      end
+
+    end
   end
 end

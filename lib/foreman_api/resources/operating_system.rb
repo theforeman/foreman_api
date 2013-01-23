@@ -4,9 +4,12 @@ module ForemanApi
       def self.doc
         @doc ||= ForemanApi.doc['resources']["operatingsystems"]
       end
-
+      
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["search", "order", "page", "per_page"]
+      # @option params [String] order For example, name asc, or name desc 
+      # @option params [String] page Paginate results 
+      # @option params [String] per_page Number of entries per request 
+      # @option params [String] search Filter results 
       #
       # @param [Hash] headers additional http headers
       def index(params = { }, headers = { })
@@ -16,7 +19,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def show(params = { }, headers = { })
@@ -26,7 +29,13 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"operatingsystem"=>["name", "major", "minor", "family", "release_name"]}
+      # @option params [Hash] operatingsystem 
+      #   allowed keys are: 
+      #   * family [String],
+      #   * major [String],
+      #   * minor [String],
+      #   * name [String],
+      #   * release_name [String],
       #
       # @param [Hash] headers additional http headers
       def create(params = { }, headers = { })
@@ -36,7 +45,14 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: {"id"=>nil, "operatingsystem"=>["name", "major", "minor", "family", "release_name"]}
+      # @option params [String] id 
+      # @option params [Hash] operatingsystem 
+      #   allowed keys are: 
+      #   * family [String],
+      #   * major [String],
+      #   * minor [String],
+      #   * name [String],
+      #   * release_name [String],
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })
@@ -46,7 +62,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id"]
+      # @option params [String] id 
       #
       # @param [Hash] headers additional http headers
       def destroy(params = { }, headers = { })
@@ -56,7 +72,9 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # allowed keys are: ["id", "medium", "architecture"]
+      # @option params [String] id 
+      # @option params [String] architecture 
+      # @option params [String] medium 
       #
       # @param [Hash] headers additional http headers
       def bootfiles(params = { }, headers = { })
