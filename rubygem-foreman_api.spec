@@ -27,6 +27,7 @@ Requires: ruby(rubygems)
 Requires: rubygem(json) 
 Requires: rubygem(rest-client) >= 1.6.1
 Requires: rubygem(oauth) 
+Requires: rubygem(apipie-rails) >= 0.0.12 
 BuildRequires: ruby(abi) = %{rubyabi}
 BuildRequires: ruby(rubygems) 
 
@@ -58,14 +59,17 @@ gem spec %{SOURCE0} -l --ruby > %{gem_name}.gemspec
 %build
 mkdir -p .%{gem_dir}
 gem install --local --install-dir .%{gem_dir} \
-            --force --rdoc --no-ri %{SOURCE0}
+            --force --no-rdoc --no-ri %{SOURCE0}
 
 %install
 mkdir -p %{buildroot}%{gem_dir}
 cp -a .%{gem_dir}/* \
         %{buildroot}%{gem_dir}/
 mv %{buildroot}%{gem_instdir}/{MIT-LICENSE,README.rdoc} ./
+mkdir -p %{buildroot}%{gem_docdir}
+mv %{buildroot}%{gem_instdir}/doc %{buildroot}%{gem_docdir}
 rm -f %{buildroot}%{gem_instdir}/%{gem_name}.gemspec
+rm -f %{buildroot}%{gem_instdir}/.yardopts
 
 %files
 %dir %{gem_instdir}
@@ -82,6 +86,11 @@ rm -f %{buildroot}%{gem_instdir}/%{gem_name}.gemspec
 
 
 %changelog
+* Thu Jan 24 2013 Martin Bačovský <mbacovsk@redhat.com> 0.0.11-1
+- Updated to 0.0.11 (mbacovsk@redhat.com)
+- generator is part of the package
+- yard docs
+
 * Tue Jan 15 2013 Martin Bačovský <mbacovsk@redhat.com> 0.0.10-1
 - Fixed params handeling (mbacovsk@redhat.com)
 
