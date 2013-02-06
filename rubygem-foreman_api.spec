@@ -16,7 +16,7 @@
 
 Summary: Ruby bindings for Forman's rest API
 Name: rubygem-%{gem_name}
-Version: 0.0.11
+Version: 0.1.0
 Release: 1%{?dist}
 Group: Development/Languages
 License: MIT
@@ -27,7 +27,6 @@ Requires: ruby(rubygems)
 Requires: rubygem(json) 
 Requires: rubygem(rest-client) >= 1.6.1
 Requires: rubygem(oauth) 
-Requires: rubygem(apipie-rails) >= 0.0.12 
 BuildRequires: ruby(abi) = %{rubyabi}
 BuildRequires: ruby(rubygems) 
 
@@ -86,6 +85,11 @@ rm -f %{buildroot}%{gem_instdir}/.yardopts
 
 
 %changelog
+* Wed Feb 06 2013 Martin Bačovský <mbacovsk@redhat.com> 0.1.0-1
+- Updated to 0.1.0 (mbacovsk@redhat.com)
+- Added support for API V2
+- Removed unnecessary dependency on apipie-rails
+
 * Thu Jan 24 2013 Martin Bačovský <mbacovsk@redhat.com> 0.0.11-1
 - Updated to 0.0.11 (mbacovsk@redhat.com)
 - generator is part of the package
