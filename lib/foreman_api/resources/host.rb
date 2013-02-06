@@ -6,10 +6,10 @@ module ForemanApi
       end
       
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] order Sort results 
-      # @option params [String] page Paginate results 
-      # @option params [String] per_page Number of entries per request 
-      # @option params [String] search Filter results 
+      # @option params [String] order Sort results
+      # @option params [String] page Paginate results
+      # @option params [String] per_page Number of entries per request
+      # @option params [String] search Filter results
       #
       # @param [Hash] headers additional http headers
       def index(params = { }, headers = { })
@@ -37,8 +37,8 @@ module ForemanApi
       #   * host_parameters_attributes [String],
       #   * hostgroup_id [String],
       #   * image_id [String],
-      #   * ip [String] Not required if using a subnet with dhcp proxy ,
-      #   * mac [String] Not required if its a virtual machine ,
+      #   * ip [String] Not required if using a subnet with dhcp proxy,
+      #   * mac [String] Not required if its a virtual machine,
       #   * medium_id [String],
       #   * model_id_id [String],
       #   * name [String],
@@ -67,8 +67,8 @@ module ForemanApi
       #   * host_parameters_attributes [String],
       #   * hostgroup_id [String],
       #   * image_id [String],
-      #   * ip [String] Not required if using a subnet with dhcp proxy ,
-      #   * mac [String] Not required if its a virtual machine ,
+      #   * ip [String] Not required if using a subnet with dhcp proxy,
+      #   * mac [String] Not required if its a virtual machine,
       #   * medium_id [String],
       #   * model_id_id [String],
       #   * name [String],

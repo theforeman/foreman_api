@@ -6,10 +6,10 @@ module ForemanApi
       end
       
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] order Sort results 
-      # @option params [String] page Paginate results 
-      # @option params [String] per_page Number of entries per request 
-      # @option params [String] search Filter results 
+      # @option params [String] order Sort results
+      # @option params [String] page Paginate results
+      # @option params [String] per_page Number of entries per request
+      # @option params [String] search Filter results
       #
       # @param [Hash] headers additional http headers
       def index(params = { }, headers = { })
@@ -32,7 +32,7 @@ module ForemanApi
       # @option params [Hash] architecture 
       #   allowed keys are: 
       #   * name [String],
-      #   * operatingsystem_ids [String] Operatingsystem id&#39;s ,
+      #   * operatingsystem_ids [String] Operatingsystem id&#8217;s,
       #
       # @param [Hash] headers additional http headers
       def create(params = { }, headers = { })
@@ -46,7 +46,7 @@ module ForemanApi
       # @option params [Hash] architecture 
       #   allowed keys are: 
       #   * name [String],
-      #   * operatingsystem_ids [String] Operatingsystem id&#39;s ,
+      #   * operatingsystem_ids [String] Operatingsystem id&#8217;s,
       #
       # @param [Hash] headers additional http headers
       def update(params = { }, headers = { })
