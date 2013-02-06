@@ -32,7 +32,8 @@ module ForemanApi
       end
 
       def self.start(foreman_url)
-        foreman_url << ".json" unless foreman_url.end_with?(".json")
+        foreman_url = foreman_url.sub(/\.json\Z/,"")
+        foreman_url << "/v#{ForemanApi::Base::API_VERSION}.json"
         response = Net::HTTP.get_response(URI.parse(foreman_url))
         unless response.code == "200"
           raise "Could not load data from #{foreman_url}"
