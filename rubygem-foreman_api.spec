@@ -16,7 +16,7 @@
 
 Summary: Ruby bindings for Forman's rest API
 Name: rubygem-%{gem_name}
-Version: 0.1.0
+Version: 0.1.1
 Release: 1%{?dist}
 Group: Development/Languages
 License: MIT
@@ -85,6 +85,10 @@ rm -f %{buildroot}%{gem_instdir}/.yardopts
 
 
 %changelog
+* Wed Feb 13 2013 Martin Bačovský <mbacovsk@redhat.com> 0.1.1-1
+- Bump to 0.1.1 (mbacovsk@redhat.com)
+- Added support for extra options for restclient resource
+
 * Wed Feb 06 2013 Martin Bačovský <mbacovsk@redhat.com> 0.1.0-1
 - Updated to 0.1.0 (mbacovsk@redhat.com)
 - Added support for API V2
