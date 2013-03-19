@@ -6,7 +6,7 @@
 <title>
   Class: ForemanApi::Resources::Audit
   
-    &mdash; Documentation by YARD 0.8.3
+    &mdash; Documentation by YARD 0.8.5.2
   
 </title>
 
@@ -150,7 +150,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#index-instance_method" title="#index (instance method)">- (Object) <strong>index</strong>(params = { }, headers = { }) </a>
+      <a href="#index-instance_method" title="#index (instance method)">- (Array) <strong>index</strong>(params = {}, headers = {}) </a>
     
 
     
@@ -164,7 +164,10 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>
+First item: parsed data; second item: raw body.
+</p>
+</div></span>
   
 </li>
 
@@ -172,7 +175,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#show-instance_method" title="#show (instance method)">- (Object) <strong>show</strong>(params = { }, headers = { }) </a>
+      <a href="#show-instance_method" title="#show (instance method)">- (Array) <strong>show</strong>(params = {}, headers = {}) </a>
     
 
     
@@ -186,7 +189,10 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>
+First item: parsed data; second item: raw body.
+</p>
+</div></span>
   
 </li>
 
@@ -223,9 +229,10 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/audit.rb', line 4</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_doc'>doc</span>
-  <span class='ivar'>@doc</span> <span class='op'>||=</span> <span class='const'>ForemanApi</span><span class='period'>.</span><span class='id identifier rubyid_doc'>doc</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>resources</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>audits</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
-<span class='kw'>end</span></pre>
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_self self kw'>self</span><span class='dot token'>.</span><span class='rubyid_doc identifier id'>doc</span>
+  <span class='rubyid_@doc ivar id'>@doc</span> <span class='opasgn op'>||=</span> <span class='rubyid_ForemanApi constant id'>ForemanApi</span><span class='dot token'>.</span><span class='rubyid_doc identifier id'>doc</span><span class='lbrack token'>[</span><span class='string val'>'resources'</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;audits&quot;</span><span class='rbrack token'>]</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -240,7 +247,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="index-instance_method">
   
-    - (<tt>Object</tt>) <strong>index</strong>(params = { }, headers = { }) 
+    - (<tt>Array</tt>) <strong>index</strong>(params = {}, headers = {}) 
   
 
   
@@ -248,7 +255,10 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
+    <p>
+First item: parsed data; second item: raw body
+</p>
+
 
   </div>
 </div>
@@ -264,12 +274,13 @@
         <span class='type'>(<tt>Hash</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>{ }</tt>)</em>
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
       
       
         &mdash;
-        <div class='inline'>
-<p>a hash of params to be passed to the service</p>
+        <div class='inline'><p>
+a hash of params to be passed to the service
+</p>
 </div>
       
     </li>
@@ -282,12 +293,13 @@
         <span class='type'>(<tt>Hash</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>{ }</tt>)</em>
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
       
       
         &mdash;
-        <div class='inline'>
-<p>additional http headers</p>
+        <div class='inline'><p>
+additional http headers
+</p>
 </div>
       
     </li>
@@ -301,14 +313,29 @@
     <ul class="option">
       
         <li>
+          <span class="name">host_id</span>
+          <span class="type">(<tt>Object</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'><p>
+Part of <tt>/api/hosts/:host_id/audits</tt> path
+</p>
+</div>
+          
+        </li>
+      
+        <li>
           <span class="name">order</span>
           <span class="type">(<tt>String</tt>)</span>
           <span class="default">
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Sort results</p>
+            &mdash; <div class='inline'><p>
+Sort results
+</p>
 </div>
           
         </li>
@@ -320,8 +347,9 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Paginate results</p>
+            &mdash; <div class='inline'><p>
+Paginate results
+</p>
 </div>
           
         </li>
@@ -333,8 +361,9 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Number of entries per request</p>
+            &mdash; <div class='inline'><p>
+Number of entries per request
+</p>
 </div>
           
         </li>
@@ -346,8 +375,9 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Filter results</p>
+            &mdash; <div class='inline'><p>
+Filter results
+</p>
 </div>
           
         </li>
@@ -357,6 +387,25 @@
     
     
 
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+First item: parsed data; second item: raw body
+</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -364,20 +413,17 @@
       <pre class="lines">
 
 
-15
-16
 17
 18
 19</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/audit.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/audit.rb', line 17</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_check_params'>check_params</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='symbol'>:allowed</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid___method__'>__method__</span>
-  <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='id identifier rubyid_fill_params_in_url'>fill_params_in_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/api/audits</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span>
-  <span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='symbol'>:get</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_index identifier id'>index</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='rubyid_perform_call identifier id'>perform_call</span><span class='lparen token'>(</span><span class='rubyid___method__ identifier id'>__method__</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='rparen token'>)</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -386,7 +432,7 @@
       <div class="method_details ">
   <h3 class="signature " id="show-instance_method">
   
-    - (<tt>Object</tt>) <strong>show</strong>(params = { }, headers = { }) 
+    - (<tt>Array</tt>) <strong>show</strong>(params = {}, headers = {}) 
   
 
   
@@ -394,7 +440,10 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
+    <p>
+First item: parsed data; second item: raw body
+</p>
+
 
   </div>
 </div>
@@ -410,12 +459,13 @@
         <span class='type'>(<tt>Hash</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>{ }</tt>)</em>
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
       
       
         &mdash;
-        <div class='inline'>
-<p>a hash of params to be passed to the service</p>
+        <div class='inline'><p>
+a hash of params to be passed to the service
+</p>
 </div>
       
     </li>
@@ -428,12 +478,13 @@
         <span class='type'>(<tt>Hash</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>{ }</tt>)</em>
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
       
       
         &mdash;
-        <div class='inline'>
-<p>additional http headers</p>
+        <div class='inline'><p>
+additional http headers
+</p>
 </div>
       
     </li>
@@ -460,6 +511,25 @@
     
     
 
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+First item: parsed data; second item: raw body
+</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -467,20 +537,17 @@
       <pre class="lines">
 
 
-25
 26
 27
-28
-29</pre>
+28</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/audit.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/audit.rb', line 26</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_show'>show</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_check_params'>check_params</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='symbol'>:allowed</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid___method__'>__method__</span>
-  <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='id identifier rubyid_fill_params_in_url'>fill_params_in_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/api/audits/:id</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span>
-  <span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='symbol'>:get</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_show identifier id'>show</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='rubyid_perform_call identifier id'>perform_call</span><span class='lparen token'>(</span><span class='rubyid___method__ identifier id'>__method__</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='rparen token'>)</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -491,9 +558,9 @@
 </div>
 
     <div id="footer">
-  Generated on Mon Jan 21 15:44:34 2013 by
+  Generated on Tue Mar 19 09:50:23 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.3 (ruby-1.9.3).
+  0.8.5.2 (ruby-1.8.7).
 </div>
 
   </body>
