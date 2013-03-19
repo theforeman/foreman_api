@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>
-  Class: ForemanApi::Resources::Environment
+  Class: ForemanApi::Resources::TemplateCombination
   
     &mdash; Documentation by YARD 0.8.5.2
   
@@ -31,10 +31,10 @@
     <div id="header">
       <div id="menu">
   
-    <a href="../../_index.html">Index (E)</a> &raquo;
+    <a href="../../_index.html">Index (T)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../../ForemanApi.html" title="ForemanApi (module)">ForemanApi</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Resources.html" title="ForemanApi::Resources (module)">Resources</a></span></span>
      &raquo; 
-    <span class="title">Environment</span>
+    <span class="title">TemplateCombination</span>
   
 
   <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
@@ -63,7 +63,7 @@
 
     <iframe id="search_frame"></iframe>
 
-    <div id="content"><h1>Class: ForemanApi::Resources::Environment
+    <div id="content"><h1>Class: ForemanApi::Resources::TemplateCombination
   
   
   
@@ -80,7 +80,7 @@
           
             <li class="next">Base</li>
           
-            <li class="next">ForemanApi::Resources::Environment</li>
+            <li class="next">ForemanApi::Resources::TemplateCombination</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/foreman_api/resources/environment.rb</dd>
+    <dd class="r2 last">lib/foreman_api/resources/template_combination.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -247,31 +247,6 @@ First item: parsed data; second item: raw body.
 </li>
 
       
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#update-instance_method" title="#update (instance method)">- (Array) <strong>update</strong>(params = {}, headers = {}) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>
-First item: parsed data; second item: raw body.
-</p>
-</div></span>
-  
-</li>
-
-      
     </ul>
   
 
@@ -302,10 +277,10 @@ First item: parsed data; second item: raw body.
 6</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/environment.rb', line 4</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/template_combination.rb', line 4</span>
 
 <span class='rubyid_def def kw'>def</span> <span class='rubyid_self self kw'>self</span><span class='dot token'>.</span><span class='rubyid_doc identifier id'>doc</span>
-  <span class='rubyid_@doc ivar id'>@doc</span> <span class='opasgn op'>||=</span> <span class='rubyid_ForemanApi constant id'>ForemanApi</span><span class='dot token'>.</span><span class='rubyid_doc identifier id'>doc</span><span class='lbrack token'>[</span><span class='string val'>'resources'</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;environments&quot;</span><span class='rbrack token'>]</span>
+  <span class='rubyid_@doc ivar id'>@doc</span> <span class='opasgn op'>||=</span> <span class='rubyid_ForemanApi constant id'>ForemanApi</span><span class='dot token'>.</span><span class='rubyid_doc identifier id'>doc</span><span class='lbrack token'>[</span><span class='string val'>'resources'</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;template_combinations&quot;</span><span class='rbrack token'>]</span>
 <span class='rubyid_end end kw'>end</span>
 </pre>
     </td>
@@ -388,7 +363,16 @@ additional http headers
     <ul class="option">
       
         <li>
-          <span class="name">environment</span>
+          <span class="name">config_template_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">template_combination</span>
           <span class="type">(<tt>Hash</tt>)</span>
           <span class="default">
             
@@ -398,7 +382,10 @@ additional http headers
 allowed keys are:
 </p>
 <ul>
-<li>name [String]
+<li>environment_id [String, nil] Environment id
+
+</li>
+<li>hostgroup_id [String, nil] Hostgroup id
 
 </li>
 </ul>
@@ -437,12 +424,12 @@ First item: parsed data; second item: raw body
       <pre class="lines">
 
 
-36
-37
-38</pre>
+26
+27
+28</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/environment.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/template_combination.rb', line 26</span>
 
 <span class='rubyid_def def kw'>def</span> <span class='rubyid_create identifier id'>create</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
   <span class='rubyid_perform_call identifier id'>perform_call</span><span class='lparen token'>(</span><span class='rubyid___method__ identifier id'>__method__</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='rparen token'>)</span>
@@ -561,12 +548,12 @@ First item: parsed data; second item: raw body
       <pre class="lines">
 
 
-57
-58
-59</pre>
+44
+45
+46</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/environment.rb', line 57</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/template_combination.rb', line 44</span>
 
 <span class='rubyid_def def kw'>def</span> <span class='rubyid_destroy identifier id'>destroy</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
   <span class='rubyid_perform_call identifier id'>perform_call</span><span class='lparen token'>(</span><span class='rubyid___method__ identifier id'>__method__</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='rparen token'>)</span>
@@ -646,58 +633,11 @@ additional http headers
     <ul class="option">
       
         <li>
-          <span class="name">order</span>
+          <span class="name">config_template_id</span>
           <span class="type">(<tt>String</tt>)</span>
           <span class="default">
             
           </span>
-          
-            &mdash; <div class='inline'><p>
-Sort results
-</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">page</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>
-Paginate results
-</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">per_page</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>
-Number of entries per request
-</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">search</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>
-Filter results
-</p>
-</div>
           
         </li>
       
@@ -732,12 +672,12 @@ First item: parsed data; second item: raw body
       <pre class="lines">
 
 
-16
-17
-18</pre>
+13
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/environment.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/template_combination.rb', line 13</span>
 
 <span class='rubyid_def def kw'>def</span> <span class='rubyid_index identifier id'>index</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
   <span class='rubyid_perform_call identifier id'>perform_call</span><span class='lparen token'>(</span><span class='rubyid___method__ identifier id'>__method__</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='rparen token'>)</span>
@@ -856,157 +796,14 @@ First item: parsed data; second item: raw body
       <pre class="lines">
 
 
-25
-26
-27</pre>
+35
+36
+37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/environment.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/template_combination.rb', line 35</span>
 
 <span class='rubyid_def def kw'>def</span> <span class='rubyid_show identifier id'>show</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
-  <span class='rubyid_perform_call identifier id'>perform_call</span><span class='lparen token'>(</span><span class='rubyid___method__ identifier id'>__method__</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='rparen token'>)</span>
-<span class='rubyid_end end kw'>end</span>
-</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="update-instance_method">
-  
-    - (<tt>Array</tt>) <strong>update</strong>(params = {}, headers = {}) 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>
-First item: parsed data; second item: raw body
-</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>params</span>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>{}</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'><p>
-a hash of params to be passed to the service
-</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>headers</span>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>{}</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'><p>
-additional http headers
-</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-  
-    
-    
-    <p class="tag_title">Options Hash (<tt>params</tt>):</p>
-    <ul class="option">
-      
-        <li>
-          <span class="name">id</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-        </li>
-      
-        <li>
-          <span class="name">environment</span>
-          <span class="type">(<tt>Hash</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>
-allowed keys are:
-</p>
-<ul>
-<li>name [String]
-
-</li>
-</ul>
-</div>
-          
-        </li>
-      
-    </ul>
-  
-    
-    
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Array</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>
-First item: parsed data; second item: raw body
-</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-48
-49
-50</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/environment.rb', line 48</span>
-
-<span class='rubyid_def def kw'>def</span> <span class='rubyid_update identifier id'>update</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
   <span class='rubyid_perform_call identifier id'>perform_call</span><span class='lparen token'>(</span><span class='rubyid___method__ identifier id'>__method__</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='rparen token'>)</span>
 <span class='rubyid_end end kw'>end</span>
 </pre>
@@ -1020,7 +817,7 @@ First item: parsed data; second item: raw body
 </div>
 
     <div id="footer">
-  Generated on Tue Mar 19 09:50:27 2013 by
+  Generated on Tue Mar 19 09:50:28 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.5.2 (ruby-1.8.7).
 </div>

@@ -1,15 +1,12 @@
 module ForemanApi
   module Resources
-    class Setting < ForemanApi::Base
+    class HostgroupClass < ForemanApi::Base
       def self.doc
-        @doc ||= ForemanApi.doc['resources']["settings"]
+        @doc ||= ForemanApi.doc['resources']["hostgroup_classes"]
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] order Sort results
-      # @option params [String] page Paginate results
-      # @option params [String] per_page Number of entries per request
-      # @option params [String] search Filter results
+      # @option params [Object] hostgroup_id Part of +/api/hostgroups/:hostgroup_id/puppetclass_ids+ path
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -18,23 +15,23 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] id
+      # @option params [String] hostgroup_id Id of hostgroup
+      # @option params [String] puppetclass_id Id of puppetclass
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
-      def show(params = {}, headers = {})
+      def create(params = {}, headers = {})
         perform_call(__method__, params, headers)
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] id
-      # @option params [Hash] setting
-      #   allowed keys are:
-      #   * value [String]
+      # @option params [Object] id Part of +/api/hostgroups/:hostgroup_id/puppetclass_ids/:id+ path
+      # @option params [String] hostgroup_id Id of hostgroup
+      # @option params [String] puppetclass_id Id of puppetclass
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
-      def update(params = {}, headers = {})
+      def destroy(params = {}, headers = {})
         perform_call(__method__, params, headers)
       end
 

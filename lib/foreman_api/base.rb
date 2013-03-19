@@ -4,6 +4,25 @@ require 'json'
 require 'foreman_api/rest_client_oauth'
 
 module ForemanApi
+
+  def self.client_config
+    @client_config ||= YAML.load_file("#{root}/foreman_api/config.yml")
+  end
+
+  def self.root
+    @root ||= File.expand_path('../', File.dirname(__FILE__))
+  end
+
+  def self.doc_file
+    "#{root}/foreman_api/documentation.json"
+  end
+
+  def self.doc
+    @doc ||= File.open(doc_file, 'r') do |f|
+      JSON.load(f.read)['docs']
+    end
+  end
+
   class Base
     API_VERSION = "2"
 
@@ -21,11 +40,20 @@ module ForemanApi
       @config = config
     end
 
-    def call(method, path, params = { }, headers = { })
+    def perform_call(method_name, params, headers)
+      method_doc = self.class.method_doc(method_name)
+      check_params params, :allowed => method_doc['params'].any?, :method => method_name
+      method_apis = method_doc['apis']
+      api = find_suitable_api_call(method_apis, params)
+      url, params = fill_params_in_url api['api_url'], params
+      return http_call(api['http_method'].downcase, url, params, headers)
+    end
+
+    def http_call(http_method, path, params = { }, headers = { })
       headers ||= { }
 
-      args = [method]
-      if [:post, :put].include?(method)
+      args = [http_method]
+      if %w[post put].include?(http_method.to_s)
         args << params.to_json
       else
         headers[:params] = params if params
@@ -85,12 +113,39 @@ module ForemanApi
       end
     end
 
+    # @param possible_apis [Array] Array of hasahs in form of
+    #   [{:api_url => '/path1', :http_method => 'GET'}, {...}]
+    # @param params [Hash] enterred params
+    # @return api that suits the enterred params mosts
+    #
+    # Given this paths:
+    #   1. +/comments+
+    #   2. +/users/:user_id/comments+
+    #   3. +/users/:user_id/posts/:post_id/comments+
+    #
+    # If +:user_id+ and +:post_id+ is pecified, the third path is
+    # used. If only +:user_id+ is specified, the second one is used.
+    # The selection defaults to the path with the least number of
+    # incuded params in alphanumeric order.
+    def find_suitable_api_call(possible_apis, params)
+      apis_with_params = possible_apis.map do |api|
+        [api, self.class.params_in_path(api['api_url'])]
+      end.sort_by { |api, url_params| [-1 * url_params.count, api['api_url']] }
+
+      suitable_api = apis_with_params.find do |api, url_params|
+        url_params.all? { |url_param| params.keys.map(&:to_s).include?(url_param) }
+      end
+
+      suitable_api ||= apis_with_params.last
+      return suitable_api.first
+    end
+
     # @return url and rest of the params
     def fill_params_in_url(url, params)
       params          ||= { }
       # insert param values
-      url_param_names = params_in_path(url)
-      url             = params_in_path(url).inject(url) do |url, param_name|
+      url_param_names = self.class.params_in_path(url)
+      url             = url_param_names.inject(url) do |url, param_name|
         param_value = params[param_name] or
           raise ArgumentError, "missing param '#{param_name}' in parameters"
         url.sub(":#{param_name}", param_value.to_s)
@@ -126,7 +181,7 @@ module ForemanApi
       end
     end
 
-    def params_in_path(url)
+    def self.params_in_path(url)
       url.scan(/:([^\/]*)/).map { |m| m.first }
     end
   end

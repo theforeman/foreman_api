@@ -38,7 +38,9 @@ module ForemanApi
         unless response.code == "200"
           raise "Could not load data from #{foreman_url}"
         end
-        doc = JSON.load(response.body).with_indifferent_access
+        body = response.body
+        File.open(ForemanApi.doc_file, "w") { |f| f.write(body) }
+        doc = JSON.load(body).with_indifferent_access
         destination = File.expand_path("../../../..", __FILE__)
         super([doc[:docs]], :destination_root => destination)
       end
@@ -63,10 +65,6 @@ module ForemanApi
         resource[:name].gsub(/\s/, "_").downcase.singularize
       end
 
-      def api(method)
-        method[:apis].first
-      end
-
       def validation(method)
         stringify = lambda do |object|
           case object
@@ -83,14 +81,27 @@ module ForemanApi
         ForemanApi::Base.construct_validation_hash(stringify[method])
       end
 
-      def format_param_description(descr, prefix = '')
+      def format_param_description(descr, prefix = ' ')
         unless descr.empty?
           prefix + strip_tags(descr).gsub(/\n/,' ').capitalize
         end
       end
 
+      def all_params(method)
+        all_params = method[:params].dup
+        method[:apis].each do |api|
+          ForemanApi::Base.params_in_path(api[:api_url]).each do |path_param|
+            unless all_params.any? { |param| param['name'] == path_param }
+              all_params << {'name' => path_param, 'expected_type' => 'object', 'description' => %[part of +#{api[:api_url]}+ path] }
+            end
+          end
+        end
+        return all_params
+      end
+
       def prioritize_id(param)
-        return '' if param.upcase == 'ID'
+        return "00" if param.upcase == 'ID'
+        return "00#{param}" if param =~ /_id/i
         param
       end
 
