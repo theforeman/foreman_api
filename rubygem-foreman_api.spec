@@ -22,14 +22,21 @@ Group: Development/Languages
 License: MIT
 URL: http://github.com/theforeman/foreman_api
 Source0:  http://rubygems.org/downloads/%{gem_name}-%{version}.gem
+%if 0%{?fedora} > 18
+Requires: ruby(release)
+%else
 Requires: ruby(abi) = %{rubyabi}
+%endif
 Requires: ruby(rubygems) 
 Requires: rubygem(json) 
 Requires: rubygem(rest-client) >= 1.6.1
 Requires: rubygem(oauth) 
+%if 0%{?fedora} > 18
+BuildRequires: ruby(release)
+%else
 BuildRequires: ruby(abi) = %{rubyabi}
+%endif
 BuildRequires: ruby(rubygems) 
-
 %if 0%{?fedora}
 BuildRequires: rubygems-devel
 %endif
@@ -53,12 +60,16 @@ gem unpack %{SOURCE0}
 %setup -q -D -T -n  %{gem_name}-%{version}
 
 gem spec %{SOURCE0} -l --ruby > %{gem_name}.gemspec
-
+gem build %{gem_name}.gemspec
 
 %build
+%if 0%{?fedora} > 18
+%gem_install
+%else
 mkdir -p .%{gem_dir}
 gem install --local --install-dir .%{gem_dir} \
-            --force --no-rdoc --no-ri %{SOURCE0}
+            --force --no-rdoc --no-ri %{gem_name}-%{version}.gem
+%endif
 
 %install
 mkdir -p %{buildroot}%{gem_dir}
