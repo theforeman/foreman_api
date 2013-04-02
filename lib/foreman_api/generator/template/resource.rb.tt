@@ -4,24 +4,23 @@ module ForemanApi
       def self.doc
         @doc ||= ForemanApi.doc['resources']["<%= resource_key %>"]
       end
-      <% resource[:methods].each do |method| -%>
+<% resource[:methods].each do |method| -%>
 
       # @param [Hash] params a hash of params to be passed to the service
-<% method["params"].sort_by{|p| prioritize_id(p["name"])}.each do |param| -%>
-      # @option params [<%= param["expected_type"].capitalize %><%= param["allow_nil"] ? ', nil' : '' %>] <%= param["name"] %> <%= format_param_description(param["description"]) %>
-<% if param["expected_type"] == 'hash' -%>
-      #   allowed keys are: 
+<% all_params(method).sort_by{|p| prioritize_id(p["name"])}.each do |param| -%>
+      # @option params [<%= param["expected_type"].capitalize %><%= param["allow_nil"] ? ', nil' : '' %>] <%= param["name"] %><%= format_param_description(param["description"]) %>
+<% if param["params"] && param["expected_type"] == 'hash' -%>
+      #   allowed keys are:
 <% param["params"].sort_by{|p| prioritize_id(p["name"])}.each do |subparam| -%>
-      #   * <%= subparam["name"] %> [<%= subparam["expected_type"].capitalize %><%= subparam["allow_nil"] ? ', nil' : '' %>]<%= format_param_description(subparam["description"], ' ') %>,
+      #   * <%= subparam["name"] %> [<%= subparam["expected_type"].capitalize %><%= subparam["allow_nil"] ? ', nil' : '' %>]<%= format_param_description(subparam["description"], ' ') %>
 <% end -%>
 <% end -%>
 <% end -%>
       #
       # @param [Hash] headers additional http headers
-      def <%= method[:name] %>(params = { }, headers = { })
-        check_params params, :allowed => <%= method[:params].any? %>, :method => __method__
-        url, params = fill_params_in_url "<%= api(method)[:api_url] %>", params
-        call(:"<%= api(method)[:http_method].downcase %>", url, params, headers)
+      # @return [Array] First item: parsed data; second item: raw body
+      def <%= method[:name] %>(params = {}, headers = {})
+        perform_call(__method__, params, headers)
       end
 <% end -%>
 

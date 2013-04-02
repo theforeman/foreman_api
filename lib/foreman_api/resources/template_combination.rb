@@ -4,49 +4,45 @@ module ForemanApi
       def self.doc
         @doc ||= ForemanApi.doc['resources']["template_combinations"]
       end
-      
+
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] config_template_id 
+      # @option params [String] config_template_id
       #
       # @param [Hash] headers additional http headers
-      def index(params = { }, headers = { })
-        check_params params, :allowed => true, :method => __method__
-        url, params = fill_params_in_url "/api/config_templates/:config_template_id/template_combinations", params
-        call(:"get", url, params, headers)
+      # @return [Array] First item: parsed data; second item: raw body
+      def index(params = {}, headers = {})
+        perform_call(__method__, params, headers)
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] config_template_id 
-      # @option params [Hash] template_combination 
-      #   allowed keys are: 
-      #   * environment_id [String, nil] Environment id,
-      #   * hostgroup_id [String, nil] Hostgroup id,
+      # @option params [String] config_template_id
+      # @option params [Hash] template_combination
+      #   allowed keys are:
+      #   * environment_id [String, nil] Environment id
+      #   * hostgroup_id [String, nil] Hostgroup id
       #
       # @param [Hash] headers additional http headers
-      def create(params = { }, headers = { })
-        check_params params, :allowed => true, :method => __method__
-        url, params = fill_params_in_url "/api/config_templates/:config_template_id/template_combinations", params
-        call(:"post", url, params, headers)
+      # @return [Array] First item: parsed data; second item: raw body
+      def create(params = {}, headers = {})
+        perform_call(__method__, params, headers)
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] id 
+      # @option params [String] id
       #
       # @param [Hash] headers additional http headers
-      def show(params = { }, headers = { })
-        check_params params, :allowed => true, :method => __method__
-        url, params = fill_params_in_url "/api/template_combinations/:id", params
-        call(:"get", url, params, headers)
+      # @return [Array] First item: parsed data; second item: raw body
+      def show(params = {}, headers = {})
+        perform_call(__method__, params, headers)
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] id 
+      # @option params [String] id
       #
       # @param [Hash] headers additional http headers
-      def destroy(params = { }, headers = { })
-        check_params params, :allowed => true, :method => __method__
-        url, params = fill_params_in_url "/api/template_combinations/:id", params
-        call(:"delete", url, params, headers)
+      # @return [Array] First item: parsed data; second item: raw body
+      def destroy(params = {}, headers = {})
+        perform_call(__method__, params, headers)
       end
 
     end

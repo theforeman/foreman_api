@@ -4,7 +4,7 @@ module ForemanApi
       def self.doc
         @doc ||= ForemanApi.doc['resources']["hostgroups"]
       end
-      
+
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] order Sort results
       # @option params [String] page Paginate results
@@ -12,73 +12,68 @@ module ForemanApi
       # @option params [String] search Filter results
       #
       # @param [Hash] headers additional http headers
-      def index(params = { }, headers = { })
-        check_params params, :allowed => true, :method => __method__
-        url, params = fill_params_in_url "/api/hostgroups", params
-        call(:"get", url, params, headers)
+      # @return [Array] First item: parsed data; second item: raw body
+      def index(params = {}, headers = {})
+        perform_call(__method__, params, headers)
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] id 
+      # @option params [String] id
       #
       # @param [Hash] headers additional http headers
-      def show(params = { }, headers = { })
-        check_params params, :allowed => true, :method => __method__
-        url, params = fill_params_in_url "/api/hostgroups/:id", params
-        call(:"get", url, params, headers)
+      # @return [Array] First item: parsed data; second item: raw body
+      def show(params = {}, headers = {})
+        perform_call(__method__, params, headers)
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] hostgroup 
-      #   allowed keys are: 
-      #   * architecture_id [String],
-      #   * domain_id [String],
-      #   * environment_id [String],
-      #   * medium_id [String],
-      #   * name [String],
-      #   * operatingsystem_id [String],
-      #   * ptable_id [String],
-      #   * puppet_ca_proxy_id [String],
-      #   * puppet_proxy_id [String],
-      #   * subnet_id [String],
+      # @option params [Hash] hostgroup
+      #   allowed keys are:
+      #   * architecture_id [String]
+      #   * domain_id [String]
+      #   * environment_id [String]
+      #   * medium_id [String]
+      #   * operatingsystem_id [String]
+      #   * ptable_id [String]
+      #   * puppet_ca_proxy_id [String]
+      #   * puppet_proxy_id [String]
+      #   * subnet_id [String]
+      #   * name [String]
       #
       # @param [Hash] headers additional http headers
-      def create(params = { }, headers = { })
-        check_params params, :allowed => true, :method => __method__
-        url, params = fill_params_in_url "/api/hostgroups", params
-        call(:"post", url, params, headers)
+      # @return [Array] First item: parsed data; second item: raw body
+      def create(params = {}, headers = {})
+        perform_call(__method__, params, headers)
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] id 
-      # @option params [Hash] hostgroup 
-      #   allowed keys are: 
-      #   * architecture_id [String],
-      #   * domain_id [String],
-      #   * environment_id [String],
-      #   * medium_id [String],
-      #   * name [String],
-      #   * operatingsystem_id [String],
-      #   * ptable_id [String],
-      #   * puppet_ca_proxy_id [String],
-      #   * puppet_proxy_id [String],
-      #   * subnet_id [String],
+      # @option params [String] id
+      # @option params [Hash] hostgroup
+      #   allowed keys are:
+      #   * architecture_id [String]
+      #   * domain_id [String]
+      #   * environment_id [String]
+      #   * medium_id [String]
+      #   * operatingsystem_id [String]
+      #   * ptable_id [String]
+      #   * puppet_ca_proxy_id [String]
+      #   * puppet_proxy_id [String]
+      #   * subnet_id [String]
+      #   * name [String]
       #
       # @param [Hash] headers additional http headers
-      def update(params = { }, headers = { })
-        check_params params, :allowed => true, :method => __method__
-        url, params = fill_params_in_url "/api/hostgroups/:id", params
-        call(:"put", url, params, headers)
+      # @return [Array] First item: parsed data; second item: raw body
+      def update(params = {}, headers = {})
+        perform_call(__method__, params, headers)
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] id 
+      # @option params [String] id
       #
       # @param [Hash] headers additional http headers
-      def destroy(params = { }, headers = { })
-        check_params params, :allowed => true, :method => __method__
-        url, params = fill_params_in_url "/api/hostgroups/:id", params
-        call(:"delete", url, params, headers)
+      # @return [Array] First item: parsed data; second item: raw body
+      def destroy(params = {}, headers = {})
+        perform_call(__method__, params, headers)
       end
 
     end
