@@ -2,6 +2,7 @@ require 'rest_client'
 require 'oauth'
 require 'json'
 require 'foreman_api/rest_client_oauth'
+require 'logger'
 
 module ForemanApi
 
@@ -26,9 +27,11 @@ module ForemanApi
   class Base
     API_VERSION = "2"
 
-    attr_reader :client, :config
+    attr_reader :client, :config, :logger
 
     def initialize(config, options = {})
+      config = config.dup
+      self.logger = config.delete(:logger)
       @client = RestClient::Resource.new(
           config[:base_url],
           { :user     => config[:username],
@@ -59,6 +62,9 @@ module ForemanApi
         headers[:params] = params if params
       end
 
+      logger.info "#{method.upcase} #{path}"
+      logger.debug "Params: #{params.inspect}"
+      logger.debug "Headers: #{headers.inspect}"
       args << headers if headers
       process_data client[path].send(*args)
     end
@@ -88,6 +94,14 @@ module ForemanApi
       end
     end
 
+    def logger=(logger)
+      if logger.nil?
+        logger = Logger.new(STDOUT)
+        logger.level = Logger::WARN
+      end
+      @logger = logger
+    end
+
     protected
 
     def process_data(response)
@@ -96,6 +110,7 @@ module ForemanApi
              rescue JSON::ParserError
                response.body
              end
+      logger.debug "Returned data: #{data.inspect}"
       return data, response
     end
 
