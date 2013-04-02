@@ -16,8 +16,8 @@
 
 Summary: Ruby bindings for Forman's rest API
 Name: rubygem-%{gem_name}
-Version: 0.1.1
-Release: 1%{?dist}
+Version: 0.1.2
+Release: 2%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://github.com/theforeman/foreman_api
@@ -80,22 +80,45 @@ mkdir -p %{buildroot}%{gem_docdir}
 mv %{buildroot}%{gem_instdir}/doc %{buildroot}%{gem_docdir}
 rm -f %{buildroot}%{gem_instdir}/%{gem_name}.gemspec
 rm -f %{buildroot}%{gem_instdir}/.yardopts
+rm -f %{buildroot}%{gem_instdir}/.gitignore
+sed -i '1d' %{buildroot}%{gem_instdir}/Rakefile
 
 %files
 %dir %{gem_instdir}
 %{gem_instdir}/lib
-%{gem_cache}
+%exclude %{gem_cache}
 %{gem_spec}
 
 %doc MIT-LICENSE README.rdoc
 
 %files doc
-%{gem_docdir}
+%doc %{gem_docdir}
 %{gem_instdir}/Gemfile
 %{gem_instdir}/Rakefile
 
 
 %changelog
+* Thu Apr 04 2013 Martin Bačovský <mbacovsk@redhat.com> 0.1.2-2
+- Removed .gitignore (mbacovsk@redhat.com)
+
+* Wed Apr 03 2013 Martin Bačovský <mbacovsk@redhat.com> 0.1.2-1
+- Bump to 0.1.2 (mbacovsk@redhat.com)
+
+* Wed Apr 03 2013 Miroslav Suchý <msuchy@redhat.com> 0.1.1-6
+- 921985 - fix files section (msuchy@redhat.com)
+
+* Fri Mar 15 2013 Miroslav Suchý <msuchy@redhat.com> 0.1.1-5
+- rebuild gem from source (msuchy@redhat.com)
+
+* Fri Mar 15 2013 Miroslav Suchý <msuchy@redhat.com> 0.1.1-4
+- remove shebang from Rakefile (msuchy@redhat.com)
+
+* Fri Mar 15 2013 Miroslav Suchý <msuchy@redhat.com> 0.1.1-3
+- mark Rakefile as executable (msuchy@redhat.com)
+
+* Fri Mar 15 2013 Miroslav Suchý <msuchy@redhat.com> 0.1.1-2
+- prepare spec for Fedora 19 (msuchy@redhat.com)
+
 * Wed Feb 13 2013 Martin Bačovský <mbacovsk@redhat.com> 0.1.1-1
 - Bump to 0.1.1 (mbacovsk@redhat.com)
 - Added support for extra options for restclient resource
