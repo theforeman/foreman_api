@@ -84,13 +84,13 @@ rm -f %{buildroot}%{gem_instdir}/.yardopts
 %files
 %dir %{gem_instdir}
 %{gem_instdir}/lib
-%{gem_cache}
+%exclude %{gem_cache}
 %{gem_spec}
 
 %doc MIT-LICENSE README.rdoc
 
 %files doc
-%{gem_docdir}
+%doc %{gem_docdir}
 %{gem_instdir}/Gemfile
 %{gem_instdir}/Rakefile
 
