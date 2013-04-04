@@ -62,7 +62,7 @@ module ForemanApi
         headers[:params] = params if params
       end
 
-      logger.info "#{method.upcase} #{path}"
+      logger.info "#{http_method.upcase} #{path}"
       logger.debug "Params: #{params.inspect}"
       logger.debug "Headers: #{headers.inspect}"
       args << headers if headers
