@@ -32,14 +32,22 @@ module ForemanApi
     def initialize(config, options = {})
       config = config.dup
       self.logger = config.delete(:logger)
-      @client = RestClient::Resource.new(
-          config[:base_url],
-          { :user     => config[:username],
-            :password => config[:password],
-            :oauth    => config[:oauth],
-            :headers  => { :content_type => 'application/json',
-                           :accept       => "application/json;version=#{API_VERSION}" }
-          }.merge(options))
+
+      headers = {
+        :content_type => 'application/json',
+        :accept       => "application/json;version=#{API_VERSION}"
+      }
+      headers.merge!(config[:headers]) unless config[:headers].nil?
+      headers.merge!(options.delete(:headers)) unless options[:headers].nil?
+
+      resource_config = {
+        :user     => config[:username],
+        :password => config[:password],
+        :oauth    => config[:oauth],
+        :headers  => headers
+      }.merge(options)
+
+      @client = RestClient::Resource.new(config[:base_url], resource_config)
       @config = config
     end
 
