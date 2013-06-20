@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
 <title>
   File: README
   
-    &mdash; Documentation by YARD 0.8.5.2
+    &mdash; Documentation by YARD 0.8.3
   
 </title>
 
@@ -61,69 +61,90 @@
 
     <iframe id="search_frame"></iframe>
 
-    <div id="content"><div id='filecontents'><h1>Foreman API bindings for Ruby</h1>
-<h2>Summary</h2>
-<pre class="code ruby"><code class="ruby">
-  <span class='rubyid_require identifier id'>require</span> <span class='string val'>'foreman_api'</span>
-  <span class='rubyid_architectures identifier id'>architectures</span> <span class='assign token'>=</span> <span class='rubyid_ForemanApi constant id'>ForemanApi</span><span class='colon2 op'>::</span><span class='rubyid_Resources constant id'>Resources</span><span class='colon2 op'>::</span><span class='rubyid_Architecture constant id'>Architecture</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span><span class='lparen token'>(</span><span class='symbol val'>:base_url</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'http://localhost:3000'</span><span class='comma token'>,</span>
-                                                          <span class='symbol val'>:username</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'admin'</span><span class='comma token'>,</span>
-                                                          <span class='symbol val'>:password</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'changeme'</span><span class='rparen token'>)</span>
+    <div id="content"><div id='filecontents'>
+<h1 id="label-Foreman+API+bindings+for+Ruby">Foreman API bindings for Ruby</h1>
 
-  <span class='rubyid_pp identifier id'>pp</span> <span class='rubyid_architectures identifier id'>architectures</span><span class='dot token'>.</span><span class='rubyid_index identifier id'>index</span>
-  <span class='lbrack token'>[</span><span class='lbrack token'>[</span><span class='lbrace token'>{</span><span class='string val'>&quot;architecture&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='lbrace token'>{</span><span class='string val'>&quot;id&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='integer val'>5</span><span class='comma token'>,</span> <span class='string val'>&quot;name&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;i386&quot;</span><span class='rbrace token'>}</span><span class='rbrace token'>}</span><span class='comma token'>,</span>
-    <span class='lbrace token'>{</span><span class='string val'>&quot;architecture&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='lbrace token'>{</span><span class='string val'>&quot;id&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='integer val'>9</span><span class='comma token'>,</span> <span class='string val'>&quot;name&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;ppc&quot;</span><span class='rbrace token'>}</span><span class='rbrace token'>}</span><span class='comma token'>,</span>
-    <span class='lbrace token'>{</span><span class='string val'>&quot;architecture&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='lbrace token'>{</span><span class='string val'>&quot;id&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='integer val'>14</span><span class='comma token'>,</span> <span class='string val'>&quot;name&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;x86_64&quot;</span><span class='rbrace token'>}</span><span class='rbrace token'>}</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
-   <span class='string val'>&quot;[{\&quot;architecture\&quot;:{\&quot;name\&quot;:\&quot;i386\&quot;,\&quot;id\&quot;:5}},{\&quot;architecture\&quot;:{\&quot;name\&quot;:\&quot;ppc\&quot;,\&quot;id\&quot;:9}},{\&quot;architecture\&quot;:{\&quot;name\&quot;:\&quot;x86_64\&quot;,\&quot;id\&quot;:14}}]&quot;</span><span class='rbrack token'>]</span>
-  <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_nil nil kw'>nil</span>
-</code></pre>
-<h2>Description</h2>
-<p>
-This gem contains Foreman API bindings for the Ruby language. The bindings
-are generated from API documentation using
-Apidoc[https://github.com/Pajk/apipie-rails] tool.
-</p>
-<p>
-The bindings brings support for new versioned API which is not complete
+<h2 id="label-Summary">Summary</h2>
+
+<p>Usage:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'foreman_api'</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'logger'</span> <span class="ruby-comment"># optional</span>
+
+<span class="ruby-identifier">architectures</span> = <span class="ruby-constant">ForemanApi</span><span class="ruby-operator">::</span><span class="ruby-constant">Resources</span><span class="ruby-operator">::</span><span class="ruby-constant">Architecture</span>.<span class="ruby-identifier">new</span>(
+  {
+    :<span class="ruby-identifier">logger</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STDOUT</span>), <span class="ruby-comment"># optional</span>
+    :<span class="ruby-identifier">base_url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'http://foreman-url'</span>, 
+    :<span class="ruby-identifier">username</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'admin'</span>, 
+    :<span class="ruby-identifier">password</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'changeme'</span>
+  })
+
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">architectures</span>.<span class="ruby-identifier">index</span>.<span class="ruby-identifier">inspect</span>
+</pre>
+
+<h2 id="label-Description">Description</h2>
+
+<p>This gem contains Foreman API bindings for the Ruby language. The bindings
+are generated from API documentation using <a
+href="https://github.com/Pajk/apipie-rails">Apidoc</a> tool.</p>
+
+<p>The bindings brings support for new versioned API which is not complete
 yet. The number of supported controllers is limited but more are coming
-soon.
-</p>
-<h3>Regenerating bindings</h3>
-<p>
-The code for generating the bindings is a part of this repo. The generator
-needs a running Foreman instance to load the apidoc.json.
-</p>
-<p>
-Usage:
-</p>
-<pre class="code ruby"><code class="ruby">
-    <span class='rubyid_bin identifier id'>bin</span><span class='div op'>/</span><span class='rubyid_generate identifier id'>generate</span><span class='dot token'>.</span><span class='rubyid_rb identifier id'>rb</span> <span class='minus op'>-</span><span class='rubyid_h identifier id'>h</span>
-    <span class='rubyid_Script constant id'>Script</span> <span class='rubyid_for for kw'>for</span> <span class='rubyid_generating identifier id'>generating</span> <span class='rubyid_API constant id'>API</span> <span class='rubyid_bindings identifier id'>bindings</span> <span class='rubyid_for for kw'>for</span> <span class='rubyid_Foreman constant id'>Foreman</span> <span class='rubyid_API constant id'>API</span> <span class='rubyid_from identifier id'>from</span> <span class='rubyid_Apipie constant id'>Apipie</span> <span class='rubyid_docs identifier id'>docs</span><span class='dot token'>.</span>
-        <span class='minus op'>-</span><span class='rubyid_u identifier id'>u</span><span class='comma token'>,</span> <span class='minus op'>-</span><span class='minus op'>-</span><span class='rubyid_url identifier id'>url</span> <span class='rubyid_FOREMAN_APIDOC_URL constant id'>FOREMAN_APIDOC_URL</span>     <span class='rubyid_By constant id'>By</span> <span class='rubyid_default identifier id'>default</span> <span class='rubyid_http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/localhost:3000/</span><span class='rubyid_apidoc identifier id'>apidoc</span>
-        <span class='minus op'>-</span><span class='rubyid_h identifier id'>h</span><span class='comma token'>,</span> <span class='minus op'>-</span><span class='minus op'>-</span><span class='rubyid_help identifier id'>help</span>
-</code></pre>
-<p>
-Only files under <tt>lib/foreman_api/resources</tt> are touched by the generator.
-</p>
-<h3>Authentication</h3>
-<p>
-Foreman API supports authentication with username/password and OAuth. For
-use of OAuth with the bindings you only have to change the params
-</p>
-<pre class="code ruby"><code class="ruby">
-  <span class='rubyid_architectures identifier id'>architectures</span> <span class='assign token'>=</span> <span class='rubyid_ForemanApi constant id'>ForemanApi</span><span class='colon2 op'>::</span><span class='rubyid_Resources constant id'>Resources</span><span class='colon2 op'>::</span><span class='rubyid_Architecture constant id'>Architecture</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span><span class='lparen token'>(</span><span class='symbol val'>:base_url</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'http://localhost:3000'</span><span class='comma token'>,</span>
-                                                          <span class='symbol val'>:oauth</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrace token'>{</span> <span class='symbol val'>:consumer_key</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'mykey'</span><span class='comma token'>,</span>
-                                                                         <span class='symbol val'>:consumer_secret</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'shhhh'</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span>
-</code></pre>
-<h2>License</h2>
-<p>
-The bindings are released under MIT license
-</p>
+soon.</p>
+
+<h3 id="label-Regenerating+bindings">Regenerating bindings</h3>
+
+<p>The code for generating the bindings is a part of this repo. The generator
+needs a running Foreman instance to load the apidoc.json.</p>
+
+<p>Usage:</p>
+
+<pre class="code ruby"><code>bin/generate.rb -h
+Script for generating API bindings for Foreman API from Apipie docs.
+    -u, --url FOREMAN_APIDOC_URL     By default http://localhost:3000/apidoc
+    -h, --help</code></pre>
+
+<p>Only files under <code>lib/foreman_api/resources</code> are touched by the
+generator.</p>
+
+<h3 id="label-Authentication">Authentication</h3>
+
+<p>Foreman API uses OAuth for authentication, you need to provide url, key and
+secret. Also, it is required to provide user which will be used for the
+request if oauth_map_users setting in the Foreman instance is set,
+otherwise 401 error will occur and Foreman log will state "users mapping
+error".</p>
+
+<p>When setting base_url make sure it *does not* include trailing slash,
+otherwise request can be refused with 401.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'foreman_api'</span>
+
+<span class="ruby-identifier">architectures</span> = <span class="ruby-constant">ForemanApi</span><span class="ruby-operator">::</span><span class="ruby-constant">Resources</span><span class="ruby-operator">::</span><span class="ruby-constant">Architecture</span>.<span class="ruby-identifier">new</span>(
+  {
+    :<span class="ruby-identifier">base_url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'http://foreman-url'</span>, 
+    :<span class="ruby-identifier">oauth</span> =<span class="ruby-operator">&gt;</span> {
+      :<span class="ruby-identifier">consumer_key</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'katello'</span>,
+      :<span class="ruby-identifier">consumer_secret</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;shhhh&quot;</span> 
+    }
+  },{
+    :<span class="ruby-identifier">headers</span> =<span class="ruby-operator">&gt;</span> {
+      :<span class="ruby-identifier">foreman_user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;admin&quot;</span>,
+    }
+  })
+
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">architectures</span>.<span class="ruby-identifier">index</span>.<span class="ruby-identifier">inspect</span>
+</pre>
+
+<h2 id="label-License">License</h2>
+
+<p>The bindings are released under MIT license</p>
 </div></div>
 
     <div id="footer">
-  Generated on Tue Mar 19 09:50:22 2013 by
+  Generated on Thu Jun 20 12:05:19 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.5.2 (ruby-1.8.7).
+  0.8.3 (ruby-1.9.3).
 </div>
 
   </body>

@@ -101,6 +101,15 @@ module ForemanApi
         perform_call(__method__, params, headers)
       end
 
+      # @param [Hash] params a hash of params to be passed to the service
+      # @option params [Object] id Part of +/api/hosts/:id/puppetrun+ path
+      #
+      # @param [Hash] headers additional http headers
+      # @return [Array] First item: parsed data; second item: raw body
+      def puppetrun(params = {}, headers = {})
+        perform_call(__method__, params, headers)
+      end
+
     end
   end
 end

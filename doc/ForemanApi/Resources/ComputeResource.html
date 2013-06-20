@@ -6,7 +6,7 @@
 <title>
   Class: ForemanApi::Resources::ComputeResource
   
-    &mdash; Documentation by YARD 0.8.5.2
+    &mdash; Documentation by YARD 0.8.3
   
 </title>
 
@@ -164,9 +164,8 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>
-First item: parsed data; second item: raw body.
-</p>
+    <span class="summary_desc"><div class='inline'>
+<p>First item: parsed data; second item: raw body.</p>
 </div></span>
   
 </li>
@@ -189,9 +188,8 @@ First item: parsed data; second item: raw body.
   
 
   
-    <span class="summary_desc"><div class='inline'><p>
-First item: parsed data; second item: raw body.
-</p>
+    <span class="summary_desc"><div class='inline'>
+<p>First item: parsed data; second item: raw body.</p>
 </div></span>
   
 </li>
@@ -214,9 +212,8 @@ First item: parsed data; second item: raw body.
   
 
   
-    <span class="summary_desc"><div class='inline'><p>
-First item: parsed data; second item: raw body.
-</p>
+    <span class="summary_desc"><div class='inline'>
+<p>First item: parsed data; second item: raw body.</p>
 </div></span>
   
 </li>
@@ -239,9 +236,8 @@ First item: parsed data; second item: raw body.
   
 
   
-    <span class="summary_desc"><div class='inline'><p>
-First item: parsed data; second item: raw body.
-</p>
+    <span class="summary_desc"><div class='inline'>
+<p>First item: parsed data; second item: raw body.</p>
 </div></span>
   
 </li>
@@ -264,9 +260,8 @@ First item: parsed data; second item: raw body.
   
 
   
-    <span class="summary_desc"><div class='inline'><p>
-First item: parsed data; second item: raw body.
-</p>
+    <span class="summary_desc"><div class='inline'>
+<p>First item: parsed data; second item: raw body.</p>
 </div></span>
   
 </li>
@@ -304,10 +299,9 @@ First item: parsed data; second item: raw body.
     <td>
       <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/compute_resource.rb', line 4</span>
 
-<span class='rubyid_def def kw'>def</span> <span class='rubyid_self self kw'>self</span><span class='dot token'>.</span><span class='rubyid_doc identifier id'>doc</span>
-  <span class='rubyid_@doc ivar id'>@doc</span> <span class='opasgn op'>||=</span> <span class='rubyid_ForemanApi constant id'>ForemanApi</span><span class='dot token'>.</span><span class='rubyid_doc identifier id'>doc</span><span class='lbrack token'>[</span><span class='string val'>'resources'</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='string val'>&quot;compute_resources&quot;</span><span class='rbrack token'>]</span>
-<span class='rubyid_end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_doc'>doc</span>
+  <span class='ivar'>@doc</span> <span class='op'>||=</span> <span class='const'>ForemanApi</span><span class='period'>.</span><span class='id identifier rubyid_doc'>doc</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>resources</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>compute_resources</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -330,9 +324,8 @@ First item: parsed data; second item: raw body.
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>
-First item: parsed data; second item: raw body
-</p>
+    
+<p>First item: parsed data; second item: raw body</p>
 
 
   </div>
@@ -353,9 +346,8 @@ First item: parsed data; second item: raw body
       
       
         &mdash;
-        <div class='inline'><p>
-a hash of params to be passed to the service
-</p>
+        <div class='inline'>
+<p>a hash of params to be passed to the service</p>
 </div>
       
     </li>
@@ -372,9 +364,8 @@ a hash of params to be passed to the service
       
       
         &mdash;
-        <div class='inline'><p>
-additional http headers
-</p>
+        <div class='inline'>
+<p>additional http headers</p>
 </div>
       
     </li>
@@ -394,44 +385,32 @@ additional http headers
             
           </span>
           
-            &mdash; <div class='inline'><p>
-allowed keys are:
-</p>
-<ul>
-<li>description [String]
-
-</li>
-<li>name [String]
-
-</li>
-<li>password [String] Password for ovirt, ec2, vmware, openstack. secret key
-for ec2
-
-</li>
-<li>provider [String] Providers include libvirt, ovirt, ec2, vmware, openstack,
-rackspace
-
-</li>
-<li>region [String] For ec2 only
-
-</li>
-<li>server [String] For vmware
-
-</li>
-<li>tenant [String] For openstack only
-
-</li>
-<li>url [String] Url for libvirt, ovirt, and openstack
-
-</li>
-<li>user [String] Username for ovirt, ec2, vmware, openstack. access key for
-ec2.
-
-</li>
-<li>uuid [String] For ovirt, vmware datacenter
-
-</li>
-</ul>
+            &mdash; <div class='inline'>
+<p>allowed keys are:</p>
+<ul><li>
+<p>description [String]</p>
+</li><li>
+<p>name [String]</p>
+</li><li>
+<p>password [String] Password for ovirt, ec2, vmware, openstack. secret key
+for ec2</p>
+</li><li>
+<p>provider [String] Providers include libvirt, ovirt, ec2, vmware, openstack,
+rackspace</p>
+</li><li>
+<p>region [String] For ec2 only</p>
+</li><li>
+<p>server [String] For vmware</p>
+</li><li>
+<p>tenant [String] For openstack only</p>
+</li><li>
+<p>url [String] Url for libvirt, ovirt, and openstack</p>
+</li><li>
+<p>user [String] Username for ovirt, ec2, vmware, openstack. access key for
+ec2.</p>
+</li><li>
+<p>uuid [String] For ovirt, vmware datacenter</p>
+</li></ul>
 </div>
           
         </li>
@@ -452,9 +431,8 @@ ec2.
       
       
         &mdash;
-        <div class='inline'><p>
-First item: parsed data; second item: raw body
-</p>
+        <div class='inline'>
+<p>First item: parsed data; second item: raw body</p>
 </div>
       
     </li>
@@ -474,10 +452,9 @@ First item: parsed data; second item: raw body
     <td>
       <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/compute_resource.rb', line 45</span>
 
-<span class='rubyid_def def kw'>def</span> <span class='rubyid_create identifier id'>create</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
-  <span class='rubyid_perform_call identifier id'>perform_call</span><span class='lparen token'>(</span><span class='rubyid___method__ identifier id'>__method__</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='rparen token'>)</span>
-<span class='rubyid_end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -494,9 +471,8 @@ First item: parsed data; second item: raw body
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>
-First item: parsed data; second item: raw body
-</p>
+    
+<p>First item: parsed data; second item: raw body</p>
 
 
   </div>
@@ -517,9 +493,8 @@ First item: parsed data; second item: raw body
       
       
         &mdash;
-        <div class='inline'><p>
-a hash of params to be passed to the service
-</p>
+        <div class='inline'>
+<p>a hash of params to be passed to the service</p>
 </div>
       
     </li>
@@ -536,9 +511,8 @@ a hash of params to be passed to the service
       
       
         &mdash;
-        <div class='inline'><p>
-additional http headers
-</p>
+        <div class='inline'>
+<p>additional http headers</p>
 </div>
       
     </li>
@@ -576,9 +550,8 @@ additional http headers
       
       
         &mdash;
-        <div class='inline'><p>
-First item: parsed data; second item: raw body
-</p>
+        <div class='inline'>
+<p>First item: parsed data; second item: raw body</p>
 </div>
       
     </li>
@@ -598,10 +571,9 @@ First item: parsed data; second item: raw body
     <td>
       <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/compute_resource.rb', line 75</span>
 
-<span class='rubyid_def def kw'>def</span> <span class='rubyid_destroy identifier id'>destroy</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
-  <span class='rubyid_perform_call identifier id'>perform_call</span><span class='lparen token'>(</span><span class='rubyid___method__ identifier id'>__method__</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='rparen token'>)</span>
-<span class='rubyid_end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -618,9 +590,8 @@ First item: parsed data; second item: raw body
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>
-First item: parsed data; second item: raw body
-</p>
+    
+<p>First item: parsed data; second item: raw body</p>
 
 
   </div>
@@ -641,9 +612,8 @@ First item: parsed data; second item: raw body
       
       
         &mdash;
-        <div class='inline'><p>
-a hash of params to be passed to the service
-</p>
+        <div class='inline'>
+<p>a hash of params to be passed to the service</p>
 </div>
       
     </li>
@@ -660,9 +630,8 @@ a hash of params to be passed to the service
       
       
         &mdash;
-        <div class='inline'><p>
-additional http headers
-</p>
+        <div class='inline'>
+<p>additional http headers</p>
 </div>
       
     </li>
@@ -682,9 +651,8 @@ additional http headers
             
           </span>
           
-            &mdash; <div class='inline'><p>
-Sort results
-</p>
+            &mdash; <div class='inline'>
+<p>Sort results</p>
 </div>
           
         </li>
@@ -696,9 +664,8 @@ Sort results
             
           </span>
           
-            &mdash; <div class='inline'><p>
-Paginate results
-</p>
+            &mdash; <div class='inline'>
+<p>Paginate results</p>
 </div>
           
         </li>
@@ -710,9 +677,8 @@ Paginate results
             
           </span>
           
-            &mdash; <div class='inline'><p>
-Number of entries per request
-</p>
+            &mdash; <div class='inline'>
+<p>Number of entries per request</p>
 </div>
           
         </li>
@@ -724,9 +690,8 @@ Number of entries per request
             
           </span>
           
-            &mdash; <div class='inline'><p>
-Filter results
-</p>
+            &mdash; <div class='inline'>
+<p>Filter results</p>
 </div>
           
         </li>
@@ -747,9 +712,8 @@ Filter results
       
       
         &mdash;
-        <div class='inline'><p>
-First item: parsed data; second item: raw body
-</p>
+        <div class='inline'>
+<p>First item: parsed data; second item: raw body</p>
 </div>
       
     </li>
@@ -769,10 +733,9 @@ First item: parsed data; second item: raw body
     <td>
       <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/compute_resource.rb', line 16</span>
 
-<span class='rubyid_def def kw'>def</span> <span class='rubyid_index identifier id'>index</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
-  <span class='rubyid_perform_call identifier id'>perform_call</span><span class='lparen token'>(</span><span class='rubyid___method__ identifier id'>__method__</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='rparen token'>)</span>
-<span class='rubyid_end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -789,9 +752,8 @@ First item: parsed data; second item: raw body
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>
-First item: parsed data; second item: raw body
-</p>
+    
+<p>First item: parsed data; second item: raw body</p>
 
 
   </div>
@@ -812,9 +774,8 @@ First item: parsed data; second item: raw body
       
       
         &mdash;
-        <div class='inline'><p>
-a hash of params to be passed to the service
-</p>
+        <div class='inline'>
+<p>a hash of params to be passed to the service</p>
 </div>
       
     </li>
@@ -831,9 +792,8 @@ a hash of params to be passed to the service
       
       
         &mdash;
-        <div class='inline'><p>
-additional http headers
-</p>
+        <div class='inline'>
+<p>additional http headers</p>
 </div>
       
     </li>
@@ -871,9 +831,8 @@ additional http headers
       
       
         &mdash;
-        <div class='inline'><p>
-First item: parsed data; second item: raw body
-</p>
+        <div class='inline'>
+<p>First item: parsed data; second item: raw body</p>
 </div>
       
     </li>
@@ -893,10 +852,9 @@ First item: parsed data; second item: raw body
     <td>
       <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/compute_resource.rb', line 25</span>
 
-<span class='rubyid_def def kw'>def</span> <span class='rubyid_show identifier id'>show</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
-  <span class='rubyid_perform_call identifier id'>perform_call</span><span class='lparen token'>(</span><span class='rubyid___method__ identifier id'>__method__</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='rparen token'>)</span>
-<span class='rubyid_end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_show'>show</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -913,9 +871,8 @@ First item: parsed data; second item: raw body
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>
-First item: parsed data; second item: raw body
-</p>
+    
+<p>First item: parsed data; second item: raw body</p>
 
 
   </div>
@@ -936,9 +893,8 @@ First item: parsed data; second item: raw body
       
       
         &mdash;
-        <div class='inline'><p>
-a hash of params to be passed to the service
-</p>
+        <div class='inline'>
+<p>a hash of params to be passed to the service</p>
 </div>
       
     </li>
@@ -955,9 +911,8 @@ a hash of params to be passed to the service
       
       
         &mdash;
-        <div class='inline'><p>
-additional http headers
-</p>
+        <div class='inline'>
+<p>additional http headers</p>
 </div>
       
     </li>
@@ -986,44 +941,32 @@ additional http headers
             
           </span>
           
-            &mdash; <div class='inline'><p>
-allowed keys are:
-</p>
-<ul>
-<li>description [String]
-
-</li>
-<li>name [String]
-
-</li>
-<li>password [String] Password for ovirt, ec2, vmware, openstack. secret key
-for ec2
-
-</li>
-<li>provider [String] Providers include libvirt, ovirt, ec2, vmware, openstack,
-rackspace
-
-</li>
-<li>region [String] For ec2 only
-
-</li>
-<li>server [String] For vmware
-
-</li>
-<li>tenant [String] For openstack only
-
-</li>
-<li>url [String] Url for libvirt, ovirt, and openstack
-
-</li>
-<li>user [String] Username for ovirt, ec2, vmware, openstack. access key for
-ec2.
-
-</li>
-<li>uuid [String] For ovirt, vmware datacenter
-
-</li>
-</ul>
+            &mdash; <div class='inline'>
+<p>allowed keys are:</p>
+<ul><li>
+<p>description [String]</p>
+</li><li>
+<p>name [String]</p>
+</li><li>
+<p>password [String] Password for ovirt, ec2, vmware, openstack. secret key
+for ec2</p>
+</li><li>
+<p>provider [String] Providers include libvirt, ovirt, ec2, vmware, openstack,
+rackspace</p>
+</li><li>
+<p>region [String] For ec2 only</p>
+</li><li>
+<p>server [String] For vmware</p>
+</li><li>
+<p>tenant [String] For openstack only</p>
+</li><li>
+<p>url [String] Url for libvirt, ovirt, and openstack</p>
+</li><li>
+<p>user [String] Username for ovirt, ec2, vmware, openstack. access key for
+ec2.</p>
+</li><li>
+<p>uuid [String] For ovirt, vmware datacenter</p>
+</li></ul>
 </div>
           
         </li>
@@ -1044,9 +987,8 @@ ec2.
       
       
         &mdash;
-        <div class='inline'><p>
-First item: parsed data; second item: raw body
-</p>
+        <div class='inline'>
+<p>First item: parsed data; second item: raw body</p>
 </div>
       
     </li>
@@ -1066,10 +1008,9 @@ First item: parsed data; second item: raw body
     <td>
       <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/compute_resource.rb', line 66</span>
 
-<span class='rubyid_def def kw'>def</span> <span class='rubyid_update identifier id'>update</span><span class='lparen token'>(</span><span class='rubyid_params identifier id'>params</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
-  <span class='rubyid_perform_call identifier id'>perform_call</span><span class='lparen token'>(</span><span class='rubyid___method__ identifier id'>__method__</span><span class='comma token'>,</span> <span class='rubyid_params identifier id'>params</span><span class='comma token'>,</span> <span class='rubyid_headers identifier id'>headers</span><span class='rparen token'>)</span>
-<span class='rubyid_end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1080,9 +1021,9 @@ First item: parsed data; second item: raw body
 </div>
 
     <div id="footer">
-  Generated on Tue Mar 19 09:50:28 2013 by
+  Generated on Thu Jun 20 12:05:24 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.5.2 (ruby-1.8.7).
+  0.8.3 (ruby-1.9.3).
 </div>
 
   </body>
