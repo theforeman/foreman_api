@@ -2,17 +2,20 @@
 
 == Summary
 
-  require 'foreman_api'
-  architectures = ForemanApi::Resources::Architecture.new(:base_url => 'http://localhost:3000', 
-                                                          :username => 'admin', 
-                                                          :password => 'changeme')
+Usage:
 
-  pp architectures.index
-  [[{"architecture"=>{"id"=>5, "name"=>"i386"}},
-    {"architecture"=>{"id"=>9, "name"=>"ppc"}},
-    {"architecture"=>{"id"=>14, "name"=>"x86_64"}}],
-   "[{\"architecture\":{\"name\":\"i386\",\"id\":5}},{\"architecture\":{\"name\":\"ppc\",\"id\":9}},{\"architecture\":{\"name\":\"x86_64\",\"id\":14}}]"]
-  => nil
+  require 'foreman_api'
+  require 'logger' # optional
+
+  architectures = ForemanApi::Resources::Architecture.new(
+    {
+      :logger => Logger.new(STDOUT), # optional
+      :base_url => 'http://foreman-url', 
+      :username => 'admin', 
+      :password => 'changeme'
+    })
+
+  puts architectures.index.inspect
 
 == Description
 
@@ -40,17 +43,31 @@ Only files under +lib/foreman_api/resources+ are touched by the generator.
 
 === Authentication
 
-Foreman API supports authentication with username/password and OAuth.
-For use of OAuth with the bindings you only have to change the params
+Foreman API uses OAuth for authentication, you need to provide url, key and
+secret. Also, it is required to provide user which will be used for the request
+if oauth_map_users setting in the Foreman instance is set, otherwise 401 error
+will occur and Foreman log will state "users mapping error".
 
-  architectures = ForemanApi::Resources::Architecture.new(:base_url => 'http://localhost:3000', 
-                                                          :oauth    => { :consumer_key    => 'mykey',
-                                                                         :consumer_secret => 'shhhh' })
+When setting base_url make sure it *does not* include trailing slash, otherwise
+request can be refused with 401.
+
+  require 'foreman_api'
+
+  architectures = ForemanApi::Resources::Architecture.new(
+    {
+      :base_url => 'http://foreman-url', 
+      :oauth => {
+        :consumer_key    => 'katello',
+        :consumer_secret => "shhhh" 
+      }
+    },{
+      :headers => {
+        :foreman_user => "admin",
+      }
+    })
+
+  puts architectures.index.inspect
 
 == License
 
 The bindings are released under MIT license 
-
-
-
-
