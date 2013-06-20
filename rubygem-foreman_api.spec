@@ -1,75 +1,51 @@
+%{?scl:%scl_package rubygem-%{gem_name}}
+%{!?scl:%global pkg_name %{name}}
+
 %global gem_name foreman_api
 
-%if 0%{?rhel} == 6 || 0%{?fedora} < 17
-%define rubyabi 1.8
-%else
 %define rubyabi 1.9.1
-%endif
-
-%if 0%{?rhel} == 6
-%global gem_dir %(ruby -rubygems -e 'puts Gem::dir' 2>/dev/null)
-%global gem_docdir %{gem_dir}/doc/%{gem_name}-%{version}
-%global gem_cache %{gem_dir}/cache/%{gem_name}-%{version}.gem
-%global gem_spec %{gem_dir}/specifications/%{gem_name}-%{version}.gemspec
-%global gem_instdir %{gem_dir}/gems/%{gem_name}-%{version}
-%endif
 
 Summary: Ruby bindings for Forman's rest API
-Name: rubygem-%{gem_name}
-Version: 0.1.3
+Name: %{?scl_prefix}rubygem-%{gem_name}
+Version: 0.1.4
 Release: 1%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://github.com/theforeman/foreman_api
 Source0:  http://rubygems.org/downloads/%{gem_name}-%{version}.gem
-%if 0%{?fedora} > 18
-Requires: ruby(release)
-%else
-Requires: ruby(abi) = %{rubyabi}
-%endif
-Requires: ruby(rubygems) 
-Requires: rubygem(json) 
-Requires: rubygem(rest-client) >= 1.6.1
-Requires: rubygem(oauth) 
-%if 0%{?fedora} > 18
-BuildRequires: ruby(release)
-%else
-BuildRequires: ruby(abi) = %{rubyabi}
-%endif
-BuildRequires: ruby(rubygems) 
-%if 0%{?fedora}
-BuildRequires: rubygems-devel
-%endif
+Requires: %{?scl_prefix}ruby(abi) = %{rubyabi}
+Requires: %{?scl_prefix}ruby(rubygems)
+Requires: %{?scl_prefix}rubygem(json)
+Requires: %{?scl_prefix}rubygem(rest-client) >= 1.6.1
+Requires: %{?scl_prefix}rubygem(oauth)
+BuildRequires: %{?scl_prefix}ruby(abi) = %{rubyabi}
+BuildRequires: %{?scl_prefix}ruby(rubygems)
+BuildRequires: %{?scl_prefix}rubygems-devel
 
 BuildArch: noarch
-Provides: rubygem(%{gem_name}) = %{version}
+Provides: %{?scl_prefix}rubygem(%{gem_name}) = %{version}
 
 %description
 Helps you to use Foreman's API calls from your app.
 
 %package doc
 BuildArch:  noarch
-Requires:   %{name} = %{version}-%{release}
+Requires:   %{?scl_prefix}%{pkg_name} = %{version}-%{release}
 Summary:    Documentation for rubygem-%{gem_name}
 
 %description doc
 This package contains documentation for rubygem-%{gem_name}.
 
 %prep
-gem unpack %{SOURCE0}
-%setup -q -D -T -n  %{gem_name}-%{version}
+%setup -q -c -T -n  %{gem_name}-%{version}
 
-gem spec %{SOURCE0} -l --ruby > %{gem_name}.gemspec
-gem build %{gem_name}.gemspec
 
 %build
-%if 0%{?fedora} > 18
-%gem_install
-%else
 mkdir -p .%{gem_dir}
+%{?scl:scl enable %{scl} "}
 gem install --local --install-dir .%{gem_dir} \
-            --force --no-rdoc --no-ri %{gem_name}-%{version}.gem
-%endif
+            --force --no-rdoc --no-ri %{SOURCE0}
+%{?scl:"}
 
 %install
 mkdir -p %{buildroot}%{gem_dir}
@@ -81,7 +57,6 @@ mv %{buildroot}%{gem_instdir}/doc %{buildroot}%{gem_docdir}
 rm -f %{buildroot}%{gem_instdir}/%{gem_name}.gemspec
 rm -f %{buildroot}%{gem_instdir}/.yardopts
 rm -f %{buildroot}%{gem_instdir}/.gitignore
-sed -i '1d' %{buildroot}%{gem_instdir}/Rakefile
 
 %files
 %dir %{gem_instdir}
@@ -96,32 +71,20 @@ sed -i '1d' %{buildroot}%{gem_instdir}/Rakefile
 %{gem_instdir}/Gemfile
 %{gem_instdir}/Rakefile
 
-
 %changelog
-* Thu Apr 04 2013 Martin Bačovský <mbacovsk@redhat.com> 0.1.3-1
-- Bump to 0.1.3 (mbacovsk@redhat.com)
-- Fixed typo in logger (jhadvig@redhat.com)
+* Thu Jun 20 2013 Martin Bačovský <mbacovsk@redhat.com> 0.1.4-1
+- Updated to 0.1.4 (mbacovsk@redhat.com)
+- updated API (Foreman 1.2)
+- fixed docs (lzap@redhat.com)
+- fixed headers options handling (tstracho@redhat.com)
 
-* Thu Apr 04 2013 Martin Bačovský <mbacovsk@redhat.com> 0.1.2-2
-- Removed .gitignore (mbacovsk@redhat.com)
 
-* Wed Apr 03 2013 Martin Bačovský <mbacovsk@redhat.com> 0.1.2-1
-- Bump to 0.1.2 (mbacovsk@redhat.com)
+* Tue Apr 09 2013 Ivan Necas <inecas@redhat.com> 0.1.3-1
+- Update to new version (inecas@redhat.com)
+- require ruby193-build for tagging (msuchy@redhat.com)
 
-* Wed Apr 03 2013 Miroslav Suchý <msuchy@redhat.com> 0.1.1-6
-- 921985 - fix files section (msuchy@redhat.com)
-
-* Fri Mar 15 2013 Miroslav Suchý <msuchy@redhat.com> 0.1.1-5
-- rebuild gem from source (msuchy@redhat.com)
-
-* Fri Mar 15 2013 Miroslav Suchý <msuchy@redhat.com> 0.1.1-4
-- remove shebang from Rakefile (msuchy@redhat.com)
-
-* Fri Mar 15 2013 Miroslav Suchý <msuchy@redhat.com> 0.1.1-3
-- mark Rakefile as executable (msuchy@redhat.com)
-
-* Fri Mar 15 2013 Miroslav Suchý <msuchy@redhat.com> 0.1.1-2
-- prepare spec for Fedora 19 (msuchy@redhat.com)
+* Tue Feb 26 2013 Miroslav Suchý <msuchy@redhat.com> 0.1.1-2
+- new package built with tito
 
 * Wed Feb 13 2013 Martin Bačovský <mbacovsk@redhat.com> 0.1.1-1
 - Bump to 0.1.1 (mbacovsk@redhat.com)
@@ -142,7 +105,7 @@ sed -i '1d' %{buildroot}%{gem_instdir}/Rakefile
 
 * Fri Jan 11 2013 Martin Bačovský <mbacovsk@redhat.com> 0.0.9-1
 - Bump to 0.0.9 (mbacovsk@redhat.com) ( compute_resource domain environment host
-   common_parameter hostgroup image medium operating_system ptable 
+   common_parameter hostgroup image medium operating_system ptable
    puppetclass role template_kind )
 
 
