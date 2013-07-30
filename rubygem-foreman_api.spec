@@ -3,24 +3,40 @@
 
 %global gem_name foreman_api
 
-%define rubyabi 1.9.1
+# we are using this gem also as non-SCL in RHEL6
+%if !("%{?scl}" == "ruby193" || 0%{?rhel} > 6 || 0%{?fedora} > 16)
+%define gem_dir %(ruby -rubygems -e 'puts Gem::dir' 2>/dev/null)
+%define gem_instdir %{gem_dir}/gems/%{gem_name}-%{version}
+%define gem_cache %{gem_dir}/cache/%{gem_name}-%{version}.gem
+%define gem_docdir %{gem_dir}/doc/%{gem_name}-%{version}
+%endif
 
 Summary: Ruby bindings for Forman's rest API
 Name: %{?scl_prefix}rubygem-%{gem_name}
-Version: 0.1.4
-Release: 1%{?dist}
+Version: 0.1.5
+Release: 2%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://github.com/theforeman/foreman_api
 Source0:  http://rubygems.org/downloads/%{gem_name}-%{version}.gem
-Requires: %{?scl_prefix}ruby(abi) = %{rubyabi}
+%if 0%{?fedora} > 18
+Requires: %{?scl_prefix}ruby(release)
+%else
+Requires: %{?scl_prefix}ruby(abi)
+%endif
 Requires: %{?scl_prefix}ruby(rubygems)
 Requires: %{?scl_prefix}rubygem(json)
 Requires: %{?scl_prefix}rubygem(rest-client) >= 1.6.1
 Requires: %{?scl_prefix}rubygem(oauth)
-BuildRequires: %{?scl_prefix}ruby(abi) = %{rubyabi}
+%if 0%{?fedora} > 18
+BuildRequires: %{?scl_prefix}ruby(release)
+%else
+BuildRequires: %{?scl_prefix}ruby(abi)
+%endif
 BuildRequires: %{?scl_prefix}ruby(rubygems)
+%if "%{?scl}" == "ruby193" || 0%{?rhel} > 6 || 0%{?fedora} > 16
 BuildRequires: %{?scl_prefix}rubygems-devel
+%endif
 
 BuildArch: noarch
 Provides: %{?scl_prefix}rubygem(%{gem_name}) = %{version}
@@ -62,7 +78,7 @@ rm -f %{buildroot}%{gem_instdir}/.gitignore
 %dir %{gem_instdir}
 %{gem_instdir}/lib
 %exclude %{gem_cache}
-%{gem_spec}
+%{gem_dir}/specifications/%{gem_name}-%{version}.gemspec
 
 %doc MIT-LICENSE README.rdoc
 
@@ -72,6 +88,20 @@ rm -f %{buildroot}%{gem_instdir}/.gitignore
 %{gem_instdir}/Rakefile
 
 %changelog
+* Tue Jul 30 2013 Martin Bačovský <mbacovsk@redhat.com> 0.1.5-2
+- Fixed deps for F19 (mbacovsk@redhat.com)
+
+* Tue Jul 30 2013 Martin Bačovský <mbacovsk@redhat.com> 0.1.5-1
+- Version bump to 0.1.5 (mbacovsk@redhat.com)
+- fixed issue 8: Remove escaped character from generated documentation in rb file 
+- updated to latest API
+
+* Thu Jun 27 2013 Lukas Zapletal <lzap+git@redhat.com> 0.1.4-3
+- adding non-SCL RHEL6 support (lzap+git@redhat.com)
+
+* Thu Jun 27 2013 Lukas Zapletal <lzap+git@redhat.com> 0.1.4-2
+- removing hard Rubi ABI requirement (lzap+git@redhat.com)
+
 * Thu Jun 20 2013 Martin Bačovský <mbacovsk@redhat.com> 0.1.4-1
 - Updated to 0.1.4 (mbacovsk@redhat.com)
 - updated API (Foreman 1.2)
