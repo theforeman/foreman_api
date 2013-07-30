@@ -12,6 +12,7 @@ require 'foreman_api/base'
 require 'net/http'
 require 'uri'
 require 'pp'
+require 'htmlentities'
 
 module ForemanApi
   module Generator
@@ -25,6 +26,7 @@ module ForemanApi
       def initialize(doc, *args)
         super
         @doc = doc.first
+        @coder = HTMLEntities.new
       end
 
       def self.source_root
@@ -83,7 +85,7 @@ module ForemanApi
 
       def format_param_description(descr, prefix = ' ')
         unless descr.empty?
-          prefix + strip_tags(descr).gsub(/\n/,' ').capitalize
+          prefix + strip_tags(@coder.decode(descr)).gsub(/\n/,' ').capitalize
         end
       end
 

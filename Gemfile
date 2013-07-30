@@ -7,4 +7,5 @@ group :generator do
   gem 'activesupport'
   gem 'thor'
   gem 'yard'
+  gem 'htmlentities'
 end
