@@ -29,13 +29,13 @@ module ForemanApi
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [Hash] config_template
       #   allowed keys are:
-      #   * operatingsystem_ids [String] Array of operating systems id to associate the template with
+      #   * operatingsystem_ids [Array] Array of operating systems id to associate the template with
       #   * template_kind_id [String, nil] Not relevant for snippet
       #   * audit_comment [String, nil]
       #   * name [String] Template name
       #   * snippet [String, nil]
       #   * template [String]
-      #   * template_combinations_attributes [String] Array of template combinations (hostgroup_id, environment_id)
+      #   * template_combinations_attributes [Array] Array of template combinations (hostgroup_id, environment_id)
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -47,13 +47,13 @@ module ForemanApi
       # @option params [String] id
       # @option params [Hash] config_template
       #   allowed keys are:
-      #   * operatingsystem_ids [String] Array of operating systems id to associate the template with
+      #   * operatingsystem_ids [Array] Array of operating systems id to associate the template with
       #   * template_kind_id [String, nil] Not relevant for snippet
       #   * audit_comment [String, nil]
       #   * name [String] Template name
       #   * snippet [String]
       #   * template [String]
-      #   * template_combinations_attributes [String] Array of template combinations (hostgroup_id, environment_id)
+      #   * template_combinations_attributes [Array] Array of template combinations (hostgroup_id, environment_id)
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

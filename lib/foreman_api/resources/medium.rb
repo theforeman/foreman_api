@@ -31,7 +31,7 @@ module ForemanApi
       #   allowed keys are:
       #   * name [String] Name of media
       #   * os_family [String] The family that the operating system belongs to.  available families:   archlinux  debian  gentoo  redhat  solaris  suse  windows 
-      #   * path [String] The path to the medium, can be a url or a valid nfs server (exclusive of the architecture).  for example http://mirror.averse.net/centos/$version/os/$arch where $arch will be substituted for the host&#8217;s actual os architecture and $version, $major and $minor will be substituted for the version of the operating system.  solaris and debian media may also use $release.
+      #   * path [String] The path to the medium, can be a url or a valid nfs server (exclusive of the architecture).  for example http://mirror.averse.net/centos/$version/os/$arch where $arch will be substituted for the host’s actual os architecture and $version, $major and $minor will be substituted for the version of the operating system.  solaris and debian media may also use $release.
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -45,7 +45,7 @@ module ForemanApi
       #   allowed keys are:
       #   * name [String] Name of media
       #   * os_family [String, nil] The family that the operating system belongs to.  available families:   archlinux  debian  gentoo  redhat  solaris  suse  windows 
-      #   * path [String] The path to the medium, can be a url or a valid nfs server (exclusive of the architecture).  for example http://mirror.averse.net/centos/$version/os/$arch where $arch will be substituted for the host&#8217;s actual os architecture and $version, $major and $minor will be substituted for the version of the operating system.  solaris and debian media may also use $release.
+      #   * path [String] The path to the medium, can be a url or a valid nfs server (exclusive of the architecture).  for example http://mirror.averse.net/centos/$version/os/$arch where $arch will be substituted for the host’s actual os architecture and $version, $major and $minor will be substituted for the version of the operating system.  solaris and debian media may also use $release.
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

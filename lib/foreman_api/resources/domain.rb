@@ -30,7 +30,7 @@ module ForemanApi
       # @option params [Hash] domain
       #   allowed keys are:
       #   * dns_id [String, nil] Dns proxy to use within this domain
-      #   * domain_parameters_attributes [String] Array of parameters (name, value)
+      #   * domain_parameters_attributes [Array] Array of parameters (name, value)
       #   * fullname [String, nil] Full name describing the domain
       #   * name [String] The full dns domain name
       #
@@ -45,7 +45,7 @@ module ForemanApi
       # @option params [Hash] domain
       #   allowed keys are:
       #   * dns_id [String, nil] Dns proxy to use within this domain
-      #   * domain_parameters_attributes [String] Array of parameters (name, value)
+      #   * domain_parameters_attributes [Array] Array of parameters (name, value)
       #   * fullname [String, nil] Full name describing the domain
       #   * name [String, nil] The full dns domain name
       #

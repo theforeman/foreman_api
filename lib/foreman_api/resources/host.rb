@@ -43,7 +43,7 @@ module ForemanApi
       #   * puppet_proxy_id [String]
       #   * sp_subnet_id [String]
       #   * subnet_id [String]
-      #   * host_parameters_attributes [String]
+      #   * host_parameters_attributes [Array]
       #   * ip [String] Not required if using a subnet with dhcp proxy
       #   * mac [String] Not required if its a virtual machine
       #   * name [String]
@@ -72,7 +72,7 @@ module ForemanApi
       #   * puppet_proxy_id [String]
       #   * sp_subnet_id [String]
       #   * subnet_id [String]
-      #   * host_parameters_attributes [String]
+      #   * host_parameters_attributes [Array]
       #   * ip [String] Not required if using a subnet with dhcp proxy
       #   * mac [String] Not required if its a virtual machine
       #   * name [String]

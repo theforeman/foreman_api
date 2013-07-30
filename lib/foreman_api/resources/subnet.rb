@@ -31,7 +31,7 @@ module ForemanApi
       #   allowed keys are:
       #   * dhcp_id [String] Dhcp proxy to use within this subnet
       #   * dns_id [String] Dns proxy to use within this subnet
-      #   * domain_ids [String] Domains in which this subnet is part
+      #   * domain_ids [Array] Domains in which this subnet is part
       #   * tftp_id [String] Tftp proxy to use within this subnet
       #   * dns_primary [String] Primary dns for this subnet
       #   * dns_secondary [String] Secondary dns for this subnet
@@ -55,7 +55,7 @@ module ForemanApi
       #   allowed keys are:
       #   * dhcp_id [String, nil] Dhcp proxy to use within this subnet
       #   * dns_id [String, nil] Dns proxy to use within this subnet
-      #   * domain_ids [String, nil] Domains in which this subnet is part
+      #   * domain_ids [Array, nil] Domains in which this subnet is part
       #   * tftp_id [String, nil] Tftp proxy to use within this subnet
       #   * dns_primary [String, nil] Primary dns for this subnet
       #   * dns_secondary [String, nil] Secondary dns for this subnet

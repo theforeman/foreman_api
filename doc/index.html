@@ -2,17 +2,17 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>
   File: README
   
-    &mdash; Documentation by YARD 0.8.3
+    &mdash; Documentation by YARD 0.8.7
   
 </title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
 
-  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
@@ -68,19 +68,19 @@
 
 <p>Usage:</p>
 
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'foreman_api'</span>
-<span class="ruby-identifier">require</span> <span class="ruby-string">'logger'</span> <span class="ruby-comment"># optional</span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>foreman_api</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>logger</span><span class='tstring_end'>&#39;</span></span> <span class='comment'># optional
+</span>
+<span class='id identifier rubyid_architectures'>architectures</span> <span class='op'>=</span> <span class='const'>ForemanApi</span><span class='op'>::</span><span class='const'>Resources</span><span class='op'>::</span><span class='const'>Architecture</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='lbrace'>{</span>
+    <span class='symbol'>:logger</span> <span class='op'>=&gt;</span> <span class='const'>Logger</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>STDOUT</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='comment'># optional
+</span>    <span class='symbol'>:base_url</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>http://foreman-url</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> 
+    <span class='symbol'>:username</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>admin</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> 
+    <span class='symbol'>:password</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>changeme</span><span class='tstring_end'>&#39;</span></span>
+  <span class='rbrace'>}</span><span class='rparen'>)</span>
 
-<span class="ruby-identifier">architectures</span> = <span class="ruby-constant">ForemanApi</span><span class="ruby-operator">::</span><span class="ruby-constant">Resources</span><span class="ruby-operator">::</span><span class="ruby-constant">Architecture</span>.<span class="ruby-identifier">new</span>(
-  {
-    :<span class="ruby-identifier">logger</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STDOUT</span>), <span class="ruby-comment"># optional</span>
-    :<span class="ruby-identifier">base_url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'http://foreman-url'</span>, 
-    :<span class="ruby-identifier">username</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'admin'</span>, 
-    :<span class="ruby-identifier">password</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'changeme'</span>
-  })
-
-<span class="ruby-identifier">puts</span> <span class="ruby-identifier">architectures</span>.<span class="ruby-identifier">index</span>.<span class="ruby-identifier">inspect</span>
-</pre>
+<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_architectures'>architectures</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span>
+</code></pre>
 
 <h2 id="label-Description">Description</h2>
 
@@ -99,7 +99,7 @@ needs a running Foreman instance to load the apidoc.json.</p>
 
 <p>Usage:</p>
 
-<pre class="code ruby"><code>bin/generate.rb -h
+<pre class="code ruby"><code class="ruby">bin/generate.rb -h
 Script for generating API bindings for Foreman API from Apipie docs.
     -u, --url FOREMAN_APIDOC_URL     By default http://localhost:3000/apidoc
     -h, --help</code></pre>
@@ -112,29 +112,29 @@ generator.</p>
 <p>Foreman API uses OAuth for authentication, you need to provide url, key and
 secret. Also, it is required to provide user which will be used for the
 request if oauth_map_users setting in the Foreman instance is set,
-otherwise 401 error will occur and Foreman log will state "users mapping
-error".</p>
+otherwise 401 error will occur and Foreman log will state “users mapping
+error”.</p>
 
 <p>When setting base_url make sure it *does not* include trailing slash,
 otherwise request can be refused with 401.</p>
 
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'foreman_api'</span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>foreman_api</span><span class='tstring_end'>&#39;</span></span>
 
-<span class="ruby-identifier">architectures</span> = <span class="ruby-constant">ForemanApi</span><span class="ruby-operator">::</span><span class="ruby-constant">Resources</span><span class="ruby-operator">::</span><span class="ruby-constant">Architecture</span>.<span class="ruby-identifier">new</span>(
-  {
-    :<span class="ruby-identifier">base_url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'http://foreman-url'</span>, 
-    :<span class="ruby-identifier">oauth</span> =<span class="ruby-operator">&gt;</span> {
-      :<span class="ruby-identifier">consumer_key</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'katello'</span>,
-      :<span class="ruby-identifier">consumer_secret</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;shhhh&quot;</span> 
-    }
-  },{
-    :<span class="ruby-identifier">headers</span> =<span class="ruby-operator">&gt;</span> {
-      :<span class="ruby-identifier">foreman_user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;admin&quot;</span>,
-    }
-  })
+<span class='id identifier rubyid_architectures'>architectures</span> <span class='op'>=</span> <span class='const'>ForemanApi</span><span class='op'>::</span><span class='const'>Resources</span><span class='op'>::</span><span class='const'>Architecture</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='lbrace'>{</span>
+    <span class='symbol'>:base_url</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>http://foreman-url</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> 
+    <span class='symbol'>:oauth</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='symbol'>:consumer_key</span>    <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>katello</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+      <span class='symbol'>:consumer_secret</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>shhhh</span><span class='tstring_end'>&quot;</span></span> 
+    <span class='rbrace'>}</span>
+  <span class='rbrace'>}</span><span class='comma'>,</span><span class='lbrace'>{</span>
+    <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+      <span class='symbol'>:foreman_user</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>admin</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='rbrace'>}</span>
+  <span class='rbrace'>}</span><span class='rparen'>)</span>
 
-<span class="ruby-identifier">puts</span> <span class="ruby-identifier">architectures</span>.<span class="ruby-identifier">index</span>.<span class="ruby-identifier">inspect</span>
-</pre>
+<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_architectures'>architectures</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span>
+</code></pre>
 
 <h2 id="label-License">License</h2>
 
@@ -142,9 +142,9 @@ otherwise request can be refused with 401.</p>
 </div></div>
 
     <div id="footer">
-  Generated on Thu Jun 20 12:05:19 2013 by
+  Generated on Tue Jul 30 15:43:14 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.3 (ruby-1.9.3).
+  0.8.7 (ruby-2.0.0).
 </div>
 
   </body>
