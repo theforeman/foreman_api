@@ -388,6 +388,8 @@
             &mdash; <div class='inline'>
 <p>allowed keys are:</p>
 <ul><li>
+<p>operatingsystem_ids [Array]</p>
+</li><li>
 <p>name [String] Name of media</p>
 </li><li>
 <p>os_family [String] The family that the operating system belongs to. 
@@ -435,12 +437,12 @@ operating system.  solaris and debian media may also use $release.</p>
       <pre class="lines">
 
 
-38
 39
-40</pre>
+40
+41</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/medium.rb', line 38</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/medium.rb', line 39</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -554,12 +556,12 @@ operating system.  solaris and debian media may also use $release.</p>
       <pre class="lines">
 
 
-61
-62
-63</pre>
+63
+64
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/medium.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/medium.rb', line 63</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -934,6 +936,8 @@ operating system.  solaris and debian media may also use $release.</p>
             &mdash; <div class='inline'>
 <p>allowed keys are:</p>
 <ul><li>
+<p>operatingsystem_ids [Array]</p>
+</li><li>
 <p>name [String] Name of media</p>
 </li><li>
 <p>os_family [String, nil] The family that the operating system belongs to. 
@@ -981,12 +985,12 @@ operating system.  solaris and debian media may also use $release.</p>
       <pre class="lines">
 
 
-52
-53
-54</pre>
+54
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/medium.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/medium.rb', line 54</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -1001,7 +1005,7 @@ operating system.  solaris and debian media may also use $release.</p>
 </div>
 
     <div id="footer">
-  Generated on Tue Jul 30 15:43:15 2013 by
+  Generated on Mon Aug 26 13:05:12 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7 (ruby-2.0.0).
 </div>

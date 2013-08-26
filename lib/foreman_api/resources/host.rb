@@ -30,23 +30,32 @@ module ForemanApi
       # @option params [Hash] host
       #   allowed keys are:
       #   * architecture_id [String]
+      #   * compute_resource_id [String]
       #   * domain_id [String]
       #   * environment_id [String]
       #   * hostgroup_id [String]
       #   * image_id [String]
       #   * medium_id [String]
-      #   * model_id_id [String]
+      #   * model_id [String]
       #   * operatingsystem_id [String]
       #   * owner_id [String]
       #   * ptable_id [String]
       #   * puppet_ca_proxy_id [String]
+      #   * puppet_class_ids [Array]
       #   * puppet_proxy_id [String]
       #   * sp_subnet_id [String]
       #   * subnet_id [String]
+      #   * build [String]
+      #   * capabilities [String]
+      #   * compute_attributes [Hash]
+      #   * enabled [String]
       #   * host_parameters_attributes [Array]
+      #   * interfaces_attributes [Hash]
       #   * ip [String] Not required if using a subnet with dhcp proxy
       #   * mac [String] Not required if its a virtual machine
+      #   * managed [String]
       #   * name [String]
+      #   * provision_method [String]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -59,23 +68,31 @@ module ForemanApi
       # @option params [Hash] host
       #   allowed keys are:
       #   * architecture_id [String]
+      #   * compute_resource_id [String]
       #   * domain_id [String]
       #   * environment_id [String]
       #   * hostgroup_id [String]
       #   * image_id [String]
       #   * medium_id [String]
-      #   * model_id_id [String]
+      #   * model_id [String]
       #   * operatingsystem_id [String]
       #   * owner_id [String]
       #   * ptable_id [String]
       #   * puppet_ca_proxy_id [String]
+      #   * puppet_class_ids [Array]
       #   * puppet_proxy_id [String]
       #   * sp_subnet_id [String]
       #   * subnet_id [String]
+      #   * build [String]
+      #   * capabilities [String]
+      #   * compute_attributes [Hash]
+      #   * enabled [String]
       #   * host_parameters_attributes [Array]
       #   * ip [String] Not required if using a subnet with dhcp proxy
       #   * mac [String] Not required if its a virtual machine
+      #   * managed [String]
       #   * name [String]
+      #   * provision_method [String]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

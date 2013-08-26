@@ -438,6 +438,8 @@
 <ul><li>
 <p>architecture_id [String]</p>
 </li><li>
+<p>compute_resource_id [String]</p>
+</li><li>
 <p>domain_id [String]</p>
 </li><li>
 <p>environment_id [String]</p>
@@ -448,7 +450,7 @@
 </li><li>
 <p>medium_id [String]</p>
 </li><li>
-<p>model_id_id [String]</p>
+<p>model_id [String]</p>
 </li><li>
 <p>operatingsystem_id [String]</p>
 </li><li>
@@ -458,19 +460,35 @@
 </li><li>
 <p>puppet_ca_proxy_id [String]</p>
 </li><li>
+<p>puppet_class_ids [Array]</p>
+</li><li>
 <p>puppet_proxy_id [String]</p>
 </li><li>
 <p>sp_subnet_id [String]</p>
 </li><li>
 <p>subnet_id [String]</p>
 </li><li>
+<p>build [String]</p>
+</li><li>
+<p>capabilities [String]</p>
+</li><li>
+<p>compute_attributes [Hash]</p>
+</li><li>
+<p>enabled [String]</p>
+</li><li>
 <p>host_parameters_attributes [Array]</p>
+</li><li>
+<p>interfaces_attributes [Hash]</p>
 </li><li>
 <p>ip [String] Not required if using a subnet with dhcp proxy</p>
 </li><li>
 <p>mac [String] Not required if its a virtual machine</p>
 </li><li>
+<p>managed [String]</p>
+</li><li>
 <p>name [String]</p>
+</li><li>
+<p>provision_method [String]</p>
 </li></ul>
 </div>
           
@@ -506,12 +524,12 @@
       <pre class="lines">
 
 
-53
-54
-55</pre>
+62
+63
+64</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/host.rb', line 53</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/host.rb', line 62</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -625,12 +643,12 @@
       <pre class="lines">
 
 
-91
-92
-93</pre>
+108
+109
+110</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/host.rb', line 91</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/host.rb', line 108</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -910,12 +928,12 @@
       <pre class="lines">
 
 
-109
-110
-111</pre>
+126
+127
+128</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/host.rb', line 109</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/host.rb', line 126</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_puppetrun'>puppetrun</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -1148,12 +1166,12 @@
       <pre class="lines">
 
 
-100
-101
-102</pre>
+117
+118
+119</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/host.rb', line 100</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/host.rb', line 117</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_status'>status</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -1249,6 +1267,8 @@
 <ul><li>
 <p>architecture_id [String]</p>
 </li><li>
+<p>compute_resource_id [String]</p>
+</li><li>
 <p>domain_id [String]</p>
 </li><li>
 <p>environment_id [String]</p>
@@ -1259,7 +1279,7 @@
 </li><li>
 <p>medium_id [String]</p>
 </li><li>
-<p>model_id_id [String]</p>
+<p>model_id [String]</p>
 </li><li>
 <p>operatingsystem_id [String]</p>
 </li><li>
@@ -1269,11 +1289,21 @@
 </li><li>
 <p>puppet_ca_proxy_id [String]</p>
 </li><li>
+<p>puppet_class_ids [Array]</p>
+</li><li>
 <p>puppet_proxy_id [String]</p>
 </li><li>
 <p>sp_subnet_id [String]</p>
 </li><li>
 <p>subnet_id [String]</p>
+</li><li>
+<p>build [String]</p>
+</li><li>
+<p>capabilities [String]</p>
+</li><li>
+<p>compute_attributes [Hash]</p>
+</li><li>
+<p>enabled [String]</p>
 </li><li>
 <p>host_parameters_attributes [Array]</p>
 </li><li>
@@ -1281,7 +1311,11 @@
 </li><li>
 <p>mac [String] Not required if its a virtual machine</p>
 </li><li>
+<p>managed [String]</p>
+</li><li>
 <p>name [String]</p>
+</li><li>
+<p>provision_method [String]</p>
 </li></ul>
 </div>
           
@@ -1317,12 +1351,12 @@
       <pre class="lines">
 
 
-82
-83
-84</pre>
+99
+100
+101</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/host.rb', line 82</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/host.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -1337,7 +1371,7 @@
 </div>
 
     <div id="footer">
-  Generated on Tue Jul 30 15:43:15 2013 by
+  Generated on Mon Aug 26 13:05:12 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7 (ruby-2.0.0).
 </div>
