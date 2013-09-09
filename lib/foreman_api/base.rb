@@ -3,6 +3,7 @@ require 'oauth'
 require 'json'
 require 'foreman_api/rest_client_oauth'
 require 'logger'
+require 'uri'
 
 module ForemanApi
 
@@ -171,7 +172,7 @@ module ForemanApi
       url             = url_param_names.inject(url) do |url, param_name|
         param_value = params[param_name] or
           raise ArgumentError, "missing param '#{param_name}' in parameters"
-        url.sub(":#{param_name}", param_value.to_s)
+        url.sub(":#{param_name}", URI.escape(param_value.to_s))
       end
 
       return url, params.reject { |param_name, _| url_param_names.include? param_name }
