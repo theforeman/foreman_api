@@ -1,15 +1,12 @@
 module ForemanApi
   module Resources
-    class Usergroup < ForemanApi::Base
+    class Interface < ForemanApi::Base
       def self.doc
-        @doc ||= ForemanApi.doc['resources']["usergroups"]
+        @doc ||= ForemanApi.doc['resources']["interfaces"]
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] order  sort results 
-      # @option params [String] page  paginate results 
-      # @option params [String] per_page  number of entries per request 
-      # @option params [String] search  filter results 
+      # @option params [String] host_id  id or name of host 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -18,7 +15,8 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] id
+      # @option params [String] id  id or name of interface 
+      # @option params [String] host_id  id or name of nested host 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -27,9 +25,18 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] usergroup
+      # @option params [String] host_id  id or name of host 
+      # @option params [Hash] interface  interface information 
       #   allowed keys are:
-      #   * name [String]
+      #   * domain_id [Numeric]  foreman domain id of interface 
+      #   * subnet_id [Numeric]  foreman subnet id of interface 
+      #   * ip [String]  ip address of interface 
+      #   * mac [String]  mac address of interface 
+      #   * name [String]  interface name 
+      #   * password [String]
+      #   * provider [String]  interface provider, i.e: ipmi 
+      #   * type [String]  interface type, i.e: nic::bmc 
+      #   * username [String]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -38,10 +45,19 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] id
-      # @option params [Hash] usergroup
+      # @option params [Object] id Part of +/api/hosts/:host_id/interfaces/:id+ path
+      # @option params [String] host_id  id or name of host 
+      # @option params [Hash] interface  interface information 
       #   allowed keys are:
-      #   * name [String]
+      #   * domain_id [Numeric]  foreman domain id of interface 
+      #   * subnet_id [Numeric]  foreman subnet id of interface 
+      #   * ip [String]  ip address of interface 
+      #   * mac [String]  mac address of interface 
+      #   * name [String]  interface name 
+      #   * password [String]
+      #   * provider [String]  interface provider, i.e: ipmi 
+      #   * type [String]  interface type, i.e: nic::bmc 
+      #   * username [String]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -50,7 +66,8 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] id
+      # @option params [String] id  id of interface 
+      # @option params [Object] host_id Part of +/api/hosts/:host_id/interfaces/:id+ path
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

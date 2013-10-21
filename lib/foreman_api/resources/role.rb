@@ -6,8 +6,8 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] page Paginate results
-      # @option params [String] per_page Number of entries per request
+      # @option params [String] page  paginate results 
+      # @option params [String] per_page  number of entries per request 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

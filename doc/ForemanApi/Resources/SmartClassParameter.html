@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>
-  Class: ForemanApi::Resources::Subnet
+  Class: ForemanApi::Resources::SmartClassParameter
   
     &mdash; Documentation by YARD 0.8.7
   
@@ -34,7 +34,7 @@
     <a href="../../_index.html">Index (S)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../../ForemanApi.html" title="ForemanApi (module)">ForemanApi</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Resources.html" title="ForemanApi::Resources (module)">Resources</a></span></span>
      &raquo; 
-    <span class="title">Subnet</span>
+    <span class="title">SmartClassParameter</span>
   
 
   <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
@@ -63,7 +63,7 @@
 
     <iframe id="search_frame"></iframe>
 
-    <div id="content"><h1>Class: ForemanApi::Resources::Subnet
+    <div id="content"><h1>Class: ForemanApi::Resources::SmartClassParameter
   
   
   
@@ -80,7 +80,7 @@
           
             <li class="next">Base</li>
           
-            <li class="next">ForemanApi::Resources::Subnet</li>
+            <li class="next">ForemanApi::Resources::SmartClassParameter</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/foreman_api/resources/subnet.rb</dd>
+    <dd class="r2 last">lib/foreman_api/resources/smart_class_parameter.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -146,54 +146,6 @@
     </h2>
 
     <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#create-instance_method" title="#create (instance method)">- (Array) <strong>create</strong>(params = {}, headers = {}) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>First item: parsed data; second item: raw body.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#destroy-instance_method" title="#destroy (instance method)">- (Array) <strong>destroy</strong>(params = {}, headers = {}) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>First item: parsed data; second item: raw body.</p>
-</div></span>
-  
-</li>
-
       
         <li class="public ">
   <span class="summary_signature">
@@ -297,10 +249,10 @@
 6</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/subnet.rb', line 4</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/smart_class_parameter.rb', line 4</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_doc'>doc</span>
-  <span class='ivar'>@doc</span> <span class='op'>||=</span> <span class='const'>ForemanApi</span><span class='period'>.</span><span class='id identifier rubyid_doc'>doc</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>resources</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>subnets</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='ivar'>@doc</span> <span class='op'>||=</span> <span class='const'>ForemanApi</span><span class='period'>.</span><span class='id identifier rubyid_doc'>doc</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>resources</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>smart_class_parameters</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -314,280 +266,7 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="create-instance_method">
-  
-    - (<tt>Array</tt>) <strong>create</strong>(params = {}, headers = {}) 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns First item: parsed data; second item: raw body</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>params</span>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>{}</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>a hash of params to be passed to the service</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>headers</span>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>{}</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>additional http headers</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-  
-    
-    
-    <p class="tag_title">Options Hash (<tt>params</tt>):</p>
-    <ul class="option">
-      
-        <li>
-          <span class="name">subnet</span>
-          <span class="type">(<tt>Hash</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'>
-<p>allowed keys are:</p>
-<ul><li>
-<p>dhcp_id [String]  dhcp proxy to use within this subnet</p>
-</li><li>
-<p>dns_id [String]  dns proxy to use within this subnet</p>
-</li><li>
-<p>domain_ids [Array]  domains in which this subnet is part</p>
-</li><li>
-<p>tftp_id [String]  tftp proxy to use within this subnet</p>
-</li><li>
-<p>dns_primary [String]  primary dns for this subnet</p>
-</li><li>
-<p>dns_secondary [String]  secondary dns for this subnet</p>
-</li><li>
-<p>from [String]  starting ip address for ip auto suggestion</p>
-</li><li>
-<p>gateway [String]  primary dns for this subnet</p>
-</li><li>
-<p>mask [String]  netmask for this subnet</p>
-</li><li>
-<p>name [String]  subnet name</p>
-</li><li>
-<p>network [String]  subnet network</p>
-</li><li>
-<p>to [String]  ending ip address for ip auto suggestion</p>
-</li><li>
-<p>vlanid [String]  vlan id for this subnet</p>
-</li></ul>
-</div>
-          
-        </li>
-      
-    </ul>
-  
-    
-    
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Array</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>First item: parsed data; second item: raw body</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-48
-49
-50</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/subnet.rb', line 48</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="destroy-instance_method">
-  
-    - (<tt>Array</tt>) <strong>destroy</strong>(params = {}, headers = {}) 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns First item: parsed data; second item: raw body</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>params</span>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>{}</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>a hash of params to be passed to the service</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>headers</span>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>{}</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>additional http headers</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-  
-    
-    
-    <p class="tag_title">Options Hash (<tt>params</tt>):</p>
-    <ul class="option">
-      
-        <li>
-          <span class="name">id</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'>
-<p>subnet numeric identifier</p>
-</div>
-          
-        </li>
-      
-    </ul>
-  
-    
-    
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Array</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>First item: parsed data; second item: raw body</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-81
-82
-83</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/subnet.rb', line 81</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="index-instance_method">
+  <h3 class="signature first" id="index-instance_method">
   
     - (<tt>Array</tt>) <strong>index</strong>(params = {}, headers = {}) 
   
@@ -650,6 +329,42 @@
     
     <p class="tag_title">Options Hash (<tt>params</tt>):</p>
     <ul class="option">
+      
+        <li>
+          <span class="name">environment_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">host_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">hostgroup_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">puppetclass_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+        </li>
       
         <li>
           <span class="name">order</span>
@@ -733,12 +448,12 @@
       <pre class="lines">
 
 
-16
-17
-18</pre>
+20
+21
+22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/subnet.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/smart_class_parameter.rb', line 20</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -852,12 +567,12 @@
       <pre class="lines">
 
 
-25
-26
-27</pre>
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/subnet.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/smart_class_parameter.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show'>show</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -939,14 +654,10 @@
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>subnet numeric identifier</p>
-</div>
-          
         </li>
       
         <li>
-          <span class="name">subnet</span>
+          <span class="name">smart_class_parameter</span>
           <span class="type">(<tt>Hash</tt>)</span>
           <span class="default">
             
@@ -955,31 +666,23 @@
             &mdash; <div class='inline'>
 <p>allowed keys are:</p>
 <ul><li>
-<p>dhcp_id [String, nil]  dhcp proxy to use within this subnet</p>
+<p>default_value [String]</p>
 </li><li>
-<p>dns_id [String, nil]  dns proxy to use within this subnet</p>
+<p>description [String]</p>
 </li><li>
-<p>domain_ids [Array, nil]  domains in which this subnet is part</p>
+<p>override [String]</p>
 </li><li>
-<p>tftp_id [String, nil]  tftp proxy to use within this subnet</p>
+<p>override_value_order [String]</p>
 </li><li>
-<p>dns_primary [String, nil]  primary dns for this subnet</p>
+<p>parameter_type [String]</p>
 </li><li>
-<p>dns_secondary [String, nil]  secondary dns for this subnet</p>
+<p>path [String]</p>
 </li><li>
-<p>from [String, nil]  starting ip address for ip auto suggestion</p>
+<p>required [String]</p>
 </li><li>
-<p>gateway [String, nil]  primary dns for this subnet</p>
+<p>validator_rule [String]</p>
 </li><li>
-<p>mask [String]  netmask for this subnet</p>
-</li><li>
-<p>name [String]  subnet name</p>
-</li><li>
-<p>network [String]  subnet network</p>
-</li><li>
-<p>to [String, nil]  ending ip address for ip auto suggestion</p>
-</li><li>
-<p>vlanid [String, nil]  vlan id for this subnet</p>
+<p>validator_type [String]</p>
 </li></ul>
 </div>
           
@@ -1015,12 +718,12 @@
       <pre class="lines">
 
 
-72
-73
-74</pre>
+49
+50
+51</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/subnet.rb', line 72</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/smart_class_parameter.rb', line 49</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -1035,7 +738,7 @@
 </div>
 
     <div id="footer">
-  Generated on Mon Oct 21 11:10:44 2013 by
+  Generated on Mon Oct 21 11:10:47 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7 (ruby-2.0.0).
 </div>

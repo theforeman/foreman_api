@@ -6,9 +6,13 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] environment_id Id of nested environment
-      # @option params [String] host_id Id of nested host
-      # @option params [String] hostgroup_id Id of nested hostgroup
+      # @option params [String] environment_id  id of nested environment 
+      # @option params [String] host_id  id of nested host 
+      # @option params [String] hostgroup_id  id of nested hostgroup 
+      # @option params [String] order  sort results 
+      # @option params [String] page  paginate results 
+      # @option params [String] per_page  number of entries per request 
+      # @option params [String] search  filter results 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -17,10 +21,10 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] id Id of puppetclass
-      # @option params [String] environment_id Id of nested environment
-      # @option params [String] host_id Id of nested host
-      # @option params [String] hostgroup_id Id of nested hostgroup
+      # @option params [String] id  id of puppetclass 
+      # @option params [String] environment_id  id of nested environment 
+      # @option params [String] host_id  id of nested host 
+      # @option params [String] hostgroup_id  id of nested hostgroup 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

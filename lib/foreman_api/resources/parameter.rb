@@ -6,12 +6,12 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] domain_id Id of domain
-      # @option params [String] host_id Id of host
-      # @option params [String] hostgroup_id Id of hostgroup
-      # @option params [String] operatingsystem_id Id of operating system
-      # @option params [String] page Paginate results
-      # @option params [String] per_page Number of entries per request
+      # @option params [String] domain_id  id of domain 
+      # @option params [String] host_id  id of host 
+      # @option params [String] hostgroup_id  id of hostgroup 
+      # @option params [String] operatingsystem_id  id of operating system 
+      # @option params [String] page  paginate results 
+      # @option params [String] per_page  number of entries per request 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -20,11 +20,11 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] id Id of parameter
-      # @option params [String] domain_id Id of domain
-      # @option params [String] host_id Id of host
-      # @option params [String] hostgroup_id Id of hostgroup
-      # @option params [String] operatingsystem_id Id of operating system
+      # @option params [String] id  id of parameter 
+      # @option params [String] domain_id  id of domain 
+      # @option params [String] host_id  id of host 
+      # @option params [String] hostgroup_id  id of hostgroup 
+      # @option params [String] operatingsystem_id  id of operating system 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -33,10 +33,10 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] domain_id Id of domain
-      # @option params [String] host_id Id of host
-      # @option params [String] hostgroup_id Id of hostgroup
-      # @option params [String] operatingsystem_id Id of operating system
+      # @option params [String] domain_id  id of domain 
+      # @option params [String] host_id  id of host 
+      # @option params [String] hostgroup_id  id of hostgroup 
+      # @option params [String] operatingsystem_id  id of operating system 
       # @option params [Hash] parameter
       #   allowed keys are:
       #   * name [String]
@@ -49,11 +49,11 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] id Id of parameter
-      # @option params [String] domain_id Id of domain
-      # @option params [String] host_id Id of host
-      # @option params [String] hostgroup_id Id of hostgroup
-      # @option params [String] operatingsystem_id Id of operating system
+      # @option params [String] id  id of parameter 
+      # @option params [String] domain_id  id of domain 
+      # @option params [String] host_id  id of host 
+      # @option params [String] hostgroup_id  id of hostgroup 
+      # @option params [String] operatingsystem_id  id of operating system 
       # @option params [Hash] parameter
       #   allowed keys are:
       #   * name [String]
@@ -66,11 +66,11 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] id Id of parameter
-      # @option params [String] domain_id Id of domain
-      # @option params [String] host_id Id of host
-      # @option params [String] hostgroup_id Id of hostgroup
-      # @option params [String] operatingsystem_id Id of operating system
+      # @option params [String] id  id of parameter 
+      # @option params [String] domain_id  id of domain 
+      # @option params [String] host_id  id of host 
+      # @option params [String] hostgroup_id  id of hostgroup 
+      # @option params [String] operatingsystem_id  id of operating system 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

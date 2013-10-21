@@ -6,10 +6,10 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] order Sort results
-      # @option params [String] page Paginate results
-      # @option params [String] per_page Number of entries per request
-      # @option params [String] search Filter results
+      # @option params [String] order  sort results 
+      # @option params [String] page  paginate results 
+      # @option params [String] per_page  number of entries per request 
+      # @option params [String] search  filter results 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -18,7 +18,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] id May be numerical id or domain name
+      # @option params [String] id  may be numerical id or domain name 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -29,10 +29,10 @@ module ForemanApi
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [Hash] domain
       #   allowed keys are:
-      #   * dns_id [String, nil] Dns proxy to use within this domain
-      #   * domain_parameters_attributes [Array] Array of parameters (name, value)
-      #   * fullname [String, nil] Full name describing the domain
-      #   * name [String] The full dns domain name
+      #   * dns_id [String, nil]  dns proxy to use within this domain 
+      #   * domain_parameters_attributes [Array]  array of parameters (name, value) 
+      #   * fullname [String, nil]  full name describing the domain 
+      #   * name [String]  the full dns domain name 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -44,10 +44,10 @@ module ForemanApi
       # @option params [String] id
       # @option params [Hash] domain
       #   allowed keys are:
-      #   * dns_id [String, nil] Dns proxy to use within this domain
-      #   * domain_parameters_attributes [Array] Array of parameters (name, value)
-      #   * fullname [String, nil] Full name describing the domain
-      #   * name [String, nil] The full dns domain name
+      #   * dns_id [String, nil]  dns proxy to use within this domain 
+      #   * domain_parameters_attributes [Array]  array of parameters (name, value) 
+      #   * fullname [String, nil]  full name describing the domain 
+      #   * name [String, nil]  the full dns domain name 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

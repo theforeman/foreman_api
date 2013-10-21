@@ -1,12 +1,11 @@
 module ForemanApi
   module Resources
-    class Dashboard < ForemanApi::Base
+    class Statistic < ForemanApi::Base
       def self.doc
-        @doc ||= ForemanApi.doc['resources']["dashboard"]
+        @doc ||= ForemanApi.doc['resources']["statistics"]
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] search  filter results 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

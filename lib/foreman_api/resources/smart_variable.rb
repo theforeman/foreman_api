@@ -1,11 +1,14 @@
 module ForemanApi
   module Resources
-    class Usergroup < ForemanApi::Base
+    class SmartVariable < ForemanApi::Base
       def self.doc
-        @doc ||= ForemanApi.doc['resources']["usergroups"]
+        @doc ||= ForemanApi.doc['resources']["smart_variables"]
       end
 
       # @param [Hash] params a hash of params to be passed to the service
+      # @option params [String] host_id
+      # @option params [String] hostgroup_id
+      # @option params [String] puppetclass_id
       # @option params [String] order  sort results 
       # @option params [String] page  paginate results 
       # @option params [String] per_page  number of entries per request 
@@ -27,9 +30,16 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] usergroup
+      # @option params [Hash] smart_variable
       #   allowed keys are:
-      #   * name [String]
+      #   * puppetclass_id [String]
+      #   * default_value [String]
+      #   * description [String]
+      #   * override_value_order [String]
+      #   * validator_rule [String]
+      #   * validator_type [String]
+      #   * variable [String]
+      #   * variable_type [String]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -39,9 +49,16 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
-      # @option params [Hash] usergroup
+      # @option params [Hash] smart_variable
       #   allowed keys are:
-      #   * name [String]
+      #   * puppetclass_id [String]
+      #   * default_value [String]
+      #   * description [String]
+      #   * override_value_order [String]
+      #   * validator_rule [String]
+      #   * validator_type [String]
+      #   * variable [String]
+      #   * variable_type [String]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

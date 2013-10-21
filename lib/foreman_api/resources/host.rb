@@ -6,10 +6,10 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] order Sort results
-      # @option params [String] page Paginate results
-      # @option params [String] per_page Number of entries per request
-      # @option params [String] search Filter results
+      # @option params [String] order  sort results 
+      # @option params [String] page  paginate results 
+      # @option params [String] per_page  number of entries per request 
+      # @option params [String] search  filter results 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -51,8 +51,8 @@ module ForemanApi
       #   * enabled [String]
       #   * host_parameters_attributes [Array]
       #   * interfaces_attributes [Hash]
-      #   * ip [String] Not required if using a subnet with dhcp proxy
-      #   * mac [String] Not required if its a virtual machine
+      #   * ip [String]  not required if using a subnet with dhcp proxy 
+      #   * mac [String]  not required if its a virtual machine 
       #   * managed [String]
       #   * name [String]
       #   * provision_method [String]
@@ -88,8 +88,8 @@ module ForemanApi
       #   * compute_attributes [Hash]
       #   * enabled [String]
       #   * host_parameters_attributes [Array]
-      #   * ip [String] Not required if using a subnet with dhcp proxy
-      #   * mac [String] Not required if its a virtual machine
+      #   * ip [String]  not required if using a subnet with dhcp proxy 
+      #   * mac [String]  not required if its a virtual machine 
       #   * managed [String]
       #   * name [String]
       #   * provision_method [String]
@@ -124,6 +124,38 @@ module ForemanApi
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
       def puppetrun(params = {}, headers = {})
+        perform_call(__method__, params, headers)
+      end
+
+      # @param [Hash] params a hash of params to be passed to the service
+      # @option params [String] id
+      # @option params [String] power_action  power action, valid actions are (‘on’, ‘start’)’, (‘off’, ‘stop’), (‘soft’, ‘reboot’), (‘cycle’, ‘reset’), (‘state’, ‘status’) 
+      #
+      # @param [Hash] headers additional http headers
+      # @return [Array] First item: parsed data; second item: raw body
+      def power(params = {}, headers = {})
+        perform_call(__method__, params, headers)
+      end
+
+      # @param [Hash] params a hash of params to be passed to the service
+      # @option params [String] id
+      # @option params [String] device  boot device, valid devices are disk, cdrom, pxe, bios 
+      #
+      # @param [Hash] headers additional http headers
+      # @return [Array] First item: parsed data; second item: raw body
+      def boot(params = {}, headers = {})
+        perform_call(__method__, params, headers)
+      end
+
+      # @param [Hash] params a hash of params to be passed to the service
+      # @option params [String] certname  optional: certname of the host 
+      # @option params [Hash] facts  hash containing the facts for the host 
+      # @option params [String] name  hostname of the host 
+      # @option params [String] type  optional: the sti type of host to create 
+      #
+      # @param [Hash] headers additional http headers
+      # @return [Array] First item: parsed data; second item: raw body
+      def facts(params = {}, headers = {})
         perform_call(__method__, params, headers)
       end
 
