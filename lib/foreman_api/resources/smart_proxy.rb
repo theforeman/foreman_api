@@ -6,9 +6,21 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] page Paginate results
-      # @option params [String] per_page Number of entries per request
-      # @option params [String] type Filter by type
+      # @option params [Object] id Part of +/api/smart_proxies/:id/import_puppetclasses+ path
+      # @option params [String] environment_id
+      # @option params [String] smart_proxy_id
+      # @option params [String] dryrun
+      #
+      # @param [Hash] headers additional http headers
+      # @return [Array] First item: parsed data; second item: raw body
+      def import_puppetclasses(params = {}, headers = {})
+        perform_call(__method__, params, headers)
+      end
+
+      # @param [Hash] params a hash of params to be passed to the service
+      # @option params [String] page  paginate results 
+      # @option params [String] per_page  number of entries per request 
+      # @option params [String] type  filter by type 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -56,6 +68,15 @@ module ForemanApi
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
       def destroy(params = {}, headers = {})
+        perform_call(__method__, params, headers)
+      end
+
+      # @param [Hash] params a hash of params to be passed to the service
+      # @option params [String] id
+      #
+      # @param [Hash] headers additional http headers
+      # @return [Array] First item: parsed data; second item: raw body
+      def refresh(params = {}, headers = {})
         perform_call(__method__, params, headers)
       end
 

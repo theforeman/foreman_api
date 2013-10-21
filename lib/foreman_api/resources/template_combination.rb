@@ -18,8 +18,8 @@ module ForemanApi
       # @option params [String] config_template_id
       # @option params [Hash] template_combination
       #   allowed keys are:
-      #   * environment_id [String, nil] Environment id
-      #   * hostgroup_id [String, nil] Hostgroup id
+      #   * environment_id [String, nil]  environment id 
+      #   * hostgroup_id [String, nil]  hostgroup id 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

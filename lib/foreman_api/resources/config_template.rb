@@ -6,10 +6,10 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] order Sort results
-      # @option params [String] page Paginate results
-      # @option params [String] per_page Number of entries per request
-      # @option params [String] search Filter results
+      # @option params [String] order  sort results 
+      # @option params [String] page  paginate results 
+      # @option params [String] per_page  number of entries per request 
+      # @option params [String] search  filter results 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -29,13 +29,13 @@ module ForemanApi
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [Hash] config_template
       #   allowed keys are:
-      #   * operatingsystem_ids [Array] Array of operating systems id to associate the template with
-      #   * template_kind_id [String, nil] Not relevant for snippet
+      #   * operatingsystem_ids [Array]  array of operating systems id to associate the template with 
+      #   * template_kind_id [String, nil]  not relevant for snippet 
       #   * audit_comment [String, nil]
-      #   * name [String] Template name
+      #   * name [String]  template name 
       #   * snippet [String, nil]
       #   * template [String]
-      #   * template_combinations_attributes [Array] Array of template combinations (hostgroup_id, environment_id)
+      #   * template_combinations_attributes [Array]  array of template combinations (hostgroup_id, environment_id) 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -47,13 +47,13 @@ module ForemanApi
       # @option params [String] id
       # @option params [Hash] config_template
       #   allowed keys are:
-      #   * operatingsystem_ids [Array] Array of operating systems id to associate the template with
-      #   * template_kind_id [String, nil] Not relevant for snippet
+      #   * operatingsystem_ids [Array]  array of operating systems id to associate the template with 
+      #   * template_kind_id [String, nil]  not relevant for snippet 
       #   * audit_comment [String, nil]
-      #   * name [String] Template name
+      #   * name [String]  template name 
       #   * snippet [String]
       #   * template [String]
-      #   * template_combinations_attributes [Array] Array of template combinations (hostgroup_id, environment_id)
+      #   * template_combinations_attributes [Array]  array of template combinations (hostgroup_id, environment_id) 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -62,7 +62,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] version Template version
+      # @option params [String] version  template version 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

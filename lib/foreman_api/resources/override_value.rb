@@ -1,15 +1,15 @@
 module ForemanApi
   module Resources
-    class Usergroup < ForemanApi::Base
+    class OverrideValue < ForemanApi::Base
       def self.doc
-        @doc ||= ForemanApi.doc['resources']["usergroups"]
+        @doc ||= ForemanApi.doc['resources']["override_values"]
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] order  sort results 
+      # @option params [String] smart_class_parameter_id
+      # @option params [String] smart_variable_id
       # @option params [String] page  paginate results 
       # @option params [String] per_page  number of entries per request 
-      # @option params [String] search  filter results 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -19,6 +19,8 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
+      # @option params [String] smart_class_parameter_id
+      # @option params [String] smart_variable_id
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -27,9 +29,12 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] usergroup
+      # @option params [String] smart_class_parameter_id
+      # @option params [String] smart_variable_id
+      # @option params [Hash] override_value
       #   allowed keys are:
-      #   * name [String]
+      #   * match [String]
+      #   * value [String]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -38,10 +43,13 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [String] id
-      # @option params [Hash] usergroup
+      # @option params [Object] id Part of +/api/smart_variables/:smart_variable_id/override_values/:id+ path
+      # @option params [String] smart_class_parameter_id
+      # @option params [String] smart_variable_id
+      # @option params [Hash] override_value
       #   allowed keys are:
-      #   * name [String]
+      #   * match [String]
+      #   * value [String]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -51,6 +59,8 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
+      # @option params [String] smart_class_parameter_id
+      # @option params [String] smart_variable_id
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

@@ -150,6 +150,30 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#available_images-instance_method" title="#available_images (instance method)">- (Array) <strong>available_images</strong>(params = {}, headers = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>First item: parsed data; second item: raw body.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#create-instance_method" title="#create (instance method)">- (Array) <strong>create</strong>(params = {}, headers = {}) </a>
     
 
@@ -314,7 +338,126 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="create-instance_method">
+  <h3 class="signature first" id="available_images-instance_method">
+  
+    - (<tt>Array</tt>) <strong>available_images</strong>(params = {}, headers = {}) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns First item: parsed data; second item: raw body</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>params</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a hash of params to be passed to the service</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>headers</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>additional http headers</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>params</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+        </li>
+      
+    </ul>
+  
+    
+    
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>First item: parsed data; second item: raw body</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+84
+85
+86</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/compute_resource.rb', line 84</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_available_images'>available_images</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create-instance_method">
   
     - (<tt>Array</tt>) <strong>create</strong>(params = {}, headers = {}) 
   
@@ -392,24 +535,24 @@
 </li><li>
 <p>name [String]</p>
 </li><li>
-<p>password [String] Password for ovirt, ec2, vmware, openstack. secret key
+<p>password [String]  password for ovirt, ec2, vmware, openstack. secret key
 for ec2</p>
 </li><li>
-<p>provider [String] Providers include libvirt, ovirt, ec2, vmware, openstack,
-rackspace</p>
+<p>provider [String]  providers include libvirt, ovirt, ec2, vmware,
+openstack, rackspace, gce</p>
 </li><li>
-<p>region [String] For ec2 only</p>
+<p>region [String]  for ec2 only</p>
 </li><li>
-<p>server [String] For vmware</p>
+<p>server [String]  for vmware</p>
 </li><li>
-<p>tenant [String] For openstack only</p>
+<p>tenant [String]  for openstack only</p>
 </li><li>
-<p>url [String] Url for libvirt, ovirt, and openstack</p>
+<p>url [String]  url for libvirt, ovirt, and openstack</p>
 </li><li>
-<p>user [String] Username for ovirt, ec2, vmware, openstack. access key for
+<p>user [String]  username for ovirt, ec2, vmware, openstack. access key for
 ec2.</p>
 </li><li>
-<p>uuid [String] For ovirt, vmware datacenter</p>
+<p>uuid [String]  for ovirt, vmware datacenter</p>
 </li></ul>
 </div>
           
@@ -652,7 +795,7 @@ ec2.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>Sort results</p>
+<p>sort results</p>
 </div>
           
         </li>
@@ -665,7 +808,7 @@ ec2.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>Paginate results</p>
+<p>paginate results</p>
 </div>
           
         </li>
@@ -678,7 +821,7 @@ ec2.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>Number of entries per request</p>
+<p>number of entries per request</p>
 </div>
           
         </li>
@@ -691,7 +834,7 @@ ec2.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>Filter results</p>
+<p>filter results</p>
 </div>
           
         </li>
@@ -948,24 +1091,24 @@ ec2.</p>
 </li><li>
 <p>name [String]</p>
 </li><li>
-<p>password [String] Password for ovirt, ec2, vmware, openstack. secret key
+<p>password [String]  password for ovirt, ec2, vmware, openstack. secret key
 for ec2</p>
 </li><li>
-<p>provider [String] Providers include libvirt, ovirt, ec2, vmware, openstack,
-rackspace</p>
+<p>provider [String]  providers include libvirt, ovirt, ec2, vmware,
+openstack, rackspace, gce</p>
 </li><li>
-<p>region [String] For ec2 only</p>
+<p>region [String]  for ec2 only</p>
 </li><li>
-<p>server [String] For vmware</p>
+<p>server [String]  for vmware</p>
 </li><li>
-<p>tenant [String] For openstack only</p>
+<p>tenant [String]  for openstack only</p>
 </li><li>
-<p>url [String] Url for libvirt, ovirt, and openstack</p>
+<p>url [String]  url for libvirt, ovirt, and openstack</p>
 </li><li>
-<p>user [String] Username for ovirt, ec2, vmware, openstack. access key for
+<p>user [String]  username for ovirt, ec2, vmware, openstack. access key for
 ec2.</p>
 </li><li>
-<p>uuid [String] For ovirt, vmware datacenter</p>
+<p>uuid [String]  for ovirt, vmware datacenter</p>
 </li></ul>
 </div>
           
@@ -1021,7 +1164,7 @@ ec2.</p>
 </div>
 
     <div id="footer">
-  Generated on Mon Aug 26 13:05:15 2013 by
+  Generated on Mon Oct 21 11:10:47 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7 (ruby-2.0.0).
 </div>
