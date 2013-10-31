@@ -6,7 +6,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Object] id Part of +/api/smart_proxies/:id/import_puppetclasses+ path
+      # @option params [String] id
       # @option params [String] environment_id
       # @option params [String] smart_proxy_id
       # @option params [String] dryrun

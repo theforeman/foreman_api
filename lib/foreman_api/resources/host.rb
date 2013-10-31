@@ -50,7 +50,6 @@ module ForemanApi
       #   * compute_attributes [Hash]
       #   * enabled [String]
       #   * host_parameters_attributes [Array]
-      #   * interfaces_attributes [Hash]
       #   * ip [String]  not required if using a subnet with dhcp proxy 
       #   * mac [String]  not required if its a virtual machine 
       #   * managed [String]
