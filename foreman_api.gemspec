@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["mbacovsk@redhat.com"]
   gem.description   = %q{Helps you to use Foreman's API calls from your app}
   gem.summary       = %q{Ruby bindings for Forman's rest API}
-  gem.homepage      = "http://github.com/mbacovsky/foreman_api"
+  gem.homepage      = "http://github.com/theforeman/foreman_api"
 
   gem.files         = `git ls-files`.split($\)
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
