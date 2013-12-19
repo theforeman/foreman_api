@@ -39,6 +39,7 @@ module ForemanApi
       #   * model_id [String]
       #   * operatingsystem_id [String]
       #   * owner_id [String]
+      #   * progress_report_id [String]  uuid to track orchestration tasks status, get /api/orchestration/:uuid/tasks 
       #   * ptable_id [String]
       #   * puppet_ca_proxy_id [String]
       #   * puppet_class_ids [Array]
@@ -76,6 +77,7 @@ module ForemanApi
       #   * model_id [String]
       #   * operatingsystem_id [String]
       #   * owner_id [String]
+      #   * progress_report_id [String]  uuid to track orchestration tasks status, get /api/orchestration/:uuid/tasks 
       #   * ptable_id [String]
       #   * puppet_ca_proxy_id [String]
       #   * puppet_class_ids [Array]

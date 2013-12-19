@@ -29,6 +29,7 @@ module ForemanApi
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [Hash] operatingsystem
       #   allowed keys are:
+      #   * description [String]
       #   * family [String]
       #   * major [String]
       #   * minor [String]
@@ -45,6 +46,7 @@ module ForemanApi
       # @option params [String] id
       # @option params [Hash] operatingsystem
       #   allowed keys are:
+      #   * description [String]
       #   * family [String]
       #   * major [String]
       #   * minor [String]
