@@ -8,12 +8,10 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{Ruby bindings for Forman's rest API}
   gem.homepage      = "http://github.com/theforeman/foreman_api"
 
-  gem.files         = `git ls-files`.split($\)
+  gem.files         = Dir['{lib,doc,test}/**/*', 'README*', 'MIT-LICENSE']
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.files.reject! do |fn|
-    fn.start_with?("lib/foreman_api/generator") ||
-      fn == 'bin/generate.rb' ||
-      fn == 'rubygem-foreman_api.spec'
+    fn.start_with?("lib/foreman_api/generator")
   end
   gem.name          = "foreman_api"
   gem.require_paths = ["lib"]
