@@ -25,20 +25,20 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] auth_source_ldap
+      # @option params [Hash, nil] auth_source_ldap
       #   allowed keys are:
-      #   * account [String]
-      #   * account_password [String]  required if onthefly_register is true 
-      #   * attr_firstname [String]  required if onthefly_register is true 
-      #   * attr_lastname [String]  required if onthefly_register is true 
-      #   * attr_login [String]  required if onthefly_register is true 
-      #   * attr_mail [String]  required if onthefly_register is true 
-      #   * base_dn [String]
+      #   * account [String, nil]
+      #   * account_password [String, nil]  required if onthefly_register is true 
+      #   * attr_firstname [String, nil]  required if onthefly_register is true 
+      #   * attr_lastname [String, nil]  required if onthefly_register is true 
+      #   * attr_login [String, nil]  required if onthefly_register is true 
+      #   * attr_mail [String, nil]  required if onthefly_register is true 
+      #   * base_dn [String, nil]
       #   * host [String]
       #   * name [String]
-      #   * onthefly_register [String]
-      #   * port [String]  defaults to 389 
-      #   * tls [String]
+      #   * onthefly_register [String, nil]
+      #   * port [String, nil]  defaults to 389 
+      #   * tls [String, nil]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -48,20 +48,20 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
-      # @option params [Hash] auth_source_ldap
+      # @option params [Hash, nil] auth_source_ldap
       #   allowed keys are:
-      #   * account [String]
-      #   * account_password [String]  required if onthefly_register is true 
-      #   * attr_firstname [String]  required if onthefly_register is true 
-      #   * attr_lastname [String]  required if onthefly_register is true 
-      #   * attr_login [String]  required if onthefly_register is true 
-      #   * attr_mail [String]  required if onthefly_register is true 
-      #   * base_dn [String]
+      #   * account [String, nil]
+      #   * account_password [String, nil]  required if onthefly_register is true 
+      #   * attr_firstname [String, nil]  required if onthefly_register is true 
+      #   * attr_lastname [String, nil]  required if onthefly_register is true 
+      #   * attr_login [String, nil]  required if onthefly_register is true 
+      #   * attr_mail [String, nil]  required if onthefly_register is true 
+      #   * base_dn [String, nil]
       #   * host [String]
       #   * name [String]
-      #   * onthefly_register [String]
-      #   * port [String]  defaults to 389 
-      #   * tls [String]
+      #   * onthefly_register [String, nil]
+      #   * port [String, nil]  defaults to 389 
+      #   * tls [String, nil]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

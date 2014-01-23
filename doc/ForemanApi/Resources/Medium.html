@@ -380,7 +380,7 @@
       
         <li>
           <span class="name">medium</span>
-          <span class="type">(<tt>Hash</tt>)</span>
+          <span class="type">(<tt>Hash</tt>, <tt>nil</tt>)</span>
           <span class="default">
             
           </span>
@@ -388,13 +388,13 @@
             &mdash; <div class='inline'>
 <p>allowed keys are:</p>
 <ul><li>
-<p>operatingsystem_ids [Array]</p>
+<p>operatingsystem_ids [Array, nil]</p>
 </li><li>
 <p>name [String]  name of media</p>
 </li><li>
-<p>os_family [String]  the family that the operating system belongs to. 
-available families:   archlinux  debian  freebsd  gentoo  redhat  solaris 
-suse  windows</p>
+<p>os_family [String, nil]  the family that the operating system belongs to. 
+available families:   aix  archlinux  debian  freebsd  gentoo  junos 
+redhat  solaris  suse  windows</p>
 </li><li>
 <p>path [String]  the path to the medium, can be a url or a valid nfs server
 (exclusive of the architecture).  for example <a
@@ -928,7 +928,7 @@ operating system.  solaris and debian media may also use $release.</p>
       
         <li>
           <span class="name">medium</span>
-          <span class="type">(<tt>Hash</tt>)</span>
+          <span class="type">(<tt>Hash</tt>, <tt>nil</tt>)</span>
           <span class="default">
             
           </span>
@@ -936,13 +936,13 @@ operating system.  solaris and debian media may also use $release.</p>
             &mdash; <div class='inline'>
 <p>allowed keys are:</p>
 <ul><li>
-<p>operatingsystem_ids [Array]</p>
+<p>operatingsystem_ids [Array, nil]</p>
 </li><li>
 <p>name [String]  name of media</p>
 </li><li>
 <p>os_family [String, nil]  the family that the operating system belongs to. 
-available families:   archlinux  debian  freebsd  gentoo  redhat  solaris 
-suse  windows</p>
+available families:   aix  archlinux  debian  freebsd  gentoo  junos 
+redhat  solaris  suse  windows</p>
 </li><li>
 <p>path [String]  the path to the medium, can be a url or a valid nfs server
 (exclusive of the architecture).  for example <a
@@ -1005,7 +1005,7 @@ operating system.  solaris and debian media may also use $release.</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Dec 19 15:47:32 2013 by
+  Generated on Thu Jan 23 15:40:32 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7 (ruby-2.0.0).
 </div>

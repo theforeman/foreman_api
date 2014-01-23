@@ -468,13 +468,13 @@
       
         <li>
           <span class="name">id</span>
-          <span class="type">(<tt>Object</tt>)</span>
+          <span class="type">(<tt>String</tt>)</span>
           <span class="default">
             
           </span>
           
             &mdash; <div class='inline'>
-<p>Part of <tt>/api/hostgroups/:hostgroup_id/puppetclass_ids/:id</tt> path</p>
+<p>id of puppetclass</p>
 </div>
           
         </li>
@@ -488,19 +488,6 @@
           
             &mdash; <div class='inline'>
 <p>id of hostgroup</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">puppetclass_id</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'>
-<p>id of puppetclass</p>
 </div>
           
         </li>
@@ -535,12 +522,12 @@
       <pre class="lines">
 
 
+33
 34
-35
-36</pre>
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/hostgroup_class.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/hostgroup_class.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -678,7 +665,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu Dec 19 15:47:34 2013 by
+  Generated on Thu Jan 23 15:40:36 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7 (ruby-2.0.0).
 </div>

@@ -380,7 +380,7 @@
       
         <li>
           <span class="name">user</span>
-          <span class="type">(<tt>Hash</tt>)</span>
+          <span class="type">(<tt>Hash</tt>, <tt>nil</tt>)</span>
           <span class="default">
             
           </span>
@@ -390,11 +390,11 @@
 <ul><li>
 <p>auth_source_id [Numeric]</p>
 </li><li>
-<p>admin [String]  is an admin account?</p>
+<p>admin [String, nil]  is an admin account?</p>
 </li><li>
-<p>firstname [String]</p>
+<p>firstname [String, nil]</p>
 </li><li>
-<p>lastname [String]</p>
+<p>lastname [String, nil]</p>
 </li><li>
 <p>login [String]</p>
 </li><li>
@@ -555,12 +555,12 @@
       <pre class="lines">
 
 
-68
 69
-70</pre>
+70
+71</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/user.rb', line 68</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/user.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -927,7 +927,7 @@
       
         <li>
           <span class="name">user</span>
-          <span class="type">(<tt>Hash</tt>)</span>
+          <span class="type">(<tt>Hash</tt>, <tt>nil</tt>)</span>
           <span class="default">
             
           </span>
@@ -935,7 +935,9 @@
             &mdash; <div class='inline'>
 <p>allowed keys are:</p>
 <ul><li>
-<p>admin [String]  is an admin account?</p>
+<p>auth_source_id [Numeric]</p>
+</li><li>
+<p>admin [String, nil]  is an admin account?</p>
 </li><li>
 <p>firstname [String, nil]</p>
 </li><li>
@@ -981,12 +983,12 @@
       <pre class="lines">
 
 
-59
 60
-61</pre>
+61
+62</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/user.rb', line 59</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/user.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -1001,7 +1003,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu Dec 19 15:47:31 2013 by
+  Generated on Thu Jan 23 15:40:31 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7 (ruby-2.0.0).
 </div>

@@ -27,11 +27,11 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] ptable
+      # @option params [Hash, nil] ptable
       #   allowed keys are:
       #   * layout [String]
       #   * name [String]
-      #   * os_family [String]
+      #   * os_family [String, nil]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -41,11 +41,11 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
-      # @option params [Hash] ptable
+      # @option params [Hash, nil] ptable
       #   allowed keys are:
       #   * layout [String]
       #   * name [String]
-      #   * os_family [String]
+      #   * os_family [String, nil]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

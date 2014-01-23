@@ -393,7 +393,7 @@
       
         <li>
           <span class="name">interface</span>
-          <span class="type">(<tt>Hash</tt>)</span>
+          <span class="type">(<tt>Hash</tt>, <tt>nil</tt>)</span>
           <span class="default">
             
           </span>
@@ -401,9 +401,9 @@
             &mdash; <div class='inline'>
 <p>interface information  allowed keys are:</p>
 <ul><li>
-<p>domain_id [Numeric]  foreman domain id of interface</p>
+<p>domain_id [Numeric, nil]  foreman domain id of interface</p>
 </li><li>
-<p>subnet_id [Numeric]  foreman subnet id of interface</p>
+<p>subnet_id [Numeric, nil]  foreman subnet id of interface</p>
 </li><li>
 <p>ip [String]  ip address of interface</p>
 </li><li>
@@ -411,13 +411,13 @@
 </li><li>
 <p>name [String]  interface name</p>
 </li><li>
-<p>password [String]</p>
+<p>password [String, nil]</p>
 </li><li>
-<p>provider [String]  interface provider, i.e: ipmi</p>
+<p>provider [String, nil]  interface provider, i.e: ipmi</p>
 </li><li>
 <p>type [String]  interface type, i.e: nic::bmc</p>
 </li><li>
-<p>username [String]</p>
+<p>username [String, nil]</p>
 </li></ul>
 </div>
           
@@ -930,14 +930,10 @@
       
         <li>
           <span class="name">id</span>
-          <span class="type">(<tt>Object</tt>)</span>
+          <span class="type">(<tt>String</tt>)</span>
           <span class="default">
             
           </span>
-          
-            &mdash; <div class='inline'>
-<p>Part of <tt>/api/hosts/:host_id/interfaces/:id</tt> path</p>
-</div>
           
         </li>
       
@@ -956,7 +952,7 @@
       
         <li>
           <span class="name">interface</span>
-          <span class="type">(<tt>Hash</tt>)</span>
+          <span class="type">(<tt>Hash</tt>, <tt>nil</tt>)</span>
           <span class="default">
             
           </span>
@@ -964,9 +960,9 @@
             &mdash; <div class='inline'>
 <p>interface information  allowed keys are:</p>
 <ul><li>
-<p>domain_id [Numeric]  foreman domain id of interface</p>
+<p>domain_id [Numeric, nil]  foreman domain id of interface</p>
 </li><li>
-<p>subnet_id [Numeric]  foreman subnet id of interface</p>
+<p>subnet_id [Numeric, nil]  foreman subnet id of interface</p>
 </li><li>
 <p>ip [String]  ip address of interface</p>
 </li><li>
@@ -974,13 +970,13 @@
 </li><li>
 <p>name [String]  interface name</p>
 </li><li>
-<p>password [String]</p>
+<p>password [String, nil]</p>
 </li><li>
-<p>provider [String]  interface provider, i.e: ipmi</p>
+<p>provider [String, nil]  interface provider, i.e: ipmi</p>
 </li><li>
 <p>type [String]  interface type, i.e: nic::bmc</p>
 </li><li>
-<p>username [String]</p>
+<p>username [String, nil]</p>
 </li></ul>
 </div>
           
@@ -1036,7 +1032,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu Dec 19 15:47:32 2013 by
+  Generated on Thu Jan 23 15:40:34 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7 (ruby-2.0.0).
 </div>

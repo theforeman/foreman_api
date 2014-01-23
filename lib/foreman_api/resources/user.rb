@@ -27,12 +27,12 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] user
+      # @option params [Hash, nil] user
       #   allowed keys are:
       #   * auth_source_id [Numeric]
-      #   * admin [String]  is an admin account? 
-      #   * firstname [String]
-      #   * lastname [String]
+      #   * admin [String, nil]  is an admin account? 
+      #   * firstname [String, nil]
+      #   * lastname [String, nil]
       #   * login [String]
       #   * mail [String]
       #   * password [String]
@@ -45,9 +45,10 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
-      # @option params [Hash] user
+      # @option params [Hash, nil] user
       #   allowed keys are:
-      #   * admin [String]  is an admin account? 
+      #   * auth_source_id [Numeric]
+      #   * admin [String, nil]  is an admin account? 
       #   * firstname [String, nil]
       #   * lastname [String, nil]
       #   * login [String]

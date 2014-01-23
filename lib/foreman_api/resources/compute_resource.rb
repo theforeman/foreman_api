@@ -27,18 +27,18 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] compute_resource
+      # @option params [Hash, nil] compute_resource
       #   allowed keys are:
-      #   * description [String]
-      #   * name [String]
-      #   * password [String]  password for ovirt, ec2, vmware, openstack. secret key for ec2 
-      #   * provider [String]  providers include libvirt, ovirt, ec2, vmware, openstack, rackspace, gce 
-      #   * region [String]  for ec2 only 
-      #   * server [String]  for vmware 
-      #   * tenant [String]  for openstack only 
+      #   * description [String, nil]
+      #   * name [String, nil]
+      #   * password [String, nil]  password for ovirt, ec2, vmware, openstack. secret key for ec2 
+      #   * provider [String, nil]  providers include libvirt, ovirt, ec2, vmware, openstack, rackspace 
+      #   * region [String, nil]  for ec2 only 
+      #   * server [String, nil]  for vmware 
+      #   * tenant [String, nil]  for openstack only 
       #   * url [String]  url for libvirt, ovirt, and openstack 
-      #   * user [String]  username for ovirt, ec2, vmware, openstack. access key for ec2. 
-      #   * uuid [String]  for ovirt, vmware datacenter 
+      #   * user [String, nil]  username for ovirt, ec2, vmware, openstack. access key for ec2. 
+      #   * uuid [String, nil]  for ovirt, vmware datacenter 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -48,18 +48,18 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
-      # @option params [Hash] compute_resource
+      # @option params [Hash, nil] compute_resource
       #   allowed keys are:
-      #   * description [String]
-      #   * name [String]
-      #   * password [String]  password for ovirt, ec2, vmware, openstack. secret key for ec2 
-      #   * provider [String]  providers include libvirt, ovirt, ec2, vmware, openstack, rackspace, gce 
-      #   * region [String]  for ec2 only 
-      #   * server [String]  for vmware 
-      #   * tenant [String]  for openstack only 
+      #   * description [String, nil]
+      #   * name [String, nil]
+      #   * password [String, nil]  password for ovirt, ec2, vmware, openstack. secret key for ec2 
+      #   * provider [String, nil]  providers include libvirt, ovirt, ec2, vmware, openstack, rackspace 
+      #   * region [String, nil]  for ec2 only 
+      #   * server [String, nil]  for vmware 
+      #   * tenant [String, nil]  for openstack only 
       #   * url [String]  url for libvirt, ovirt, and openstack 
-      #   * user [String]  username for ovirt, ec2, vmware, openstack. access key for ec2. 
-      #   * uuid [String]  for ovirt, vmware datacenter 
+      #   * user [String, nil]  username for ovirt, ec2, vmware, openstack. access key for ec2. 
+      #   * uuid [String, nil]  for ovirt, vmware datacenter 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

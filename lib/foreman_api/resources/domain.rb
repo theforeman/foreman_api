@@ -27,10 +27,10 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] domain
+      # @option params [Hash, nil] domain
       #   allowed keys are:
       #   * dns_id [String, nil]  dns proxy to use within this domain 
-      #   * domain_parameters_attributes [Array]  array of parameters (name, value) 
+      #   * domain_parameters_attributes [Array, nil]  array of parameters (name, value) 
       #   * fullname [String, nil]  full name describing the domain 
       #   * name [String]  the full dns domain name 
       #
@@ -42,12 +42,12 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
-      # @option params [Hash] domain
+      # @option params [Hash, nil] domain
       #   allowed keys are:
       #   * dns_id [String, nil]  dns proxy to use within this domain 
-      #   * domain_parameters_attributes [Array]  array of parameters (name, value) 
+      #   * domain_parameters_attributes [Array, nil]  array of parameters (name, value) 
       #   * fullname [String, nil]  full name describing the domain 
-      #   * name [String, nil]  the full dns domain name 
+      #   * name [String]  the full dns domain name 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

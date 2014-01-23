@@ -27,11 +27,11 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] medium
+      # @option params [Hash, nil] medium
       #   allowed keys are:
-      #   * operatingsystem_ids [Array]
+      #   * operatingsystem_ids [Array, nil]
       #   * name [String]  name of media 
-      #   * os_family [String]  the family that the operating system belongs to.  available families:   archlinux  debian  freebsd  gentoo  redhat  solaris  suse  windows  
+      #   * os_family [String, nil]  the family that the operating system belongs to.  available families:   aix  archlinux  debian  freebsd  gentoo  junos  redhat  solaris  suse  windows  
       #   * path [String]  the path to the medium, can be a url or a valid nfs server (exclusive of the architecture).  for example http://mirror.centos.org/centos/$version/os/$arch where $arch will be substituted for the host’s actual os architecture and $version, $major and $minor will be substituted for the version of the operating system.  solaris and debian media may also use $release. 
       #
       # @param [Hash] headers additional http headers
@@ -42,11 +42,11 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
-      # @option params [Hash] medium
+      # @option params [Hash, nil] medium
       #   allowed keys are:
-      #   * operatingsystem_ids [Array]
+      #   * operatingsystem_ids [Array, nil]
       #   * name [String]  name of media 
-      #   * os_family [String, nil]  the family that the operating system belongs to.  available families:   archlinux  debian  freebsd  gentoo  redhat  solaris  suse  windows  
+      #   * os_family [String, nil]  the family that the operating system belongs to.  available families:   aix  archlinux  debian  freebsd  gentoo  junos  redhat  solaris  suse  windows  
       #   * path [String]  the path to the medium, can be a url or a valid nfs server (exclusive of the architecture).  for example http://mirror.centos.org/centos/$version/os/$arch where $arch will be substituted for the host’s actual os architecture and $version, $major and $minor will be substituted for the version of the operating system.  solaris and debian media may also use $release. 
       #
       # @param [Hash] headers additional http headers

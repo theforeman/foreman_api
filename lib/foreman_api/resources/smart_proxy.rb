@@ -38,7 +38,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] smart_proxy
+      # @option params [Hash, nil] smart_proxy
       #   allowed keys are:
       #   * name [String]
       #   * url [String]
@@ -51,7 +51,7 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
-      # @option params [Hash] smart_proxy
+      # @option params [Hash, nil] smart_proxy
       #   allowed keys are:
       #   * name [String]
       #   * url [String]

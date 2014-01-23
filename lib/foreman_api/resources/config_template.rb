@@ -27,15 +27,15 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] config_template
+      # @option params [Hash, nil] config_template
       #   allowed keys are:
-      #   * operatingsystem_ids [Array]  array of operating systems id to associate the template with 
+      #   * operatingsystem_ids [Array, nil]  array of operating systems id to associate the template with 
       #   * template_kind_id [String, nil]  not relevant for snippet 
       #   * audit_comment [String, nil]
       #   * name [String]  template name 
       #   * snippet [String, nil]
       #   * template [String]
-      #   * template_combinations_attributes [Array]  array of template combinations (hostgroup_id, environment_id) 
+      #   * template_combinations_attributes [Array, nil]  array of template combinations (hostgroup_id, environment_id) 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -45,15 +45,15 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
-      # @option params [Hash] config_template
+      # @option params [Hash, nil] config_template
       #   allowed keys are:
-      #   * operatingsystem_ids [Array]  array of operating systems id to associate the template with 
+      #   * operatingsystem_ids [Array, nil]  array of operating systems id to associate the template with 
       #   * template_kind_id [String, nil]  not relevant for snippet 
       #   * audit_comment [String, nil]
       #   * name [String]  template name 
-      #   * snippet [String]
+      #   * snippet [String, nil]
       #   * template [String]
-      #   * template_combinations_attributes [Array]  array of template combinations (hostgroup_id, environment_id) 
+      #   * template_combinations_attributes [Array, nil]  array of template combinations (hostgroup_id, environment_id) 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

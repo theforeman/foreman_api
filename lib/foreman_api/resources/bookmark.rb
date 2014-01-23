@@ -25,11 +25,11 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] bookmark
+      # @option params [Hash, nil] bookmark
       #   allowed keys are:
       #   * controller [String]
       #   * name [String]
-      #   * public [String]
+      #   * public [String, nil]
       #   * query [String]
       #
       # @param [Hash] headers additional http headers
@@ -40,11 +40,11 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
-      # @option params [Hash] bookmark
+      # @option params [Hash, nil] bookmark
       #   allowed keys are:
       #   * controller [String]
       #   * name [String]
-      #   * public [String]
+      #   * public [String, nil]
       #   * query [String]
       #
       # @param [Hash] headers additional http headers

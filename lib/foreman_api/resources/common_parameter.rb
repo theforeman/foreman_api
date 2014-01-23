@@ -27,7 +27,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] common_parameter
+      # @option params [Hash, nil] common_parameter
       #   allowed keys are:
       #   * name [String]
       #   * value [String]
@@ -40,7 +40,7 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
-      # @option params [Hash] common_parameter
+      # @option params [Hash, nil] common_parameter
       #   allowed keys are:
       #   * name [String]
       #   * value [String]

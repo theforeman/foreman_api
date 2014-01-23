@@ -25,9 +25,8 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Object] id Part of +/api/hostgroups/:hostgroup_id/puppetclass_ids/:id+ path
+      # @option params [String] id  id of puppetclass 
       # @option params [String] hostgroup_id  id of hostgroup 
-      # @option params [String] puppetclass_id  id of puppetclass 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

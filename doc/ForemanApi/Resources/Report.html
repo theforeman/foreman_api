@@ -380,7 +380,7 @@
       
         <li>
           <span class="name">report</span>
-          <span class="type">(<tt>Hash</tt>)</span>
+          <span class="type">(<tt>Hash</tt>, <tt>nil</tt>)</span>
           <span class="default">
             
           </span>
@@ -390,7 +390,7 @@
 <ul><li>
 <p>host [String]  hostname or certname</p>
 </li><li>
-<p>logs [Array]  optional array of log hashes</p>
+<p>logs [Array, nil]  optional array of log hashes</p>
 </li><li>
 <p>metrics [Hash]  hash of report metrics, can be just {}</p>
 </li><li>
@@ -432,12 +432,12 @@
       <pre class="lines">
 
 
-59
-60
-61</pre>
+40
+41
+42</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/report.rb', line 59</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/report.rb', line 40</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -551,12 +551,12 @@
       <pre class="lines">
 
 
-34
-35
-36</pre>
+49
+50
+51</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/report.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/report.rb', line 49</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -845,12 +845,12 @@
       <pre class="lines">
 
 
-44
-45
-46</pre>
+59
+60
+61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/report.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/foreman_api/resources/report.rb', line 59</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_last'>last</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_perform_call'>perform_call</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
@@ -984,7 +984,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu Dec 19 15:47:32 2013 by
+  Generated on Thu Jan 23 15:40:33 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7 (ruby-2.0.0).
 </div>

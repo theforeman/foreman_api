@@ -27,35 +27,35 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] host
+      # @option params [Hash, nil] host
       #   allowed keys are:
-      #   * architecture_id [String]
-      #   * compute_resource_id [String]
-      #   * domain_id [String]
-      #   * environment_id [String]
-      #   * hostgroup_id [String]
-      #   * image_id [String]
-      #   * medium_id [String]
-      #   * model_id [String]
-      #   * operatingsystem_id [String]
-      #   * owner_id [String]
-      #   * progress_report_id [String]  uuid to track orchestration tasks status, get /api/orchestration/:uuid/tasks 
-      #   * ptable_id [String]
-      #   * puppet_ca_proxy_id [String]
-      #   * puppet_class_ids [Array]
-      #   * puppet_proxy_id [String]
-      #   * sp_subnet_id [String]
-      #   * subnet_id [String]
-      #   * build [String]
-      #   * capabilities [String]
-      #   * compute_attributes [Hash]
-      #   * enabled [String]
-      #   * host_parameters_attributes [Array]
-      #   * ip [String]  not required if using a subnet with dhcp proxy 
-      #   * mac [String]  not required if its a virtual machine 
-      #   * managed [String]
+      #   * architecture_id [String, nil]
+      #   * compute_resource_id [String, nil]
+      #   * domain_id [String, nil]
+      #   * environment_id [String, nil]
+      #   * hostgroup_id [String, nil]
+      #   * image_id [String, nil]
+      #   * medium_id [String, nil]
+      #   * model_id [String, nil]
+      #   * operatingsystem_id [String, nil]
+      #   * owner_id [String, nil]
+      #   * progress_report_id [String, nil]  uuid to track orchestration tasks status, get /api/orchestration/:uuid/tasks 
+      #   * ptable_id [String, nil]
+      #   * puppet_ca_proxy_id [String, nil]
+      #   * puppet_class_ids [Array, nil]
+      #   * puppet_proxy_id [String, nil]
+      #   * sp_subnet_id [String, nil]
+      #   * subnet_id [String, nil]
+      #   * build [String, nil]
+      #   * capabilities [String, nil]
+      #   * compute_attributes [Hash, nil]
+      #   * enabled [String, nil]
+      #   * host_parameters_attributes [Array, nil]
+      #   * ip [String, nil]  not required if using a subnet with dhcp proxy 
+      #   * mac [String, nil]  not required if its a virtual machine 
+      #   * managed [String, nil]
       #   * name [String]
-      #   * provision_method [String]
+      #   * provision_method [String, nil]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -65,35 +65,35 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
-      # @option params [Hash] host
+      # @option params [Hash, nil] host
       #   allowed keys are:
-      #   * architecture_id [String]
-      #   * compute_resource_id [String]
-      #   * domain_id [String]
-      #   * environment_id [String]
-      #   * hostgroup_id [String]
-      #   * image_id [String]
-      #   * medium_id [String]
-      #   * model_id [String]
-      #   * operatingsystem_id [String]
-      #   * owner_id [String]
-      #   * progress_report_id [String]  uuid to track orchestration tasks status, get /api/orchestration/:uuid/tasks 
-      #   * ptable_id [String]
-      #   * puppet_ca_proxy_id [String]
-      #   * puppet_class_ids [Array]
-      #   * puppet_proxy_id [String]
-      #   * sp_subnet_id [String]
-      #   * subnet_id [String]
-      #   * build [String]
-      #   * capabilities [String]
-      #   * compute_attributes [Hash]
-      #   * enabled [String]
-      #   * host_parameters_attributes [Array]
-      #   * ip [String]  not required if using a subnet with dhcp proxy 
-      #   * mac [String]  not required if its a virtual machine 
-      #   * managed [String]
+      #   * architecture_id [String, nil]
+      #   * compute_resource_id [String, nil]
+      #   * domain_id [String, nil]
+      #   * environment_id [String, nil]
+      #   * hostgroup_id [String, nil]
+      #   * image_id [String, nil]
+      #   * medium_id [String, nil]
+      #   * model_id [String, nil]
+      #   * operatingsystem_id [String, nil]
+      #   * owner_id [String, nil]
+      #   * progress_report_id [String, nil]  uuid to track orchestration tasks status, get /api/orchestration/:uuid/tasks 
+      #   * ptable_id [String, nil]
+      #   * puppet_ca_proxy_id [String, nil]
+      #   * puppet_class_ids [Array, nil]
+      #   * puppet_proxy_id [String, nil]
+      #   * sp_subnet_id [String, nil]
+      #   * subnet_id [String, nil]
+      #   * build [String, nil]
+      #   * capabilities [String, nil]
+      #   * compute_attributes [Hash, nil]
+      #   * enabled [String, nil]
+      #   * host_parameters_attributes [Array, nil]
+      #   * ip [String, nil]  not required if using a subnet with dhcp proxy 
+      #   * mac [String, nil]  not required if its a virtual machine 
+      #   * managed [String, nil]
       #   * name [String]
-      #   * provision_method [String]
+      #   * provision_method [String, nil]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -120,7 +120,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Object] id Part of +/api/hosts/:id/puppetrun+ path
+      # @option params [String] id
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

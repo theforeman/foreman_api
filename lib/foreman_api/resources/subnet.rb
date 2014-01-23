@@ -27,21 +27,21 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] subnet
+      # @option params [Hash, nil] subnet
       #   allowed keys are:
-      #   * dhcp_id [String]  dhcp proxy to use within this subnet 
-      #   * dns_id [String]  dns proxy to use within this subnet 
-      #   * domain_ids [Array]  domains in which this subnet is part 
-      #   * tftp_id [String]  tftp proxy to use within this subnet 
-      #   * dns_primary [String]  primary dns for this subnet 
-      #   * dns_secondary [String]  secondary dns for this subnet 
-      #   * from [String]  starting ip address for ip auto suggestion 
-      #   * gateway [String]  primary dns for this subnet 
+      #   * dhcp_id [String, nil]  dhcp proxy to use within this subnet 
+      #   * dns_id [String, nil]  dns proxy to use within this subnet 
+      #   * domain_ids [Array, nil]  domains in which this subnet is part 
+      #   * tftp_id [String, nil]  tftp proxy to use within this subnet 
+      #   * dns_primary [String, nil]  primary dns for this subnet 
+      #   * dns_secondary [String, nil]  secondary dns for this subnet 
+      #   * from [String, nil]  starting ip address for ip auto suggestion 
+      #   * gateway [String, nil]  primary dns for this subnet 
       #   * mask [String]  netmask for this subnet 
       #   * name [String]  subnet name 
       #   * network [String]  subnet network 
-      #   * to [String]  ending ip address for ip auto suggestion 
-      #   * vlanid [String]  vlan id for this subnet 
+      #   * to [String, nil]  ending ip address for ip auto suggestion 
+      #   * vlanid [String, nil]  vlan id for this subnet 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -51,7 +51,7 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id  subnet numeric identifier 
-      # @option params [Hash] subnet
+      # @option params [Hash, nil] subnet
       #   allowed keys are:
       #   * dhcp_id [String, nil]  dhcp proxy to use within this subnet 
       #   * dns_id [String, nil]  dns proxy to use within this subnet 

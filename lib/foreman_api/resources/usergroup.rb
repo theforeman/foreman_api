@@ -27,7 +27,7 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] usergroup
+      # @option params [Hash, nil] usergroup
       #   allowed keys are:
       #   * name [String]
       #
@@ -39,7 +39,7 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
-      # @option params [Hash] usergroup
+      # @option params [Hash, nil] usergroup
       #   allowed keys are:
       #   * name [String]
       #

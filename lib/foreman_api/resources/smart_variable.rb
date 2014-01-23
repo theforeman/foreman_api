@@ -30,16 +30,16 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] smart_variable
+      # @option params [Hash, nil] smart_variable
       #   allowed keys are:
-      #   * puppetclass_id [String]
-      #   * default_value [String]
-      #   * description [String]
-      #   * override_value_order [String]
-      #   * validator_rule [String]
-      #   * validator_type [String]
+      #   * puppetclass_id [String, nil]
+      #   * default_value [String, nil]
+      #   * description [String, nil]
+      #   * override_value_order [String, nil]
+      #   * validator_rule [String, nil]
+      #   * validator_type [String, nil]
       #   * variable [String]
-      #   * variable_type [String]
+      #   * variable_type [String, nil]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -49,16 +49,16 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
-      # @option params [Hash] smart_variable
+      # @option params [Hash, nil] smart_variable
       #   allowed keys are:
-      #   * puppetclass_id [String]
-      #   * default_value [String]
-      #   * description [String]
-      #   * override_value_order [String]
-      #   * validator_rule [String]
-      #   * validator_type [String]
+      #   * puppetclass_id [String, nil]
+      #   * default_value [String, nil]
+      #   * description [String, nil]
+      #   * override_value_order [String, nil]
+      #   * validator_rule [String, nil]
+      #   * validator_type [String, nil]
       #   * variable [String]
-      #   * variable_type [String]
+      #   * variable_type [String, nil]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

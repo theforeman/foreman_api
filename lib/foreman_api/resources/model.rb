@@ -27,12 +27,12 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] model
+      # @option params [Hash, nil] model
       #   allowed keys are:
-      #   * hardware_model [String]
-      #   * info [String]
+      #   * hardware_model [String, nil]
+      #   * info [String, nil]
       #   * name [String]
-      #   * vendor_class [String]
+      #   * vendor_class [String, nil]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -42,12 +42,12 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
-      # @option params [Hash] model
+      # @option params [Hash, nil] model
       #   allowed keys are:
-      #   * hardware_model [String]
-      #   * info [String]
+      #   * hardware_model [String, nil]
+      #   * info [String, nil]
       #   * name [String]
-      #   * vendor_class [String]
+      #   * vendor_class [String, nil]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

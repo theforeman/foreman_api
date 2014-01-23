@@ -27,14 +27,14 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Hash] operatingsystem
+      # @option params [Hash, nil] operatingsystem
       #   allowed keys are:
-      #   * description [String]
-      #   * family [String]
+      #   * description [String, nil]
+      #   * family [String, nil]
       #   * major [String]
       #   * minor [String]
       #   * name [String]
-      #   * release_name [String]
+      #   * release_name [String, nil]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -44,14 +44,14 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
-      # @option params [Hash] operatingsystem
+      # @option params [Hash, nil] operatingsystem
       #   allowed keys are:
-      #   * description [String]
-      #   * family [String]
+      #   * description [String, nil]
+      #   * family [String, nil]
       #   * major [String]
       #   * minor [String]
       #   * name [String]
-      #   * release_name [String]
+      #   * release_name [String, nil]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

@@ -9,7 +9,9 @@ module ForemanApi
       # @option params [String] domain_id  id of domain 
       # @option params [String] host_id  id of host 
       # @option params [String] hostgroup_id  id of hostgroup 
+      # @option params [String] location_id  id of location 
       # @option params [String] operatingsystem_id  id of operating system 
+      # @option params [String] organization_id  id of organization 
       # @option params [String] page  paginate results 
       # @option params [String] per_page  number of entries per request 
       #
@@ -24,7 +26,9 @@ module ForemanApi
       # @option params [String] domain_id  id of domain 
       # @option params [String] host_id  id of host 
       # @option params [String] hostgroup_id  id of hostgroup 
+      # @option params [String] location_id  id of location 
       # @option params [String] operatingsystem_id  id of operating system 
+      # @option params [String] organization_id  id of organization 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -36,8 +40,10 @@ module ForemanApi
       # @option params [String] domain_id  id of domain 
       # @option params [String] host_id  id of host 
       # @option params [String] hostgroup_id  id of hostgroup 
+      # @option params [String] location_id  id of location 
       # @option params [String] operatingsystem_id  id of operating system 
-      # @option params [Hash] parameter
+      # @option params [String] organization_id  id of organization 
+      # @option params [Hash, nil] parameter
       #   allowed keys are:
       #   * name [String]
       #   * value [String]
@@ -53,8 +59,10 @@ module ForemanApi
       # @option params [String] domain_id  id of domain 
       # @option params [String] host_id  id of host 
       # @option params [String] hostgroup_id  id of hostgroup 
+      # @option params [String] location_id  id of location 
       # @option params [String] operatingsystem_id  id of operating system 
-      # @option params [Hash] parameter
+      # @option params [String] organization_id  id of organization 
+      # @option params [Hash, nil] parameter
       #   allowed keys are:
       #   * name [String]
       #   * value [String]
@@ -70,7 +78,9 @@ module ForemanApi
       # @option params [String] domain_id  id of domain 
       # @option params [String] host_id  id of host 
       # @option params [String] hostgroup_id  id of hostgroup 
+      # @option params [String] location_id  id of location 
       # @option params [String] operatingsystem_id  id of operating system 
+      # @option params [String] organization_id  id of organization 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -79,10 +89,12 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Object] domain_id Part of +/api/domains/:domain_id/parameters+ path
-      # @option params [Object] host_id Part of +/api/hosts/:host_id/parameters+ path
-      # @option params [Object] hostgroup_id Part of +/api/hostgroups/:hostgroup_id/parameters+ path
-      # @option params [Object] operatingsystem_id Part of +/api/operatingsystems/:operatingsystem_id/parameters+ path
+      # @option params [String] domain_id  id of domain 
+      # @option params [String] host_id  id of host 
+      # @option params [String] hostgroup_id  id of hostgroup 
+      # @option params [String] location_id  id of location 
+      # @option params [String] operatingsystem_id  id of operating system 
+      # @option params [String] organization_id  id of organization 
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

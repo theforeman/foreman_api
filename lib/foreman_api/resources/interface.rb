@@ -26,17 +26,17 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] host_id  id or name of host 
-      # @option params [Hash] interface  interface information 
+      # @option params [Hash, nil] interface  interface information 
       #   allowed keys are:
-      #   * domain_id [Numeric]  foreman domain id of interface 
-      #   * subnet_id [Numeric]  foreman subnet id of interface 
+      #   * domain_id [Numeric, nil]  foreman domain id of interface 
+      #   * subnet_id [Numeric, nil]  foreman subnet id of interface 
       #   * ip [String]  ip address of interface 
       #   * mac [String]  mac address of interface 
       #   * name [String]  interface name 
-      #   * password [String]
-      #   * provider [String]  interface provider, i.e: ipmi 
+      #   * password [String, nil]
+      #   * provider [String, nil]  interface provider, i.e: ipmi 
       #   * type [String]  interface type, i.e: nic::bmc 
-      #   * username [String]
+      #   * username [String, nil]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body
@@ -45,19 +45,19 @@ module ForemanApi
       end
 
       # @param [Hash] params a hash of params to be passed to the service
-      # @option params [Object] id Part of +/api/hosts/:host_id/interfaces/:id+ path
+      # @option params [String] id
       # @option params [String] host_id  id or name of host 
-      # @option params [Hash] interface  interface information 
+      # @option params [Hash, nil] interface  interface information 
       #   allowed keys are:
-      #   * domain_id [Numeric]  foreman domain id of interface 
-      #   * subnet_id [Numeric]  foreman subnet id of interface 
+      #   * domain_id [Numeric, nil]  foreman domain id of interface 
+      #   * subnet_id [Numeric, nil]  foreman subnet id of interface 
       #   * ip [String]  ip address of interface 
       #   * mac [String]  mac address of interface 
       #   * name [String]  interface name 
-      #   * password [String]
-      #   * provider [String]  interface provider, i.e: ipmi 
+      #   * password [String, nil]
+      #   * provider [String, nil]  interface provider, i.e: ipmi 
       #   * type [String]  interface type, i.e: nic::bmc 
-      #   * username [String]
+      #   * username [String, nil]
       #
       # @param [Hash] headers additional http headers
       # @return [Array] First item: parsed data; second item: raw body

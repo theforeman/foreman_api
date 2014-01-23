@@ -30,7 +30,7 @@ module ForemanApi
 
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] compute_resource_id
-      # @option params [Hash] image
+      # @option params [Hash, nil] image
       #   allowed keys are:
       #   * architecture_id [String]
       #   * compute_resource_id [String]
@@ -48,7 +48,7 @@ module ForemanApi
       # @param [Hash] params a hash of params to be passed to the service
       # @option params [String] id
       # @option params [String] compute_resource_id
-      # @option params [Hash] image
+      # @option params [Hash, nil] image
       #   allowed keys are:
       #   * architecture_id [String]
       #   * compute_resource_id [String]
