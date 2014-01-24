@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = ForemanApi::VERSION
 
-  gem.add_dependency 'json'
-  gem.add_dependency 'rest-client', '>= 1.6.1'
-  gem.add_dependency 'oauth'
+  gem.add_dependency 'json', '~> 1.8'
+  gem.add_dependency 'rest-client', '~> 1.6'
+  gem.add_dependency 'oauth', '~> 0.4'
 end
