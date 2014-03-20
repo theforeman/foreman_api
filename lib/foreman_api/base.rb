@@ -45,6 +45,7 @@ module ForemanApi
         :user     => config[:username],
         :password => config[:password],
         :oauth    => config[:oauth],
+        :timeout  => config[:timeout],
         :headers  => headers
       }.merge(options)
 
