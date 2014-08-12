@@ -48,6 +48,7 @@ module ForemanApi
         :timeout  => config[:timeout],
         :headers  => headers
       }.merge(options)
+      resource_config[:verify_ssl] = config[:verify_ssl] unless config[:verify_ssl].nil?
 
       @client = RestClient::Resource.new(config[:base_url], resource_config)
       @config = config
