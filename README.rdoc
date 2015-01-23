@@ -1,5 +1,9 @@
 = Foreman API bindings for Ruby
 
+== NOTE
+
+Alternatively, you may want to take a look at {apipie-bindings}[https://github.com/Apipie/apipie-bindings]. It is the replacement for foreman_api that is used in the Foreman CLI. It has more frequent releases. Additional info at {apipie-bindings}[http://rubydoc.info/github/Apipie/apipie-bindings/frames/file/README.md].
+
 == Summary
 
 Usage:
